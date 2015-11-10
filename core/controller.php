@@ -9,8 +9,9 @@ class Controller {
     }
     
     function render($filename){
-        require("tpl/Smarty.class.php");
-        $tpl = new Smarty();
+        
+        require_once('tpl/SmartyBC.class.php');
+        $tpl = new SmartyBC();
         $tpl->assign($this->vars);
         $tpl->assign('WEBROOT', WEBROOT);
         $tpl->assign('APPROOT', APPROOT);

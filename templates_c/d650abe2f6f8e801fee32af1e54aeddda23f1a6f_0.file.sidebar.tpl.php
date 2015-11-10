@@ -1,32 +1,32 @@
-<?php /* Smarty version 3.1.27, created on 2015-10-25 05:20:43
-         compiled from "C:\wamp\www\MVC\application\views\sidebar.tpl" */ ?>
+<?php /* Smarty version 3.1.27, created on 2015-11-10 03:18:59
+         compiled from "C:\wamp\www\projet_rpm\application\views\sidebar.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:18242562c66abe077a0_90572345%%*/
+/*%%SmartyHeaderCode:2262756415413428a78_78217275%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '8395e28afcee63657c5e38b5e8c98b95e5c2f9c4' => 
+    'd650abe2f6f8e801fee32af1e54aeddda23f1a6f' => 
     array (
-      0 => 'C:\\wamp\\www\\MVC\\application\\views\\sidebar.tpl',
+      0 => 'C:\\wamp\\www\\projet_rpm\\application\\views\\sidebar.tpl',
       1 => 1445750426,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18242562c66abe077a0_90572345',
+  'nocache_hash' => '2262756415413428a78_78217275',
   'variables' => 
   array (
     'ROOT' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_562c66abe0e049_25148215',
+  'unifunc' => 'content_56415413430ae6_71612188',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_562c66abe0e049_25148215')) {
-function content_562c66abe0e049_25148215 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56415413430ae6_71612188')) {
+function content_56415413430ae6_71612188 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '18242562c66abe077a0_90572345';
+$_smarty_tpl->properties['nocache_hash'] = '2262756415413428a78_78217275';
 ?>
 <!-- Sidebar -->
   <div class="panel-heading">Services</div>

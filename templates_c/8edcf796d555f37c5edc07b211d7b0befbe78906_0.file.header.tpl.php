@@ -1,32 +1,32 @@
-<?php /* Smarty version 3.1.27, created on 2015-10-25 05:33:09
-         compiled from "C:\wamp\www\MVC\application\views\header.tpl" */ ?>
+<?php /* Smarty version 3.1.27, created on 2015-11-10 03:18:59
+         compiled from "C:\wamp\www\projet_rpm\application\views\header.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:393562c69950c4b22_90854195%%*/
+/*%%SmartyHeaderCode:126856415413383250_70698254%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'b0dab93c04a73cd067828fbae31d538f9702996d' => 
+    '8edcf796d555f37c5edc07b211d7b0befbe78906' => 
     array (
-      0 => 'C:\\wamp\\www\\MVC\\application\\views\\header.tpl',
-      1 => 1445751183,
+      0 => 'C:\\wamp\\www\\projet_rpm\\application\\views\\header.tpl',
+      1 => 1447043904,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '393562c69950c4b22_90854195',
+  'nocache_hash' => '126856415413383250_70698254',
   'variables' => 
   array (
     'ROOT' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_562c6995180a89_49753494',
+  'unifunc' => 'content_564154133dc340_20771477',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_562c6995180a89_49753494')) {
-function content_562c6995180a89_49753494 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_564154133dc340_20771477')) {
+function content_564154133dc340_20771477 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '393562c69950c4b22_90854195';
+$_smarty_tpl->properties['nocache_hash'] = '126856415413383250_70698254';
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -38,7 +38,7 @@ $_smarty_tpl->properties['nocache_hash'] = '393562c69950c4b22_90854195';
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Twitter Bootstrap Modal Login Popup - Social Login Popup </title>
+		<title>Réseau Professionnel Mouride</title>
 		<meta name="description" content="Twitter Bootstrap Modal Login Popup - Social Login Popup ">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 

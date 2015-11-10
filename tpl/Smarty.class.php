@@ -127,7 +127,7 @@ class Smarty extends Smarty_Internal_TemplateBase
     /**
      * define caching modes
      */
-    const CACHING_OFF = 0;
+    const CACHING_OFF = 1;
 
     const CACHING_LIFETIME_CURRENT = 1;
 
