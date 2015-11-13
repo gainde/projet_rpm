@@ -25,12 +25,12 @@ class Application {
                     $this->controller->{$this->action}();
                 }
             } else {
-                require (WEBAPPROOT . 'controllers/404.php');
+                require (WEBAPPROOT . 'controllers/PageErreur.php');
                 $this->controller = new Erreur();
                 $this->controller->Page404();
             }
         } else {
-            require (WEBAPPROOT . 'controllers/404.php');
+            require (WEBAPPROOT . 'controllers/PageErreur.php');
             $this->controller = new Erreur();
             $this->controller->Page404();
         }

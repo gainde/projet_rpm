@@ -4,7 +4,4 @@
 	<script src="{$ROOT}ressources/js/login_init.js"></script>
 	</body>
 </html>
-{php}
-   // including a php script directly from the template.
-   include(WEBAPPROOT.'views/login-register/modal_login.php');
-{/php}
+{include file=$modal_tpl}

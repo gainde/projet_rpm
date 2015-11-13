@@ -7,6 +7,7 @@ img2.src="images/ajax-loader.gif";
 
 // When DOM is ready
 $(document).ready(function(){
+    var root = location.protocol + '//' + location.host + '/projet_rpm/';
 	// When the form is submitted
 	$("#login-modal form").submit(function(){  
 		// Hide 'Submit' Button
@@ -22,7 +23,7 @@ $(document).ready(function(){
 
 		$.ajax({  
 			type: "POST",
-			url: "login-register/do-login.php",  // Send the login info to this page
+			url: root+"authentification/login/",  // Send the login info to this page
 			data: str,  
 			success: function(msg){  
 		 
