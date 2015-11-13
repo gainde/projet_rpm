@@ -15,6 +15,40 @@ body{
     height: 100px;
     width: 100px;
 }
+.header_top{
+    margin-top: 30px;
+}
+.sign{
+    margin-left: 10px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+a.sign{
+    text-decoration: none;
+}
+a.sign:hover{
+    color:#A1CE94;
+}
+.bar-top{
+    background-color: #6D8765;
+    border-bottom: 1px solid #072007;
+}
+.text-logo{
+    font-weight: bold;
+    font-size: 26px;
+    color: #072007;
+    font-family: Comic Sans, Comic Sans MS, cursive;
+}
+.search{
+    margin-top: 16px;
+    padding: 0;
+}
+.search button:hover{
+    background-color: #072007;
+    color: white;
+}
+
 
 .login_modal_footer{margin-top:5px;}
 .login_modal_header .modal-title {text-align: center;font-family:'Philosopher',sans-serif; }
@@ -32,7 +66,7 @@ body{
     padding-bottom:20px;
 }
 .login_modal_header, .login_modal_footer {background: #000 !important;color:#fff;}
-.modal-register-btn{margin: 4% 33% 2% 33% ;width:100%;}
+.modal-register-btn{margin: 22% 26% 0% 23% ;width:100%;}
 .login-modal input{height:40px; box-shadow: none; border:1px solid #ddd;}
 .modal-body-left{float:left; width:50%; padding-right:4%; border-right:4px solid #ddd;}
 .modal-body-right{float:right; width:47%;}
@@ -389,4 +423,12 @@ blockquote p {
 }
 .error-actions > a{
     margin:20px;
+}
+
+.spaceBottom30{
+    margin-bottom: 30px;
+}
+
+.top{
+    padding-top: 10px;
 }

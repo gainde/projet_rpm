@@ -18,5 +18,12 @@ class Accueil extends Controller{
         $this->set($data);
         $this->render('index');
     }
+    
+    function load_css(){
+        
+    }
+    
+    function load_js(){ 
+    }
 
 }
