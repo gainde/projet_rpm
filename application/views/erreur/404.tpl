@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
         <div class="col-lg-6 col-sm-6 col-md-6 col-md-push-3">
             <div class="error-template">
                 <div class="erreur404">

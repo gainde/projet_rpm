@@ -1,7 +1,7 @@
-<div class="container">
+<div class="">
     <img src="{$ROOT}ressources/images/banniere.jpg" class="banniere"/>
 </div>
-	<div class="container">
+	<div class="sidebar-globe">
 		<div id="sidebar-wrapper" class="col-lg-3 col-sm-3 col-md-3 panel panel-default">
 			{include file='../sidebar.tpl'}
 		</div>

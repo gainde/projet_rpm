@@ -2,13 +2,16 @@ body{
     color: #888888;
     font-family: 'Bree Serif',serif;
     font-size: 16px;
-    min-height: 2000px;
+    min-height: 1000px;
 }
 .container{
 	width:1245px;
 }
+.main{
+    background-color: white;
+}
 .banniere{
-    width: 1215px;
+    width: 100%;
     height: 300px;
 }
 .logo{
@@ -82,7 +85,7 @@ a.sign:hover{
 #center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
 .modal-login-btn{width:100%;height:40px; margin-bottom:10px;}
 h1{
-    line-height: 50px;
+    margin: 0;
     color:#072007;
     border-bottom:5px solid #072007;
 }
@@ -110,11 +113,13 @@ button.btn-primary:hover{
 #wrapper.toggled {
     padding-left: 250px;
 }
+sidebar-globe{
+}
 
 #sidebar-wrapper {
     z-index: 1000;
-    height: 700px;
     overflow-y: auto;
+    height: 100%;
     background: #072007;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -431,4 +436,10 @@ blockquote p {
 
 .top{
     padding-top: 10px;
+}
+.margin_top20{
+    margin-top: 20px;
+}
+.margin_bottom40{
+    margin-bottom: 40px;
 }

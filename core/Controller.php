@@ -14,15 +14,19 @@ class Controller {
     function render($filename){
         
         require_once(WEBROOT.'tpl/SmartyBC.class.php');
+        $addmarging = (get_class($this) === "Accueil")? "" : "margin_bottom40";
         $tpl = new SmartyBC();
-        $tpl->assign($this->vars);
+        $tpl->assign('addmarging', $addmarging);
         $tpl->assign('WEBROOT', WEBROOT);
         $tpl->assign('APPROOT', APPROOT);
         $tpl->assign('ROOT', ROOT);
+        //$nav_bar_tpl = WEBAPPROOT.'views/nav-bar.tpl';
+        //$tpl->assign('navbar_tpl', $nav_bar_tpl);
         $tpl->display(WEBAPPROOT.'views/header.tpl');
         $tpl->display(WEBAPPROOT.'views/nav-bar.tpl');
         $tpl->display(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.tpl');
         $modal_tpl = WEBAPPROOT.'views/login-register/modal_login.tpl';
+        
         $tpl->assign('modal_tpl', $modal_tpl);
         $tpl->display(WEBAPPROOT.'views/footer.tpl');
 

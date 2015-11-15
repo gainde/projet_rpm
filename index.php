@@ -11,5 +11,5 @@
 require_once 'system/config.php';
 
 include WEBROOT.'system/Application.php';
-require ('core/controller.php');
+require ('core/Controller.php');
 $app = new Application();
