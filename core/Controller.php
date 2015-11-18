@@ -20,13 +20,14 @@ class Controller {
         $tpl->assign('WEBROOT', WEBROOT);
         $tpl->assign('APPROOT', APPROOT);
         $tpl->assign('ROOT', ROOT);
+        $tpl->assign('User', $this->getUser());
         //$nav_bar_tpl = WEBAPPROOT.'views/nav-bar.tpl';
         //$tpl->assign('navbar_tpl', $nav_bar_tpl);
         $tpl->display(WEBAPPROOT.'views/header.tpl');
         $tpl->display(WEBAPPROOT.'views/nav-bar.tpl');
         $tpl->display(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.tpl');
         $modal_tpl = WEBAPPROOT.'views/login-register/modal_login.tpl';
-        
+        var_dump($this->getUser());
         $tpl->assign('modal_tpl', $modal_tpl);
         $tpl->display(WEBAPPROOT.'views/footer.tpl');
 
@@ -49,6 +50,14 @@ class Controller {
     }
     
     function load_js(){ 
+    }
+    
+    function getUser(){
+        require_once WEBAPPROOT . 'security/AuthentificationManager.php';
+        $auth = new AuthentificationManager();
+        //print_r($auth->getUser());
+        //$user = UserSession::getUser();
+        return $auth->getUser();
     }
     
 

@@ -31,10 +31,20 @@ class AuthentificationManager {
         //$userdao->test();
         $dao = new DAO(array('username' =>$username, 'password' =>$password), $this->table );
         $user = $dao->select();
-        var_dump($user);
-        
+        if (isset($user)) {
+            require_once WEBAPPROOT.'security/UserSession.php';
+            $session = new UserSession();
+            $session->start();
+            $session->set($user);
+            //var_dump($session->get());
+            return $user;
+        }
     } 
     public function logout(){
+        require_once WEBAPPROOT.'security/UserSession.php';
+        $session = new UserSession();
+        $session->start();
+        $session->delete();
     } 
     /*
      * validation donnée
@@ -51,6 +61,10 @@ class AuthentificationManager {
     public function removeUser(){
     }
     public function getUser(){ 
+        require_once WEBAPPROOT.'security/UserSession.php';
+            $session = new UserSession();
+            $session->start();
+            return $session->getUser();
     }
     public function getCurrentUser(){    
     }

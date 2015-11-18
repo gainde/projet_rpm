@@ -15,47 +15,44 @@ class Session {
 
     protected $key, $name, $cookie;
 
-    public function __construct($key, $name = 'MY_SESSION', $cookie = []) {
+    public function __construct($key, $name = 'RPM_SITE') {
         $this->key = $key;
         $this->name = $name;
-        $this->cookie = $cookie;
-
-        $this->cookie += [
+        $this->cookie = array(
             'lifetime' => 0,
             'path' => ini_get('session.cookie_path'),
             'domain' => ini_get('session.cookie_domain'),
             'secure' => isset($_SERVER['HTTPS']),
-            'httponly' => true
-        ];
+            'httponly' => true);
 
         $this->setup();
     }
 
     protected function setup() {
-        ini_set('session.use_cookies', 1);
-        ini_set('session.use_only_cookies', 1);
+        //ini_set('session.use_cookies', 1);
+        //ini_set('session.use_only_cookies', 1);
 
         session_name($this->name);
 
-        session_set_cookie_params(
+        /*session_set_cookie_params(
                 $this->cookie['lifetime'], $this->cookie['path'], $this->cookie['domain'], $this->cookie['secure'], $this->cookie['httponly']
-        );
+        );*/
     }
 
-    public function delete($param) {
-        unset($_SESSION[$param]);
+    public function delete() {
+        unset($_SESSION[$this->key]);
     }
 
-    public function get($key) {
-        
+    public function get() {
+        return isset($_SESSION[$this->key]) ? $_SESSION[$this->key] : null;
     }
 
-    public function set($key, $value) {
-        
+    public function set($value) {
+        $_SESSION[$this->key] = $value;
     }
 
     public function exist($key) {
-        
+        return isset($_SESSION[$key]);
     }
 
     public function start() {
@@ -73,7 +70,7 @@ class Session {
             return false;
         }
 
-        $_SESSION = 0; // [] instead?
+        $_SESSION = array();
 
         setcookie(
                 $this->name, '', time() - 42000, $this->cookie['path'], $this->cookie['domain'], $this->cookie['secure'], $this->cookie['httponly']
@@ -119,6 +116,12 @@ class Session {
 
     public function refresh() {
         session_regenerate_id(true);
+    }
+
+    public function save() {
+        setcookie(
+                $this->name, json_decode($_SESSION[$this->key]), time() - 42000, $this->cookie['path'], $this->cookie['domain'], $this->cookie['secure'], $this->cookie['httponly']
+        );
     }
 
 }

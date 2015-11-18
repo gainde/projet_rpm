@@ -3,8 +3,15 @@
 <nav class="nav navbar-default navbar-fixed-top bar-top">
     <div class="container ">
         <div class="pull-right">
-            <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">S'enregistrer</a></span>
-            <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">Se connecter</a></span>
+
+            {if isset($User)}
+                <span class="sign">Bonjour&nbsp;{$User->getUsername()}</span>
+                <span><a href="{$ROOT}authentification/logout/">Se deconnecter</button></a>
+            {else}
+                <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">S'enregistrer</a></span>
+                <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">Se connecter</a></span>
+            {/if}
+
         </div>
     </div>
 </nav>
