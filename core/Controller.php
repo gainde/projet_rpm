@@ -27,7 +27,7 @@ class Controller {
         $tpl->display(WEBAPPROOT.'views/nav-bar.tpl');
         $tpl->display(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.tpl');
         $modal_tpl = WEBAPPROOT.'views/login-register/modal_login.tpl';
-        var_dump($this->getUser());
+        //var_dump($this->getUser());
         $tpl->assign('modal_tpl', $modal_tpl);
         $tpl->display(WEBAPPROOT.'views/footer.tpl');
 

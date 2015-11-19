@@ -4,9 +4,18 @@
     <div class="container ">
         <div class="pull-right">
 
-            {if isset($User)}
-                <span class="sign">Bonjour&nbsp;{$User->getUsername()}</span>
-                <span><a href="{$ROOT}authentification/logout/">Se deconnecter</button></a>
+            {if isset($User) && $User instanceof User}
+
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Bonjour&nbsp;{$User->getUsername()}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownLoginMenu">
+                        <li><a href="#">Profil</a></li>
+                        <li class="dropdown-header"><span><a href="{$ROOT}authentification/logout/">Se deconnecter</a></li>
+                    </ul>
+                </div>
             {else}
                 <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">S'enregistrer</a></span>
                 <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">Se connecter</a></span>

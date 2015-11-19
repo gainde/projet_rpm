@@ -31,6 +31,7 @@ $(document).ready(function(){
 
 				// Hide Gif Spinning Rotator
 				$('#ajax_loading').hide(); 
+                                console.log(result);
                                 var data_array = $.parseJSON(result);
                                 console.log(data_array['reponse']);
 				if(data_array['reponse'] === 'OK') // LOGIN OK?
