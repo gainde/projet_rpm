@@ -1,5 +1,5 @@
 
-	<div class="container">
+	<div class="">
 		<div id="sidebar-wrapper" class="col-lg-3 col-sm-3 col-md-3 panel panel-default">
 			{include file='../sidebar.tpl'}
 		</div>
@@ -16,7 +16,12 @@
 			  <p>
 				Est atqui fierent ex. Ad pro omnes scaevola, elitr omnium docendi sea in. Ei possit bonorum denique duo. Facete epicuri liberavisse usu et. Utinam facilis expetendis quo ne.
 			  </p>
-		</div>
+                          <div class="clearfix">
+                            <a href="projets/" class="btn btn-primary pull-left btnNext">Voir Projets<i class="glyphicon glyphicon-chevron-right"></i></a>
+                        </div>
+                </div>
+                    <hr>
+                    
 		<div>
                     <h2>Realisation</h2>
                     <p>

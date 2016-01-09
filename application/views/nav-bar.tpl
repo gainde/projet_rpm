@@ -1,15 +1,31 @@
 <!-- TOPNAV
 ================================================== -->
 <nav class="nav navbar-default navbar-fixed-top bar-top">
-    <div class="container">
+    <div class="container ">
         <div class="pull-right">
-            <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">S'enregistrer</a></span>
-            <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">Se connecter</a></span>
+
+            {if $User != null  && $User instanceof User}
+
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Bonjour&nbsp;{$User->getUsername()}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownLoginMenu">
+                        <li><a href="#">Profil</a></li>
+                        <li class="dropdown-header"><span><a href="{$ROOT}authentification/logout/">Se deconnecter</a></li>
+                    </ul>
+                </div>
+            {else}
+                <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">S'enregistrer</a></span>
+                <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">Se connecter</a></span>
+            {/if}
+
         </div>
     </div>
 </nav>
 <div class="header_top"><!--header_top-->
-    <div class="container">
+    <div class="">
 
         <div class="row top">
             <div class="col-sm-6">
@@ -38,11 +54,11 @@
 
 <!-- NAVBAR
 ================================================== -->
-<div class="navbar-wrapper">
-    <div class="container">
+<div class="{$addmarging} navbar-wrapper">
+    <div class="">
 
         <div class="navbar navbar navbar-static-top" role="navigation">
-            <div class="container">
+            <div class="">
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{$ROOT}accueil/">Accueil</a></li>

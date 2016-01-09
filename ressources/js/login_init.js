@@ -7,7 +7,6 @@ img2.src="images/ajax-loader.gif";
 
 // When DOM is ready
 $(document).ready(function(){
-    var root = location.protocol + '//' + location.host + '/projet_rpm/';
 	// When the form is submitted
 	$("#login-modal form").submit(function(){  
 		// Hide 'Submit' Button
@@ -23,16 +22,19 @@ $(document).ready(function(){
 
 		$.ajax({  
 			type: "POST",
-			url: root+"authentification/login/",  // Send the login info to this page
+			url: getLoginUrl(),  // Send the login info to this page
 			data: str,  
-			success: function(msg){  
+			success: function(result){  
 		 
 				// Show 'Submit' Button
 				$('#submit').show();
 
 				// Hide Gif Spinning Rotator
 				$('#ajax_loading').hide(); 
-				if(msg == 'OK') // LOGIN OK?
+                                console.log(result);
+                                var data_array = $.parseJSON(result);
+                                console.log(data_array['reponse']);
+				if(data_array['reponse'] === 'OK') // LOGIN OK?
 				{  
 					var login_response = '<div id="logged_in">' +
 						 '<div style="width: 350px; float: left; margin-left: 70px;">' + 
@@ -54,8 +56,9 @@ $(document).ready(function(){
 				}  
 				else // ERROR?
 				{  
-					var login_response = msg;
+					var login_response = result;
 					$('#login_response').html(login_response);
+                                        alert('echec');
 				}  
 		   
 			}  
@@ -71,5 +74,5 @@ $(document).ready(function(){
 
 function go_to_private_page()
 {
-	window.location = 'index.php'; 
+	window.location = './'; 
 }

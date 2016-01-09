@@ -27,10 +27,11 @@ class Authentification extends Controller {
                 $result = $auth->login($username, $password);
                 if ($result == null) {
                     //traiter erreur
-                    var_dump("Erreur");
+                    //var_dump("Erreur");
                 } else {
                     $json = json_encode($result);
-                    var_dump($json);
+                    //var_dump($json);
+                    echo json_encode(array("reponse" => 'OK'));
                 }
             }
         }
@@ -40,6 +41,14 @@ class Authentification extends Controller {
     protected function isAjax() {
         return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
                 $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest');
+    }
+
+    function logout() {
+        require_once WEBAPPROOT . 'security/AuthentificationManager.php';
+        $auth = new AuthentificationManager();
+        $auth->logout();
+        header("Location: ".ROOT);
+        exit();
     }
 
 }

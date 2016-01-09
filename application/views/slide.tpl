@@ -5,8 +5,8 @@
         <!-- start Basic Jquery Slider -->
        <ul class="bjqs">
           <li><img src="{$ROOT}ressources/images/touba.jpg" title="Ville de Touba"></li>
-          <li><img src="http://placehold.it/500x400" title="Automatically generated caption"></li>
-          <li><img src="http://placehold.it/500x400" title="Automatically generated caption"></li>
+          <li><img src="{$ROOT}ressources/images/touba.jpg" title="Ville de Touba"></li>
+          <li><img src="{$ROOT}ressources/images/touba.jpg" title="Ville de Touba"></li>
         </ul>
         <!-- end Basic jQuery Slider -->
 

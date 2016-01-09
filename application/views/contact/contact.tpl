@@ -1,4 +1,4 @@
-	<div class="container">
+	<div class="">
 		<div id="sidebar-wrapper" class="col-lg-3 col-sm-3 col-md-3 panel panel-default">
 			{include file='../sidebar.tpl'}
 		</div>
