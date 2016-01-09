@@ -16,6 +16,11 @@ class Controller {
         require_once(WEBROOT.'tpl/SmartyBC.class.php');
         $addmarging = (get_class($this) === "Accueil")? "" : "margin_bottom40";
         $tpl = new SmartyBC();
+        if(!empty($this->vars)){
+            foreach ($this->vars as $key => $value) {
+                $tpl->assign($key, $value);
+            }
+        }
         $tpl->assign('addmarging', $addmarging);
         $tpl->assign('WEBROOT', WEBROOT);
         $tpl->assign('APPROOT', APPROOT);
