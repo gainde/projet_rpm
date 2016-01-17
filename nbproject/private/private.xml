@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/header.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/system/Session.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Admin.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/accueil/index.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/index.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/nav-bar.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/security/UserSession.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/slide.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/apropos/apropos.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/.htaccess</file>
+            <file>file:/C:/wamp/www/projet_rpm/core/CrudInterface.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/system/Application.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/core/DAO.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Accueil.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/system/config.php</file>
             <file>file:/C:/wamp/www/projet_rpm/core/Controller.php</file>
         </group>
     </open-files>

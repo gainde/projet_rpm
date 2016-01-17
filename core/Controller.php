@@ -2,9 +2,9 @@
 require_once (WEBAPPROOT.'models/ServiceDao.php');
 
 class Controller {
-    var $vars = array();
-    var $js = array();
-    var $css = array();
+    protected $vars = array();
+    protected $js = array();
+    protected $css = array();
     
     function __construct() {
         
