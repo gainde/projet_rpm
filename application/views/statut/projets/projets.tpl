@@ -8,7 +8,7 @@
         <div class="panel">
             <div class="panel-body">
 
-                <!--/stories-->
+                <!--/Liste projets-->
                 {foreach from=$projets item=projet}
 
                     <div class="row">    
@@ -21,7 +21,7 @@
                             <div class="row">
                                 <div class="col-xs-9">
                                     {$projet->getDescription()}
-                                    <p class="lead"><button class="btn btn-default">Read More</button></p>
+                                    <p class="lead"><button class="btn btn-default">Lire la suite</button></p>
                                     <span class="list-inline">Date création :{$projet->getDate_creation()}</span>
                                 </div>
                                 <div class="col-xs-3"></div>
@@ -32,7 +32,7 @@
                     <hr>
 
                 {/foreach}
-                <!--/stories-->
+                <!--/liste projets-->
 
 
                 <a href="#" class="btn btn-primary pull-right btnNext">Plus <i class="glyphicon glyphicon-chevron-right"></i></a>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 10 Janvier 2016 à 00:04
+-- Généré le :  Dim 17 Janvier 2016 à 20:57
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `bysol958_rpm`
 --
-CREATE DATABASE IF NOT EXISTS `bysol958_rpm` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `bysol958_rpm` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `bysol958_rpm`;
 
 -- --------------------------------------------------------
@@ -50,6 +50,40 @@ TRUNCATE TABLE `adresse`;
 
 INSERT INTO `adresse` (`id`, `rue`, `code_postal`, `ville`, `province`, `pays`, `numero`) VALUES
 (8, 'saint real', 'h3m2y8', 'Montreal', 'quebec', 'canada', '11786');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `domaine`
+--
+
+CREATE TABLE IF NOT EXISTS `domaine` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_service` int(11) NOT NULL,
+  `titre` varchar(50) NOT NULL,
+  `description` varchar(260) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_service` (`id_service`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Vider la table avant d'insérer `domaine`
+--
+
+TRUNCATE TABLE `domaine`;
+--
+-- Contenu de la table `domaine`
+--
+
+INSERT INTO `domaine` (`id`, `id_service`, `titre`, `description`) VALUES
+(1, 1, 'Génie Civil', NULL),
+(2, 1, 'Génie Logiciel', NULL),
+(3, 1, 'Génie Informatique', NULL),
+(4, 1, 'Génie Mécanique', NULL),
+(5, 1, 'Génie Électrique', NULL),
+(6, 2, 'Médecin', NULL),
+(7, 2, 'Infirmière', NULL),
+(8, 3, 'Analyste Financier', NULL);
 
 -- --------------------------------------------------------
 
@@ -95,6 +129,38 @@ TRUNCATE TABLE `projets`;
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `service`
+--
+
+CREATE TABLE IF NOT EXISTS `service` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` varchar(50) NOT NULL,
+  `description` varchar(260) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `titre` (`titre`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Vider la table avant d'insérer `service`
+--
+
+TRUNCATE TABLE `service`;
+--
+-- Contenu de la table `service`
+--
+
+INSERT INTO `service` (`id`, `titre`, `description`) VALUES
+(1, 'Ingénieurie', NULL),
+(2, 'Santé', NULL),
+(3, 'Finance', NULL),
+(4, 'Social', NULL),
+(5, 'Agriculture', NULL),
+(6, 'Communication', NULL),
+(7, 'Divers', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `user`
 --
 
@@ -129,6 +195,16 @@ TRUNCATE TABLE `user`;
 
 INSERT INTO `user` (`id`, `nom`, `prenom`, `username`, `password`, `telephone`, `adresse`, `date_naissance`, `profession`, `email`, `is_admin`, `is_active`, `is_verified`, `date_creation`, `last_update`) VALUES
 (1, 'thimbo', 'moussa', 'test', 'test123', '5142099999', 8, NULL, 'programmeur', 'moussa@adress.ca', 0, 0, 0, '2015-11-11 23:16:37', '2015-11-11 23:16:37');
+
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `domaine`
+--
+ALTER TABLE `domaine`
+  ADD CONSTRAINT `domaine_ibfk_1` FOREIGN KEY (`id_service`) REFERENCES `service` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

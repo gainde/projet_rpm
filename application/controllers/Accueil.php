@@ -1,5 +1,7 @@
 <?php
 
+require_once (WEBAPPROOT.'models/ServiceDao.php');
+
 /* 
  * @Auteur : Moussa Thimbo
  */
@@ -11,11 +13,6 @@ class Accueil extends Controller{
     }
     
     function index() {
-        $data = array(
-            'titre' => 'Accueil',
-            'description' => 'exemple de description'
-        );
-        $this->set($data);
         $this->render('index');
     }
     

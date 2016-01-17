@@ -1,4 +1,6 @@
 <?php
+require_once (WEBAPPROOT.'models/ServiceDao.php');
+
 class Controller {
     var $vars = array();
     var $js = array();
@@ -26,6 +28,7 @@ class Controller {
         $tpl->assign('APPROOT', APPROOT);
         $tpl->assign('ROOT', ROOT);
         $tpl->assign('User', $this->getUser());
+        $tpl->assign('services', $this->getServices());
         //$nav_bar_tpl = WEBAPPROOT.'views/nav-bar.tpl';
         //$tpl->assign('navbar_tpl', $nav_bar_tpl);
         $tpl->display(WEBAPPROOT.'views/header.tpl');
@@ -63,6 +66,12 @@ class Controller {
         //print_r($auth->getUser());
         //$user = UserSession::getUser();
         return $auth->getUser();
+    }
+    
+    function getServices() {
+        $dao = new ServiceDao(new Service());
+        $services = $dao->getAllData();
+        return $services;
     }
     
 

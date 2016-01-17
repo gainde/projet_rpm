@@ -66,6 +66,9 @@ class Database {
     }
 
     public function selectAll($sql, $params, $class = null) {
+        if ($class != null) {
+            return $this->getAllObject($sql, $params, $class);
+        }
         return $this->execute($sql, $params, $class);
     }
 
@@ -122,10 +125,21 @@ class Database {
     }
 
     private function getAllObject($sql, $params, $class) {
-        $stmt = $this->_connection->prepare($sql);
-        $stmt->execute($params);
-        $result = $stmt->fetchAll(PDO::FETCH_CLASS, $class);
-        return $result;
+         try{
+            $stmt = $this->_connection->prepare($sql);
+            $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
+            if (!empty($params)) {
+                $stmt->execute($params);
+            } else{
+                $stmt->execute();
+            }
+            $stmt->execute($params);
+            $result = $stmt->fetchAll();
+            return $result;
+        }  catch (PDOException $e) {
+            var_dump($e->getMessage() . ' ' . $e->getTraceAsString() . ' ');
+            return false;
+        }
     }
 
     public function min($field) {
