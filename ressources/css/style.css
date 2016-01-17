@@ -24,7 +24,7 @@ body{
 .sign{
     margin-left: 10px;
     color: white;
-    font-size: 12px;
+    font-size: 22px;
     cursor: pointer;
 }
 a.sign{
@@ -157,7 +157,7 @@ a {
     text-decoration: none;
 }
 
-div .navbar{
+div .navbar,.bg-footer{
     background-color: #3f6c31;
     color:white;
     border-color: #36eb01;
