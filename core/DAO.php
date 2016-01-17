@@ -61,7 +61,7 @@ class DAO implements CrudInterface {
       }
       } */
 
-    public function select($rows = '*', $where = null, $order = null) {
+    /*public function select($rows = '*', $where = null, $order = null) {
         $bindings = null;
         $query = 'SELECT ' . $rows . ' FROM ' . $this->table;
         if ($where == null) {
@@ -82,7 +82,7 @@ class DAO implements CrudInterface {
             $query .= ' ORDER BY ' . $order;
         }
         return $this->db->select($query, $bindings, $this->table);
-    }
+    }*/
 
     public function getResult() {
         return $this->result;
@@ -122,6 +122,17 @@ class DAO implements CrudInterface {
             return $this->db->insert($sql, $bindings);
         }
         return false;
+    }
+     public function selectAll($table, $rows = '*', $where = null, $order = null) {
+          $sql = "SELECT " . $rows . " FROM " . $table ;
+        if ($where !== null) {
+            $sql .= " WHERE " . $where;
+        }
+        if ($order != null) {
+            $sql .= ' ORDER BY ' . $order;
+        }
+        $result = $this->db->selectAll($sql, null, $table);
+        return $result;
     }
 
     public function read($id = "") {
@@ -173,6 +184,14 @@ class DAO implements CrudInterface {
         $id = (empty($this->variables[$this->pk])) ? $id : $this->variables[$this->pk];
         if (!empty($id)) {
             $sql = "SELECT * FROM " . $this->table . " WHERE " . $this->pk . "= :" . $this->pk . " LIMIT 1";
+            $this->variables = $this->db->row($sql, array($this->pk => $id));
+        }
+    }
+    
+     public function findAll($id = "") {
+        $id = (empty($this->variables[$this->pk])) ? $id : $this->variables[$this->pk];
+        if (!empty($id)) {
+            $sql = "SELECT * FROM " . $this->table . " WHERE " . $this->pk . "= :" . $this->pk;
             $this->variables = $this->db->row($sql, array($this->pk => $id));
         }
     }
@@ -231,5 +250,12 @@ class DAO implements CrudInterface {
         $dao->setPrimaryKey($pk);
         return $dao->read();
     }
+    
+    public static function loadAll($table, $rows = '*', $where = null, $order = null) {
+        $dao = new Dao(null, $table);
+        //$dao->setPrimaryKey($pk);
+        return $dao->selectAll($table, $rows, $where, $order);
+    }
+    
 
 }
