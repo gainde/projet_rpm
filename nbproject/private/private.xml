@@ -11,6 +11,14 @@
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Accueil.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/sidebar.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/bean/Domaine.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Admin.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/accueil/index.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/.htaccess</file>
+            <file>file:/C:/wamp/www/projet_rpm/core/CrudInterface.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/system/Application.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/core/DAO.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Accueil.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/system/config.php</file>
             <file>file:/C:/wamp/www/projet_rpm/core/Controller.php</file>
         </group>
     </open-files>
