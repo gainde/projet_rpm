@@ -21,6 +21,7 @@ class Statut extends Controller{
     }
     function projets() {
         $this->set($this->getListProjets());
+        $this->setSubMenu("projets");
         $this->render('projets/projets');
     }
     function realisations() {

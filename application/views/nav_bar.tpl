@@ -61,20 +61,24 @@
             <div class="">
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="{$ROOT}accueil/">Accueil</a></li>
-                        <li><a href="{$ROOT}authentification/register/">Devenir membre</a></li>
-                        <li><a href="{$ROOT}pourquoi/">Pourquoi devenir membre</a></li>
-                        <li class="dropdown bg-footer"><a href="{$ROOT}statut/" class="dropdown-toggle"  data-toggle="dropdown">Projets/Réalisations<span class="caret"></span></a>
-                            <ul class="dropdown-menu nav bg-footer">
-                                <li><a href="{$ROOT}statut/projets">Projets</a></li>
-                                <li><a href="{$ROOT}statut/">Réalisations</a></li>
-                            </ul></li>
+                        {nocache}
+                      {foreach from=$pages key=page item=info_page}
+                         
+                          <li class="{$info_page.class}"><a href="{$page}"{$info_page.param[0]}>{$info_page.name} {$info_page.param[1]}</a>
+                            {if $info_page.param[0] != ''}
 
-                        <li><a href="{$ROOT}actualites/">Actualités</a></li>
-                        <li><a href="{$ROOT}apropos/">A propos de RPM</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="{$ROOT}contact/">Nous joindre</a></li>
-                    </ul>
+                                <ul class="dropdown-menu nav bg-footer">
+                                {foreach from=$info_page.sub_menu key=sub_page item=info_sub_page}
+                           
+                                   <li class="{$info_sub_page.class}"><a href="{$sub_page}">{$info_sub_page.name}</a></li>
+                                {/foreach}
+
+                                </ul>
+                             {/if}
+                         </li>
+                    {/foreach}
+                    {/nocache}
+            </ul>
                 </div>
             </div>
         </div>

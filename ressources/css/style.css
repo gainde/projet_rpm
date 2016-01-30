@@ -163,7 +163,7 @@ div .navbar,.bg-footer{
     border-color: #36eb01;
     margin-bottom: 0;
 }
-.nav > li > a:hover, .nav > li > a:focus, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+.nav > li > a:hover, .nav > li > a:focus, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus, li.active {
     color:white;
     background-color: #5ea24a;
 }

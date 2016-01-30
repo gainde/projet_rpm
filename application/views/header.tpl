@@ -6,16 +6,16 @@
 <html class="no-js">
     <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <title>Réseau Professionnel Mouride</title>
-        <meta name="description" content="Twitter Bootstrap Modal Login Popup - Social Login Popup ">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Twitter Bootstrap Modal Login Popup - Social Login Popup "/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300' rel='stylesheet' type='text/css'> 
+        <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300' rel='stylesheet' type='text/css'/> 
 
 
         <link rel="stylesheet" href="{$ROOT}ressources/css/bootstrap.min.css"/>

@@ -595,7 +595,7 @@ class Smarty extends Smarty_Internal_TemplateBase
      *
      * @var bool
      */
-    public $template_resource_caching = true;
+    public $template_resource_caching = false;
 
     /**
      * check If-Modified-Since headers
