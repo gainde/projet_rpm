@@ -41,7 +41,7 @@ a.sign:hover{
     font-weight: bold;
     font-size: 26px;
     color: #072007;
-    font-family: Comic Sans, Comic Sans MS, cursive;
+    font-family: arial;
 }
 .search{
     margin-top: 16px;
@@ -163,7 +163,7 @@ div .navbar,.bg-footer{
     border-color: #36eb01;
     margin-bottom: 0;
 }
-.nav > li > a:hover, .nav > li > a:focus {
+.nav > li > a:hover, .nav > li > a:focus, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     color:white;
     background-color: #5ea24a;
 }

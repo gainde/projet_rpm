@@ -35,6 +35,7 @@
         <p>
             Mel quaeque splendide accommodare in, ex probatus torquatos quo. Et vel invenire voluptaria, putant erroribus ex mel. Putent quodsi nam ei, diam labore vis at. Has aperiri scriptorem no, id quo persius perpetua. Ei cibo porro duo, his quodsi menandri argumentum id. Adhuc iracundia eloquentiam in vel.
         </p>
+        <img src="{$ROOT}ressources/images/execution_projet_v1.png"  />
     </div>
 </div>
 <div class="clearfix" style="height:40px"></div>
