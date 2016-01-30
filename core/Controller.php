@@ -13,7 +13,7 @@ class Controller {
         $this->vars = $tab;
     }
     
-    function render($filename){
+    function render($filename, $header="header.tpl", $footer="footer.tpl"){
         
         require_once(WEBROOT.'tpl/SmartyBC.class.php');
         $addmarging = (get_class($this) === "Accueil")? "" : "margin_bottom40";
@@ -26,18 +26,19 @@ class Controller {
         $tpl->assign('addmarging', $addmarging);
         $tpl->assign('WEBROOT', WEBROOT);
         $tpl->assign('APPROOT', APPROOT);
-        $tpl->assign('ROOT', ROOT);
+        $tpl->assign('ROOT', ROOT); 
         $tpl->assign('User', $this->getUser());
         $tpl->assign('services', $this->getServices());
-        //$nav_bar_tpl = WEBAPPROOT.'views/nav-bar.tpl';
-        //$tpl->assign('navbar_tpl', $nav_bar_tpl);
-        $tpl->display(WEBAPPROOT.'views/header.tpl');
-        $tpl->display(WEBAPPROOT.'views/nav-bar.tpl');
+        $nav_bar_tpl = WEBAPPROOT.'views/nav_bar.tpl';
+        $tpl->assign('navbar_tpl', $nav_bar_tpl);
+        
+        $tpl->display(WEBAPPROOT."views/".$header);
+        //$tpl->display(WEBAPPROOT.'views/nav-bar.tpl');
         $tpl->display(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.tpl');
         $modal_tpl = WEBAPPROOT.'views/login-register/modal_login.tpl';
         //var_dump($this->getUser());
         $tpl->assign('modal_tpl', $modal_tpl);
-        $tpl->display(WEBAPPROOT.'views/footer.tpl');
+        $tpl->display(WEBAPPROOT."views/".$footer);
 
 
         //require(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.html');
@@ -54,6 +55,7 @@ class Controller {
         $this->css[] = $WEBROOT."ressources/css/bootstrap.min.css";
         $this->css[] = $WEBROOT."ressources/css/font-awesome.min.css";
         $this->css[] = $WEBROOT."ressources/css/style.css";
+        $this->css[] = $WEBROOT."ressources/css/lightbox.css";
         
     }
     

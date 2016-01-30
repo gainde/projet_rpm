@@ -20,8 +20,10 @@
 
         <link rel="stylesheet" href="{$ROOT}ressources/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="{$ROOT}ressources/css/font-awesome.min.css"/>
-
+        <link rel="stylesheet" href="{$ROOT}ressources/css/lightbox.css"/>
         <link rel="stylesheet" href="{$ROOT}ressources/css/style.css" />
+        
+         <script src="{$ROOT}ressources/js/lightbox.js"></script>
         <script src="{$ROOT}ressources/js/modernizr-2.6.2.min.js"></script>
         <script src="{$ROOT}ressources/js/jquery-1.10.2.min.js"></script>
         <script src="{$ROOT}ressources/js/bjqs-1.3.min.js"></script>
@@ -37,4 +39,4 @@
     </head>
     <body>
         <div class="container main nopadding">
-            {*{include file=$navbar_tpl}*}
+            {include file="$navbar_tpl"}

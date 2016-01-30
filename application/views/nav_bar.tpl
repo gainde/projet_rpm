@@ -64,7 +64,11 @@
                         <li class="active"><a href="{$ROOT}accueil/">Accueil</a></li>
                         <li><a href="{$ROOT}authentification/register/">Devenir membre</a></li>
                         <li><a href="{$ROOT}pourquoi/">Pourquoi devenir membre</a></li>
-                        <li><a href="{$ROOT}statut/">Projets/Réalisations</a></li>
+                        <li class="dropdown bg-footer"><a href="{$ROOT}statut/" class="dropdown-toggle"  data-toggle="dropdown">Projets/Réalisations<span class="caret"></span></a>
+                            <ul class="dropdown-menu nav bg-footer">
+                                <li><a href="{$ROOT}statut/projets">Projets</a></li>
+                                <li><a href="{$ROOT}statut/">Réalisations</a></li>
+                            </ul></li>
 
                         <li><a href="{$ROOT}actualites/">Actualités</a></li>
                         <li><a href="{$ROOT}apropos/">A propos de RPM</a></li>

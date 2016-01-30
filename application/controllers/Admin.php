@@ -1,4 +1,5 @@
 <?php
+require_once (WEBAPPROOT.'models/ProjetDao.php');
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -21,11 +22,7 @@ class Admin extends Controller{
     }
     
     function projets() {
-        $data = array(
-            'titre' => 'Admin',
-            'description' => 'exemple de description'
-        );
-        $this->set(array('admin'=>$data));
+        $this->set($this->getListProjets());
         $this->render('projets/projets');
     }
     function load_css(){   
@@ -33,5 +30,9 @@ class Admin extends Controller{
     
     function load_js(){ 
     }
-
+    function getListProjets(){
+       $projetDao = new ProjetDao(new Projet());
+       $list = $projetDao->getAllData();
+       return array("projets" => $list);
+    }
 }
