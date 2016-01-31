@@ -1,5 +1,6 @@
 <?php
 require_once (WEBAPPROOT.'models/ServiceDao.php');
+require_once (WEBAPPROOT.'libs/MenuHelper.php');
 
 class Controller {
     protected $vars = array();
@@ -7,18 +8,26 @@ class Controller {
     protected $css = array();
     protected $page_active = 'index';
     protected $sub_menu_active = '';
+    protected $menuHelper ;
+    protected $header = "header.tpl" ;
+    protected $footer="footer.tpl";
     
     function __construct() {
-        
+        $this->menuHelper = MenuHelper::getInstance();
     }
+    
     function set($tab){
-        $this->vars = $tab;
+        array_merge($this->vars, $tab);
+    }
+    
+    function setData($key, $value){
+        $this->vars[$key] = $value;
     }
     function setSubMenu($var){
         $this->sub_menu_active = $var;
     }
     
-    function render($filename, $header="header.tpl", $footer="footer.tpl"){
+    function render($filename){
         $this->page_active = strtolower(get_class($this));
         $pages = $this->getNavBar();
         require_once(WEBROOT.'tpl/SmartyBC.class.php');
@@ -36,16 +45,18 @@ class Controller {
         $tpl->assign('User', $this->getUser());
         $tpl->assign('services', $this->getServices());
         $tpl->assign('pages', $pages);
+        $tpl->assign('liste_css', $this->css);
+        $tpl->assign('liste_js', $this->js);
         $nav_bar_tpl = WEBAPPROOT.'views/nav_bar.tpl';
         $tpl->assign('navbar_tpl', $nav_bar_tpl);
       
-        $tpl->display(WEBAPPROOT."views/".$header);
+        $tpl->display(WEBAPPROOT."views/".  $this->header);
         //$tpl->display(WEBAPPROOT.'views/nav_bar.tpl');
         $tpl->display(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.tpl');
         $modal_tpl = WEBAPPROOT.'views/login-register/modal_login.tpl';
         //var_dump($this->getUser());
         $tpl->assign('modal_tpl', $modal_tpl);
-        $tpl->display(WEBAPPROOT."views/".$footer);
+        $tpl->display(WEBAPPROOT."views/".$this->footer);
 
 
         //require(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.html');
