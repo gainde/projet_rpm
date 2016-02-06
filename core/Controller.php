@@ -119,7 +119,7 @@ class Controller {
                     'class' => $link[$this->sub_menu_active === 'projets'],
                     'name' => 'Projets'),
                     ROOT."statut/"  => array(
-                    'class' => $link[$this->sub_menu_active === ''],
+                    'class' => $link[$this->sub_menu_active === 'realisations'],
                     'name' => 'Réalisations')
                 )),
             ROOT."actualites/"  => array(

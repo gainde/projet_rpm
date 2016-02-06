@@ -170,6 +170,10 @@ div .navbar,.bg-footer{
 .nav > li > a {
     color:white;
 }
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    color:white;
+    background-color: #5ea24a;
+}
 
 
 /* Sidebar Styles */
