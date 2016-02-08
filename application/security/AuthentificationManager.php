@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require WEBAPPROOT.'models/UserDao.php';
+require_once WEBAPPROOT.'models/UserDao.php';
 
 /**
  * Description of Auth

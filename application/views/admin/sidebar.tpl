@@ -3,9 +3,9 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">                
             <li class="active">
-                <a class="" href="index.php">
+                <a class="" href="./">
                     <i class="icon_house_alt"></i>
-                    <span>Dashboard</span>
+                    <span>Accueil</span>
                 </a>
             </li>
             <li class="sub-menu">

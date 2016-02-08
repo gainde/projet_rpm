@@ -109,7 +109,7 @@
              <!-- TABLE: LATEST ORDERS -->
               <div class="box box-info">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Latest Orders</h3>
+                  <h3 class="box-title">Projets</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -120,8 +120,8 @@
                     <table class="table no-margin">
                       <thead>
                         <tr>
-                          <th>Order ID</th>
-                          <th>Item</th>
+                          <th>ID</th>
+                          <th>Titre</th>
                           <th>Status</th>
                           <th>Popularity</th>
                         </tr>
