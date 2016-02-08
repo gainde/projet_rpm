@@ -1,5 +1,6 @@
 <?php
 require_once (WEBAPPROOT.'models/ProjetDao.php');
+require_once (WEBAPPROOT.'models/UserDao.php');
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -17,11 +18,6 @@ class Admin extends Controller{
     }
     
     function index() {
-        $data = array(
-            'titre' => 'Admin',
-            'description' => 'exemple de description'
-        );
-        $this->set($data);
         $this->render('index');
     }
     
@@ -29,6 +25,21 @@ class Admin extends Controller{
         $this->set($this->getListProjets());
         $this->render('projets/projets');
     }
+    
+    function membres($request = null){
+        if($request== null){
+            $this->set($this->getListMembres());
+            $this->render('membres/liste_membres');
+        }else{
+            if($request == 'add_membre'){
+                $this->render('membres/add_membre');
+            }
+            else{
+                echo 'erreur 404 doit etre lancé';
+            }
+        }
+    }
+    
     function load_css(){  
         $this->css = $this->menuHelper->getCss('admin');
     }
@@ -40,5 +51,10 @@ class Admin extends Controller{
        $projetDao = new ProjetDao(new Projet());
        $list = $projetDao->getAllData();
        return array("projets" => $list);
+    }
+    function getListMembres(){
+        $userDao = new UserDao(new User());
+        $list = $userDao->getAllData();
+       return array("membres" => $list);
     }
 }
