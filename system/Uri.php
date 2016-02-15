@@ -1,15 +1,15 @@
 <?php
 
-class uri 
-{
+class Uri {
     /*
      * @var array $fragments
      */
-    public static $fragments = array();
+
+    private static $fragments = array();
 
     /*
-    * @var object $instance
-    */
+     * @var object $instance
+     */
     private static $instance = null;
 
     /**
@@ -21,15 +21,12 @@ class uri
      * @return object
      *
      */
-    public static function getInstance()
-    {
-         if(is_null(self::$instance))
-         {
-             self::$instance = new uri;
-         }
+    public static function getInstance() {
+        if (is_null(self::$instance)) {
+            self::$instance = new uri;
+        }
         return self::$instance;
     }
-
 
     /**
      *
@@ -37,10 +34,10 @@ class uri
      * @so nobody can create a new instance using new
      *
      */
-    private function __construct()
-    {
-        /*** put the string into array ***/
-        self::$fragments =  explode('/', $_SERVER['QUERY_STRING']);
+    private function __construct() {
+        /*         * * put the string into array ** */
+        $qstring = str_replace("page=", "", $_SERVER['QUERY_STRING']);
+        self::$fragments = ArrayUtils::remove_empty(explode('/', $qstring));
     }
 
     /**
@@ -55,15 +52,16 @@ class uri
      * @return bool false if key is not found
      *
      */
-    public function fragment($key)
-    {
-        if(array_key_exists($key, self::$fragments))
-        {
+    public function fragment($key) {
+        if (array_key_exists($key, self::$fragments)) {
             return self::$fragments[$key];
         }
         return false;
     }
 
+    public function getFragment() {
+        return self::$fragments;
+    }
 
     /**
      *
@@ -72,9 +70,10 @@ class uri
      * @access private
      *
      */
-    private function __clone()
-    {
+    private function __clone() {
+        
     }
+
 }
 
 ?>
