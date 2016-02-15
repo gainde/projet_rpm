@@ -1,6 +1,8 @@
 <?php
 require_once (WEBAPPROOT.'models/ServiceDao.php');
 require_once (WEBAPPROOT.'libs/MenuHelper.php');
+require_once (WEBAPPROOT.'libs/ArrayUtils.php');
+require_once (WEBROOT.'system/Uri.php');
 
 class Controller {
     protected $vars = array();
@@ -40,10 +42,16 @@ class Controller {
                 $tpl->assign($key, $value);
             }
         }
+        $uri = Uri::getInstance()->getFragment();
+        $home = $uri[0];
+        unset($uri[0]);
         $tpl->assign('addmarging', $addmarging);
+        $tpl->assign('home', $home);
+        $tpl->assign('uri', $uri);
         $tpl->assign('WEBROOT', WEBROOT);
         $tpl->assign('APPROOT', APPROOT);
         $tpl->assign('ROOT', ROOT); 
+        $tpl->assign('ADMINROOT', ADMINROOT); 
         $tpl->assign('User', $this->getUser());
         $tpl->assign('services', $this->getServices());
         $tpl->assign('pages', $pages);

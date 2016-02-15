@@ -3,7 +3,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">                
             <li class="active">
-                <a class="" href="./">
+                <a class="" href="{$ADMINROOT}">
                     <i class="icon_house_alt"></i>
                     <span>Accueil</span>
                 </a>
@@ -32,8 +32,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="#">Liste des membres</a></li>
-                    <li><a class="" href="#">Ajout</a></li>
+                    <li><a class="" href="{$ADMINROOT}membres">Liste des membres</a></li>
+                    <li><a class="" href="{$ADMINROOT}membres/add_membre">Ajout</a></li>
                     <li><a class="" href="#">Modification</a></li>
                 </ul>
             </li>
