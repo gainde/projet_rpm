@@ -43,8 +43,13 @@ class Controller {
             }
         }
         $uri = Uri::getInstance()->getFragment();
-        $home = $uri[0];
-        unset($uri[0]);
+        if(empty($uri == false)){
+            $home = $uri[0];
+            unset($uri[0]);
+        }
+        else {
+            $home = 'Accueil';
+        }
         $tpl->assign('addmarging', $addmarging);
         $tpl->assign('home', $home);
         $tpl->assign('uri', $uri);

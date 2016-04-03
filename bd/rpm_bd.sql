@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 17 Janvier 2016 à 20:57
+-- Généré le :  Sam 27 Février 2016 à 02:42
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `bysol958_rpm`
 --
-CREATE DATABASE IF NOT EXISTS `bysol958_rpm` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `bysol958_rpm`;
 
 -- --------------------------------------------------------
 
@@ -39,11 +37,6 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
---
--- Vider la table avant d'insérer `adresse`
---
-
-TRUNCATE TABLE `adresse`;
 --
 -- Contenu de la table `adresse`
 --
@@ -66,11 +59,6 @@ CREATE TABLE IF NOT EXISTS `domaine` (
   KEY `id_service` (`id_service`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
---
--- Vider la table avant d'insérer `domaine`
---
-
-TRUNCATE TABLE `domaine`;
 --
 -- Contenu de la table `domaine`
 --
@@ -99,11 +87,6 @@ CREATE TABLE IF NOT EXISTS `participants` (
   PRIMARY KEY (`id_user`,`id_projet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Vider la table avant d'insérer `participants`
---
-
-TRUNCATE TABLE `participants`;
 -- --------------------------------------------------------
 
 --
@@ -121,11 +104,6 @@ CREATE TABLE IF NOT EXISTS `projets` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Vider la table avant d'insérer `projets`
---
-
-TRUNCATE TABLE `projets`;
 -- --------------------------------------------------------
 
 --
@@ -134,17 +112,12 @@ TRUNCATE TABLE `projets`;
 
 CREATE TABLE IF NOT EXISTS `service` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titre` varchar(50) NOT NULL,
-  `description` varchar(260) DEFAULT NULL,
+  `titre` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `description` varchar(260) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `titre` (`titre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
---
--- Vider la table avant d'insérer `service`
---
-
-TRUNCATE TABLE `service`;
 --
 -- Contenu de la table `service`
 --
@@ -182,19 +155,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`,`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Vider la table avant d'insérer `user`
---
-
-TRUNCATE TABLE `user`;
 --
 -- Contenu de la table `user`
 --
 
 INSERT INTO `user` (`id`, `nom`, `prenom`, `username`, `password`, `telephone`, `adresse`, `date_naissance`, `profession`, `email`, `is_admin`, `is_active`, `is_verified`, `date_creation`, `last_update`) VALUES
-(1, 'thimbo', 'moussa', 'test', 'test123', '5142099999', 8, NULL, 'programmeur', 'moussa@adress.ca', 0, 0, 0, '2015-11-11 23:16:37', '2015-11-11 23:16:37');
+(1, 'thimbo', 'moussa', 'test', 'test123', '5142099999', 8, NULL, 'programmeur', 'moussa@adress.ca', 0, 0, 0, '2015-11-11 23:16:37', '2015-11-11 23:16:37'),
+(2, 'Ousmane', 'Dieng', 'oussou', 'test123', '1549999999', 1, NULL, 'Ingénieur', 'oussou.dieng@gmail.com', 1, 1, 1, '2016-02-03 02:14:51', '2016-02-03 02:14:51'),
+(3, 'toto', 'robo', 'c3po', 'toto123', '9999999999', 1, NULL, 'robotique', 'toto@domain.ca', 0, 1, 1, '2016-02-03 02:14:51', '2016-02-03 02:14:51');
 
 --
 -- Contraintes pour les tables exportées
