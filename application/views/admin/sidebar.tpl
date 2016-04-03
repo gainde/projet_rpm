@@ -1,7 +1,7 @@
 <aside>
     <div id="sidebar"  class="nav-collapse ">
-        <!-- sidebar menu start-->
-        <ul class="sidebar-menu">                
+        <!-- sidebar menu start  class=sidebar-menu-->
+        <ul class="sidebar-menu" >                
             <li class="active">
                 <a class="" href="{$ADMINROOT}">
                     <i class="icon_house_alt"></i>

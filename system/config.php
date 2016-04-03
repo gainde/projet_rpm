@@ -28,7 +28,7 @@ if (ENVIRONMENT == 'dev') {
     define('DB_DB', 'bysol958_rpm');
 } else {
     define('DB_HOST', 'localhost');
-    define('DB_USER', 'bysol958_root');
-    define('DB_PASSWORD', 'root123');
-    define('DB_DB', 'bysol958_rpm');
+    define('DB_USER', 'rp2mc079_root');
+    define('DB_PASSWORD', 'eekVZ%QKKItx');
+    define('DB_DB', 'rp2mc079_rpm');
 }
