@@ -7,7 +7,7 @@
 <div class="clearfix"></div><br />
 
 <div class="container">
-<table width="100%" data-toggle="table" border="1" class="table table-bordered table-responsive">
+<table id="example" width="100%" data-toggle="table" border="1" class="table table-bordered table-responsive">
  	<thead>
     	<th ><input type="checkbox" id="checkall" alt="Sélectionner Tout"/></th>
         <th >Nom</th>
@@ -41,3 +41,8 @@
  {/foreach}
 </table>
 </div>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>

@@ -29,13 +29,18 @@ class Controller {
     function setSubMenu($var){
         $this->sub_menu_active = $var;
     }
-    
+   
+    function redirect($url, $statusCode = 303){
+        $url = ROOT.$url;
+        header('Location: ' . $url, true, $statusCode);
+        die();
+    }
     function render($filename){
         $this->page_active = strtolower(get_class($this));
         $this->menuHelper = MenuHelper::getInstance();
         $pages = $this->menuHelper->getNavBar($this->page_active, $this->sub_menu_active);
         require_once(WEBROOT.'tpl/SmartyBC.class.php');
-        $addmarging = (get_class($this) === "Accueil")? "" : "margin_bottom40";
+        $addmarging = (strcmp(get_class($this),"Accueil")=== 0)? "margin-0" : "margin_bottom40";
         $tpl = new SmartyBC();
         if(!empty($this->vars)){
             foreach ($this->vars as $key => $value) {

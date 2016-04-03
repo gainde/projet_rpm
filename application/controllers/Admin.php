@@ -90,8 +90,8 @@ class Admin extends Controller{
                                             'image' => "$name_image");
                     $projetDao = new ProjetDao(new Projet($array_projet));
                     $projetDao->create();
-                    $this->set($this->getListProjets());
-                    $this->render('projets/projets');
+                    
+                    $this->redirect('projets/projets');
                 }
             }else{
            

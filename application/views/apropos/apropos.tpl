@@ -7,11 +7,11 @@
     <div class="col-lg-9 col-sm-9 col-md-9">
         <h1>A propos de RPM</h1>
         
-        <h2>Réseau des Professionnels Mouride </h2>
+        <h2>Réseau des Professionnels Mourides </h2>
         <h3>Avant-Propos  </h3>
 <p>Chers musulmans, chers talibés,  
 Nous vous présentons nos meilleures salutations,et nos remerciements. 
-Avant toute chose, rappelons des paroles de Serigne A.Ahad Mbacké sur notre guide Serigne Touba - 
+Avant toute chose, rappelons des paroles de Serigne Abdoul Ahad Mbacké sur notre guide Serigne Touba - 
 Que Dieu l’agrée. Nous avons que lui comme guide. Toute sa vie, il l’a consacré à Dieu et s’est conformé aux 
 prescriptions divines derrière le Prophète Muhammed (PSL). À partir de là, il s’engage à fond dans la voix de Dieu jusqu’à obtenir
 toutes les bénédictions du Prophète (PSL) et les largesses du Très-Haut. Alors vous 
@@ -23,17 +23,16 @@ s’investit dans ses œuvres. </p>
 : 
 « Pourquoi ne pas créer un réseau des médecins mourides, des ingénieurs mourides etc..? »
 .  Dès  lors  des  talibés  mourides  se  sont  engagés  à  mettre  en  place  un  Réseau  des  Professionnels 
-Mouride (RPM) qui regroupe entre autres l’ensemble des talibés mourides. </p> 
+Mourides (RPM) qui regroupe entre autres l’ensemble des talibés mourides. </p> 
 <h3>Mission</h3>  
 <p>Fondé en 2015, le Réseau des Professionnels Mouride (RPM) est une organisation de bienfaisance vouée à la réalisation, 
 au développement ou à la contribution technique dans les projets de Serigne Touba Khadim Rassoul. RPM regroupe des talibés dévoués au 
 service de Cheikhoul Khadim, qui trouvent dans ce projet un moyen de servir leur guide grâce à leurs connaissances professionnelles.  
 Ainsi l’ensemble des professionnels Mouride du monde seront la bienvenue et sont invités dans ce projet ambitieux. </p>
 <h3>Objectif</h3>
-<p>Enrésumé les objectifs de RPM sont : 
+<p>En résumé les objectifs de RPM sont : 
 <ul><li>
- Apporter appui technique dans la réalisation des projets Chei
- kh Ahmadou Bamba </li>
+ Apporter appui technique dans la réalisation des projets de Cheikh Ahmadou Bamba </li>
     <li>
  Développer de nouveaux projets qui peuvent être bénéfiques à
  la communauté mouride </li>
@@ -57,6 +56,11 @@ Ainsi l’ensemble des professionnels Mouride du monde seront la bienvenue et so
 <hr>
 
         <img src="{$ROOT}ressources/images/execution.png"  />
+        <br/>
+<h4> Organigramme </h4>
+<hr>
+
+        <img class="size-img" src="{$ROOT}ressources/images/organigramme.png"  />
     </div>
 </div>
     <br/><br/>

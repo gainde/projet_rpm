@@ -57,6 +57,7 @@ class MenuHelper {
             $css[] = "admin/jquery-ui-1.10.4.min.css";
             $css[] = "admin/jquery-jvectormap-1.2.2.css";
             $css[] = "admin/owl.carousel.css";
+            $css[] = "admin/dataTables.bootstrap.min.css";
         }else{
             $css[] = "style.css";
             $css[] = "bjqs.css";
@@ -84,6 +85,9 @@ class MenuHelper {
             
             $js[] = "admin/jquery.knob.js";
             $js[] = "admin/owl.carousel.js";
+            $js[] = "admin/jquery-1.12.0.min.js";
+            $js[] = "admin/dataTables.bootstrap.min.js";
+            $js[] = "admin/jquery.dataTables.min.js";
         }
         return $js;
     }

@@ -30,6 +30,7 @@
         <div class="row top">
             <div class="col-sm-8">
                 <img src="{$ROOT}ressources/images/logo.png" class="logo" />
+                <br/>
                 <span class="text-logo">Réseau des Professionels Mourides du Monde</span>
             </div>
             <div class="col-sm-4">
@@ -54,7 +55,7 @@
 
 <!-- NAVBAR
 ================================================== -->
-<div class="{$addmarging} navbar-wrapper">
+<div class=" navbar-wrapper">
     <div class="">
 
         <div class="navbar navbar navbar-static-top" role="navigation">
@@ -85,3 +86,6 @@
 
     </div>
 </div>
+            {nocache}
+<div class="{$addmarging}"></div>
+{/nocache}

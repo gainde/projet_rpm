@@ -1,4 +1,5 @@
 </div>  
+<div style="margin-bottom: 40px;"></div>
  <nav class="container bg-footer">
  <div class="container">
  <div class="col-lg-4 socials-margin">
@@ -9,7 +10,7 @@
  </div>
  <div class="col-lg-12 style-text" style="text-align:right">
   © Copyright 2015 -  
-  <?php echo date("Y");?> RPM. Tous droits réservés.
+  {$smarty.now|date_format:'%Y'} RPM. Tous droits réservés.
   </div>
   </div>
  </nav>
