@@ -13,10 +13,17 @@
 				  <div class="panel-heading">
 					<h3 class="panel-title">Vision</h3>
 				  </div>
-				  <div class="panel-body">
-					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a vulputate arcu. Fusce egestas finibus urna, eu tristique metus sollicitudin id. Aenean urna urna, lobortis eget neque vel, luctus mattis urna. Nullam luctus laoreet erat, id efficitur orci venenatis a. Cras maximus velit sed bibendum congue. Ut ornare luctus pellentesque. Integer maximus lacinia rutrum.
-
-In lacus purus, pulvinar eget augue et, auctor volutpat massa. Morbi hendrerit rhoncus nisi vel placerat. 
+                                    <div class="panel-body" >
+					<p style="overflow: hidden; height:159px">Chers musulmans, chers talibés,  
+Nous vous présentons nos meilleures salutations,et nos remerciements. 
+Avant toute chose, rappelons des paroles de Serigne A.Ahad Mbacké sur notre guide Serigne Touba - 
+Que Dieu l’agrée. Nous avons que lui comme guide. Toute sa vie, il l’a consacré à Dieu et s’est conformé aux 
+prescriptions divines derrière le Prophète Muhammed (PSL). À partir de là, il s’engage à fond dans la voix de Dieu jusqu’à obtenir
+toutes les bénédictions du Prophète (PSL) et les largesses du Très-Haut. Alors vous 
+devez comprendre que tout ce que nous entreprenons ne peut que nous servir, car il a déjà reçu les faveurs du Bon Dieu. (...).
+S’il a prêché en incitant au travail sur le chantier de Dieu, c’est pour montrer que le Seigneur va assister quiconque
+s’investit dans ses œuvres. </p>
+                                        <p><a href="{$ROOT}apropos" title='A propos de RPM'>Lire la suite ...</a></p>
 				  </div>
 				</div>
 			</div>

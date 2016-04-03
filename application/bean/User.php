@@ -41,8 +41,12 @@ class User extends Bean {
         }
         if (isset($this->adresse)) {
             $this->adresse = Dao::load($this->adresse, 'adresse');
+            $this->linkObject = array('adresse');
         }
-        $this->linkObject = array('adresse');
+        
+    }
+    public function getId() {
+        return $this->id;
     }
 
     public function getLogin() {
@@ -93,6 +97,10 @@ class User extends Bean {
         return $this->adresse;
     }
 
+    public function setId($id) {
+        $this->id = $id;
+    }
+    
     public function setLogin($login) {
         $this->login = $login;
     }

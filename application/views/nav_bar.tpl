@@ -28,11 +28,11 @@
     <div class="">
 
         <div class="row top">
-            <div class="col-sm-6">
-                <img src="{$ROOT}ressources/images/logo.jpeg" class="logo" />
-                <span class="text-logo">Réseaux Professionels Mourides</span>
+            <div class="col-sm-8">
+                <img src="{$ROOT}ressources/images/logo.png" class="logo" />
+                <span class="text-logo">Réseau des Professionels Mourides du Monde</span>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="search pull-right">
                     <form class="navbar-form nopadding" role="search">
                         <div class="input-group">

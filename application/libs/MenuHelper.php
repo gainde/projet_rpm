@@ -87,6 +87,66 @@ class MenuHelper {
         }
         return $js;
     }
+    
+    function getNavBar($page_active = 'accueil', $sub_menu_active = ''){
+        
+        $link = array(true => 'active', false => '');
+       
+        $dropdown = array(true => array(' class="dropdown-toggle"  data-toggle="dropdown"','<span class="caret"></span>') 
+                                        , false => array('', ''));
+        
+        $pages = array(ROOT."accueil/"  => array(
+                'class' => $link[$page_active === 'accueil'],
+                'name' => 'Accueil',
+                'param' => $dropdown[false],
+                'sub_menu' => array()
+            ),
+            ROOT."authentification/register/"  => array(
+                'class' => $link[$page_active === 'register'],
+                'name' => 'Devenir membre',
+                'param' => $dropdown[false],
+                'sub_menu' => array()),
+            ROOT."pourquoi/"  => array(
+                'class' => $link[$page_active === 'pourquoi'],
+                'name' => 'Pourquoi devenir membre',
+                'param' => $dropdown[false],
+                'sub_menu' => array()),
+            ROOT."statut/"  => array(
+                'class' => $link[$page_active === 'statut'],
+                'name' => 'Projets/Réalisations',
+                'param' => $dropdown[true],
+                'sub_menu' => array(
+                    ROOT."statut/projets"  => array(
+                    'class' => $link[$sub_menu_active === 'projets'],
+                    'name' => 'Projets'),
+                    ROOT."statut/"  => array(
+                    'class' => $link[$sub_menu_active === ''],
+                    'name' => 'Réalisations')
+                )),
+            ROOT."actualites/"  => array(
+                'class' => $link[$page_active === 'actualites'],
+                'name' => 'Actualités',
+                'param' => $dropdown[false],
+                'sub_menu' => array()),
+            ROOT."apropos/"  => array(
+                'class' => $link[$page_active === 'apropos'],
+                'name' => 'A propos de RPM',
+                'param' => $dropdown[false],
+                'sub_menu' => array()),
+            ROOT."#/"  => array(
+                'class' => $link[$page_active === ''],
+                'name' => 'Forum',
+                'param' => $dropdown[false],
+                'sub_menu' => array()),
+            ROOT."contact/"  => array(
+                'class' => $link[$page_active === 'contact'],
+                'name' => 'Nous joindre',
+                'param' => $dropdown[false],
+                'sub_menu' => array())
+                
+        );
+         return $pages;
+    }
             
     function getAdminSideBar(){
         

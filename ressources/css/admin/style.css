@@ -4969,3 +4969,12 @@ span.customSelect.changed {
     color: #999;
     font-size: 12px;
 }
+.bg-label{
+    color:#639953;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.size-image > img{
+    width: 100px;
+    height: 100px;
+}

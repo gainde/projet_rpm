@@ -39,5 +39,9 @@ class UserDao extends DAO {
         }
         return $user;
     }
+    
+    public function getAllData() {
+        return $this->selectAll($this->table);
+    }
 
 }

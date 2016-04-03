@@ -1,6 +1,8 @@
 <?php
 require_once (WEBAPPROOT.'models/ServiceDao.php');
 require_once (WEBAPPROOT.'libs/MenuHelper.php');
+require_once (WEBAPPROOT.'libs/ArrayUtils.php');
+require_once (WEBROOT.'system/Uri.php');
 
 class Controller {
     protected $vars = array();
@@ -14,10 +16,11 @@ class Controller {
     
     function __construct() {
         $this->menuHelper = MenuHelper::getInstance();
+        //$pages = $this->menuHelper->getNavBar();
     }
     
     function set($tab){
-        array_merge($this->vars, $tab);
+        $this->vars = $tab;
     }
     
     function setData($key, $value){
@@ -29,7 +32,8 @@ class Controller {
     
     function render($filename){
         $this->page_active = strtolower(get_class($this));
-        $pages = $this->getNavBar();
+        $this->menuHelper = MenuHelper::getInstance();
+        $pages = $this->menuHelper->getNavBar($this->page_active, $this->sub_menu_active);
         require_once(WEBROOT.'tpl/SmartyBC.class.php');
         $addmarging = (get_class($this) === "Accueil")? "" : "margin_bottom40";
         $tpl = new SmartyBC();
@@ -38,10 +42,16 @@ class Controller {
                 $tpl->assign($key, $value);
             }
         }
+        $uri = Uri::getInstance()->getFragment();
+        $home = $uri[0];
+        unset($uri[0]);
         $tpl->assign('addmarging', $addmarging);
+        $tpl->assign('home', $home);
+        $tpl->assign('uri', $uri);
         $tpl->assign('WEBROOT', WEBROOT);
         $tpl->assign('APPROOT', APPROOT);
         $tpl->assign('ROOT', ROOT); 
+        $tpl->assign('ADMINROOT', ADMINROOT); 
         $tpl->assign('User', $this->getUser());
         $tpl->assign('services', $this->getServices());
         $tpl->assign('pages', $pages);
@@ -96,7 +106,7 @@ class Controller {
     
     function getPageActive(){
     }
-    
+
     function getNavBar(){
         //print_r($this->page_active);
         
@@ -177,6 +187,5 @@ class Controller {
          return $pages;
         
     }
-    
 
 }

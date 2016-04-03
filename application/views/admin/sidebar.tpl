@@ -3,9 +3,9 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">                
             <li class="active">
-                <a class="" href="index.php">
+                <a class="" href="{$ADMINROOT}">
                     <i class="icon_house_alt"></i>
-                    <span>Dashboard</span>
+                    <span>Accueil</span>
                 </a>
             </li>
             <li class="sub-menu">
@@ -32,9 +32,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="#">Liste des membres</a></li>
-                    <li><a class="" href="#">Ajout</a></li>
-                    <li><a class="" href="#">Modification</a></li>
+                    <li><a class="" href="{$ADMINROOT}membres">Liste des membres</a></li>
+                    <li><a class="" href="{$ADMINROOT}membres/add_membre">Ajout</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
@@ -44,9 +43,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="#">Liste des projets</a></li>
-                    <li><a class="" href="#">Ajout</a></li>
-                    <li><a class="" href="#">Modification</a></li>
+                    <li><a class="" href="{$ADMINROOT}projets" title="Liste des projets">Liste des projets</a></li>
+                    <li><a class="" href="{$ADMINROOT}projets/creer_projet">Ajout</a></li>
                 </ul>
             </li>
             <li>

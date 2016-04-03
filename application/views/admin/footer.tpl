@@ -1,3 +1,7 @@
+</section>
+<!--main content end-->
+</section>
+<!-- container section start -->
 <!-- javascripts -->
 {foreach from=$liste_js item=js}
     <script type="text/javascript" src="{$ROOT}ressources/js/{$js}"></script>

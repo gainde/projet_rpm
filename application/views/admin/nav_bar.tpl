@@ -4,7 +4,7 @@
                 </div>
 
                 <!--logo start-->
-                <a href="index.php" class="logo">RPM <span class="lite">Admin</span></a>
+                <a href="{$ADMINROOT}" class="logo">RPM <span class="lite">Admin</span></a>
                 <!--logo end-->
 
                 <div class="nav search-row" id="top_menu">
