@@ -1,8 +1,9 @@
 body{
     color: #888888;
-    font-family: 'Bree Serif',serif;
+    font-family:  Arial,Helvetica Neue,Helvetica,sans-serif;
     font-size: 16px;
     min-height: 1000px;
+    text-justify: auto;
 }
 .container{
 	width:1245px;
@@ -15,7 +16,7 @@ body{
     height: 300px;
 }
 .logo{
-    height: 100px;
+    height: auto;
     width: 100px;
 }
 .header_top{
@@ -39,7 +40,6 @@ a.sign:hover{
 }
 .text-logo{
     font-weight: bold;
-    font-size: 26px;
     color: #072007;
     font-family: arial;
 }
@@ -51,7 +51,10 @@ a.sign:hover{
     background-color: #072007;
     color: white;
 }
-
+h1,h2,h3,h4,h5{
+    font-weight: bold;
+    color: #072007;
+}
 
 .login_modal_footer{margin-top:5px;}
 .login_modal_header .modal-title {text-align: center;font-family:'Philosopher',sans-serif; }
@@ -85,7 +88,7 @@ a.sign:hover{
 #center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
 .modal-login-btn{width:100%;height:40px; margin-bottom:10px;}
 h1{
-    margin: 0;
+    margin: 0 0 10px 0;
     color:#072007;
     border-bottom:5px solid #072007;
 }
@@ -169,6 +172,10 @@ div .navbar,.bg-footer{
 }
 .nav > li > a {
     color:white;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    color:white;
+    background-color: #5ea24a;
 }
 
 
@@ -440,4 +447,13 @@ blockquote p {
 }
 .margin_bottom40{
     margin-bottom: 40px;
+}
+.bg-sub-li{
+    background-color: white;
+}
+.size-img{
+    width: auto;
+}
+.margin-0{
+    margin: 0px !important;
 }

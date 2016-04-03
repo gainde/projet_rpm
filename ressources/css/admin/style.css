@@ -4989,3 +4989,13 @@ span.customSelect.changed {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
+
+.bg-label{
+    color:#639953;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.size-image > img{
+    width: 100px;
+    height: 100px;
+}
