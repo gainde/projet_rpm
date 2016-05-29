@@ -17,17 +17,18 @@ define('WEBROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME'])); //
 define('APPROOT', ROOT . 'application/'); //application dossier
 define('WEBAPPROOT', WEBROOT . 'application/'); //application dossier
 define('ADMINROOT', ROOT . 'admin/'); //application dossier
+define('SITEURL', 'http://'.$_SERVER['HTTP_HOST']. '/'); //site url de base
 
 /* * *
  * DATEBASE
  */
 if (ENVIRONMENT == 'dev') {
-    define('DB_HOST', 'localhost');
+     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASSWORD', '');
     define('DB_DB', 'bysol958_rpm');
 } else {
-    define('DB_HOST', 'localhost');
+     define('DB_HOST', 'localhost');
     define('DB_USER', 'rp2mc079_root');
     define('DB_PASSWORD', 'eekVZ%QKKItx');
     define('DB_DB', 'rp2mc079_rpm');

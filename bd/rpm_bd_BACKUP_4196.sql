@@ -2,10 +2,17 @@
 -- version 4.1.14
 -- http://www.phpmyadmin.net
 --
+<<<<<<< HEAD
 -- Host: 127.0.0.1
 -- Generation Time: May 29, 2016 at 08:07 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
+=======
+-- Client :  127.0.0.1
+-- Généré le :  Sam 27 Février 2016 à 02:42
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
+>>>>>>> 6b1c289a0b3e5b32d1cf317cb43f088dc0ee423e
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -38,7 +45,11 @@ CREATE TABLE IF NOT EXISTS `adresse` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
+<<<<<<< HEAD
 -- Dumping data for table `adresse`
+=======
+-- Contenu de la table `adresse`
+>>>>>>> 6b1c289a0b3e5b32d1cf317cb43f088dc0ee423e
 --
 
 INSERT INTO `adresse` (`id`, `rue`, `code_postal`, `ville`, `province`, `pays`, `numero`) VALUES
@@ -60,7 +71,11 @@ CREATE TABLE IF NOT EXISTS `domaine` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
+<<<<<<< HEAD
 -- Dumping data for table `domaine`
+=======
+-- Contenu de la table `domaine`
+>>>>>>> 6b1c289a0b3e5b32d1cf317cb43f088dc0ee423e
 --
 
 INSERT INTO `domaine` (`id`, `id_service`, `titre`, `description`) VALUES
@@ -89,6 +104,7 @@ CREATE TABLE IF NOT EXISTS `participants` (
   PRIMARY KEY (`id_user`,`id_projet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+<<<<<<< HEAD
 -- --------------------------------------------------------
 
 --
@@ -111,6 +127,8 @@ INSERT INTO `pourquoi` (`id`, `titre`, `description`, `contenu`) VALUES
 (4, 'Pourquoi devenir membre', 'Devenir membre est devenir mouride', '<p>Le RPM s&rsquo;est donn&eacute; comme cr&eacute;do de travailler &agrave; la r&eacute;alisation des projets de Khadimou Rassoul. Donc &ecirc;tre membre vous donne le privil&egrave;ge de contribuer aux diff&eacute;rents projets dans les secteurs tels que la sant&eacute;, l&rsquo;&eacute;ducation, l&rsquo;assainissement, l&rsquo;environnement,â€¯laâ€¯construction, l&rsquo;&eacute;nergie, les TIC, l&rsquo;ing&eacute;nierie etc.</p>\r\n<p>Il vous donne aussi la possibilit&eacute; d&rsquo;apporter votre contribution &agrave; l&rsquo;&oelig;uvre deâ€¯Serigne Touba.</p>\r\n<p>Il est important de se rappeler que Serigne Touba Que Dieu l&rsquo;agr&eacute;e ne s&rsquo;est pas rabaiss&eacute; pour obtenir la place qu&rsquo;il occupe. Nous aussi nous devons tenir notre rang. Comme vous le savez, Serigne Touba disait dans <strong>Matlaboul fawsayni</strong> &laquo;Seigneur des mondes faites que la ville de Touba soit un lieu de d&eacute;vouement au Cr&eacute;ateur, de fid&eacute;lit&eacute; au culte musulman, de savoir (&hellip;)&raquo;.Cheikh Ahmadou Bamba nous fait savoir qu&rsquo;Allah a exauc&eacute; tous ses v&oelig;ux qui y ont &eacute;t&eacute; exprim&eacute;s. Cela veut dire apporter sa contribution n&rsquo;est rien d&rsquo;autre que de participer &agrave; des v&oelig;ux d&eacute;j&agrave; accomplis.</p>\r\n<p>Le RPM se serviraâ€¯de ce recueil <strong>Matlaboul fawzayni</strong> comme guide de projets et compte sur l&rsquo;approbation du khalife g&eacute;n&eacute;ral dans ses d&eacute;marches.</p>\r\n<p>En tant que Mouride, nous n&rsquo;avons personne de sup&eacute;rieur, digne de notre confianceâ€¯autre que Serigne Touba en qui nous pla&ccedil;ons notre espoir. Nous talib&eacute;, devons faire don de nos valeurs et de nos acquis, afin de m&eacute;riter le titre de talib&eacute; de Cheikhoul Khadim, qui a d&eacute;j&agrave; tout fait pour nous, nous humains, nous africains, nous s&eacute;n&eacute;galais, nous Mouride.</p>\r\n<p><strong>Que Serigne Touba, notre v&eacute;n&eacute;r&eacute; guide accepte notre acte d&rsquo;all&eacute;geance, nous assiste en notre for int&eacute;rieur dans nos actes de tous les jours et dans ce projet qui a pour but d&rsquo;&oelig;uvrer pour Serigne Touba. </strong></p>'),
 (5, 'Pourquoi devenir membre', 'Devenir membre est devenir mouride', '<p>Le RPM s&rsquo;est donn&eacute; comme cr&eacute;do de travailler &agrave; la r&eacute;alisation des projets de Khadimou Rassoul. Donc &ecirc;tre membre vous donne le privil&egrave;ge de contribuer aux diff&eacute;rents projets dans les secteurs tels que la sant&eacute;, l&rsquo;&eacute;ducation, l&rsquo;assainissement, l&rsquo;environnement,â€¯laâ€¯construction, l&rsquo;&eacute;nergie, les TIC, l&rsquo;ing&eacute;nierie etc.</p>\r\n<p>Il vous donne aussi la possibilit&eacute; d&rsquo;apporter votre contribution &agrave; l&rsquo;&oelig;uvre deâ€¯Serigne Touba.</p>\r\n<p>Il est important de se rappeler que Serigne Touba Que Dieu l&rsquo;agr&eacute;e ne s&rsquo;est pas rabaiss&eacute; pour obtenir la place qu&rsquo;il occupe. Nous aussi nous devons tenir notre rang. Comme vous le savez, Serigne Touba disait dans <strong>Matlaboul fawsayni</strong> &laquo;Seigneur des mondes faites que la ville de Touba soit un lieu de d&eacute;vouement au Cr&eacute;ateur, de fid&eacute;lit&eacute; au culte musulman, de savoir (&hellip;)&raquo;.Cheikh Ahmadou Bamba nous fait savoir qu&rsquo;Allah a exauc&eacute; tous ses v&oelig;ux qui y ont &eacute;t&eacute; exprim&eacute;s. Cela veut dire apporter sa contribution n&rsquo;est rien d&rsquo;autre que de participer &agrave; des v&oelig;ux d&eacute;j&agrave; accomplis.</p>\r\n<p>Le RPM se serviraâ€¯de ce recueil <strong>Matlaboul fawzayni</strong> comme guide de projets et compte sur l&rsquo;approbation du khalife g&eacute;n&eacute;ral dans ses d&eacute;marches.</p>\r\n<p>En tant que Mouride, nous n&rsquo;avons personne de sup&eacute;rieur, digne de notre confianceâ€¯autre que Serigne Touba en qui nous pla&ccedil;ons notre espoir. Nous talib&eacute;, devons faire don de nos valeurs et de nos acquis, afin de m&eacute;riter le titre de talib&eacute; de Cheikhoul Khadim, qui a d&eacute;j&agrave; tout fait pour nous, nous humains, nous africains, nous s&eacute;n&eacute;galais, nous Mouride.</p>\r\n<p><strong>Que Serigne Touba, notre v&eacute;n&eacute;r&eacute; guide accepte notre acte d&rsquo;all&eacute;geance, nous assiste en notre for int&eacute;rieur dans nos actes de tous les jours et dans ce projet qui a pour but d&rsquo;&oelig;uvrer pour Serigne Touba. </strong></p>');
 
+=======
+>>>>>>> 6b1c289a0b3e5b32d1cf317cb43f088dc0ee423e
 -- --------------------------------------------------------
 
 --
@@ -146,6 +164,7 @@ INSERT INTO `projet` (`id`, `titre`, `description`, `contenu`, `date_creation`, 
 
 -- --------------------------------------------------------
 
+<<<<<<< HEAD
 --
 -- Table structure for table `projets`
 --
@@ -161,6 +180,8 @@ CREATE TABLE IF NOT EXISTS `projets` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+=======
+>>>>>>> 6b1c289a0b3e5b32d1cf317cb43f088dc0ee423e
 -- --------------------------------------------------------
 
 --
@@ -169,6 +190,7 @@ CREATE TABLE IF NOT EXISTS `projets` (
 
 CREATE TABLE IF NOT EXISTS `service` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
   `titre` varchar(50) CHARACTER SET utf8 NOT NULL,
   `description` varchar(260) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -177,6 +199,16 @@ CREATE TABLE IF NOT EXISTS `service` (
 
 --
 -- Dumping data for table `service`
+=======
+  `titre` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `description` varchar(260) CHARACTER SET latin1 DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `titre` (`titre`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Contenu de la table `service`
+>>>>>>> 6b1c289a0b3e5b32d1cf317cb43f088dc0ee423e
 --
 
 INSERT INTO `service` (`id`, `titre`, `description`) VALUES
@@ -213,14 +245,23 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`,`email`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `user`
+=======
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Contenu de la table `user`
+>>>>>>> 6b1c289a0b3e5b32d1cf317cb43f088dc0ee423e
 --
 
 INSERT INTO `user` (`id`, `nom`, `prenom`, `username`, `password`, `telephone`, `adresse`, `date_naissance`, `profession`, `email`, `is_admin`, `is_active`, `is_verified`, `date_creation`, `last_update`) VALUES
-(1, 'thimbo', 'moussa', 'test', 'test123', '5142099999', 8, NULL, 'programmeur', 'moussa@adress.ca', 0, 0, 0, '2015-11-11 23:16:37', '2015-11-11 23:16:37');
+(1, 'thimbo', 'moussa', 'test', 'test123', '5142099999', 8, NULL, 'programmeur', 'moussa@adress.ca', 0, 0, 0, '2015-11-11 23:16:37', '2015-11-11 23:16:37'),
+(2, 'Ousmane', 'Dieng', 'oussou', 'test123', '1549999999', 1, NULL, 'Ingénieur', 'oussou.dieng@gmail.com', 1, 1, 1, '2016-02-03 02:14:51', '2016-02-03 02:14:51'),
+(3, 'toto', 'robo', 'c3po', 'toto123', '9999999999', 1, NULL, 'robotique', 'toto@domain.ca', 0, 1, 1, '2016-02-03 02:14:51', '2016-02-03 02:14:51');
 
 --
 -- Constraints for dumped tables

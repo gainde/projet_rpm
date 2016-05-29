@@ -6,7 +6,7 @@
 <html class="no-js">
     <!--<![endif]-->
     <head>
-        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <title>Réseau Professionnel Mouride</title>
         <meta name="description" content="Twitter Bootstrap Modal Login Popup - Social Login Popup "/>

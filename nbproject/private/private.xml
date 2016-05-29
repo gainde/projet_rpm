@@ -3,55 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< .mine
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/index.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/system/Uri.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/libs/ArrayUtils.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/chart-chartjs.html</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/bean/Service.php</file>
-=======
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Statut.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/index.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/accueil/index.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/.htaccess</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Contact.php</file>
->>>>>>> .theirs
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Pourquoi.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Accueil.php</file>
-<<<<<<< .mine
             <file>file:/C:/wamp/www/projet_rpm/application/libs/MenuHelper.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/membres/add_membre.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/header.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/system/config.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/bean/Domaine.php</file>
-=======
             <file>file:/C:/wamp/www/projet_rpm/application/views/pourquoi/pourquoi.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/header.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/system/config.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/footer.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Projets.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/afficher_projet.tpl</file>
->>>>>>> .theirs
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Authentification.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/footer.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Projets.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Admin.php</file>
-<<<<<<< .mine
             <file>file:/C:/wamp/www/projet_rpm/ressources/css/style.css</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/admin.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/sidebar.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/sidebar.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/header.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/statut/projets/projets.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/bean/User.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/membres/liste_membres.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/ressources/css/admin/style.css</file>
-            <file>file:/C:/wamp/www/projet_rpm/system/Database.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/nav_bar.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Actualites.php</file>
-=======
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/admin.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/sidebar.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/header.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/footer.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/statut/projets/projets.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/system/Application.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/PageErreur.php</file>
@@ -61,7 +34,6 @@
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/projets.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/ressources/css/admin/style.css</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/contact/contact.tpl</file>
->>>>>>> .theirs
             <file>file:/C:/wamp/www/projet_rpm/application/views/nav_bar.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/editer_projet.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Apropos.php</file>
@@ -70,6 +42,7 @@
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Actualites.php</file>
             <file>file:/C:/wamp/www/projet_rpm/core/DAO.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/apropos/apropos.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/breadcrumb.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/bean/Projet.php</file>
             <file>file:/C:/wamp/www/projet_rpm/core/Controller.php</file>
         </group>

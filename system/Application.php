@@ -5,16 +5,21 @@ class Application {
     private $controller = null;
     private $action = null;
     private $params = array();
+    private $isAdmin = false;
+    private $controllerPath;
 
     /**
      * analyser et récupérer format (controlleur/methode/[params/]
      * sinon erreur
      */
     public function __construct() {
+        $this->controllerPath = WEBAPPROOT . 'controllers/';
         $this->splitUrl();
-        if (file_exists(WEBAPPROOT . 'controllers/' . $this->controller . '.php')) {
-            require WEBAPPROOT . 'controllers/' . $this->controller . '.php';
-            $this->controller = new $this->controller();
+        
+        if (file_exists($this->controllerPath . $this->controller . '.php')) {
+            require $this->controllerPath . $this->controller . '.php';
+            
+            $this->controller = new $this->controller($this->isAdmin);
             // verifier si méthode existe
             if (method_exists($this->controller, $this->action)) {
                 if (!empty($this->params)) {
@@ -25,12 +30,12 @@ class Application {
                     $this->controller->{$this->action}();
                 }
             } else {
-                require (WEBAPPROOT . 'controllers/PageErreur.php');
+                require ($this->controllerPath . 'PageErreur.php');
                 $this->controller = new Erreur();
                 $this->controller->Page404();
             }
         } else {
-            require (WEBAPPROOT . 'controllers/PageErreur.php');
+            require ($this->controllerPath . 'PageErreur.php');
             $this->controller = new Erreur();
             $this->controller->Page404();
         }
@@ -45,6 +50,7 @@ class Application {
             $url = trim($_GET['page'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
+            $this->checkAdmin($url, count($url));
             $this->controller = isset($url[0]) ? ucfirst($url[0]) : "Accueil";
             $this->action = isset($url[1]) ? $url[1] : "index";
             // Enlever le controlleur et la méthode
@@ -55,6 +61,18 @@ class Application {
             $this->controller = "Accueil";
             $this->action = "index";
         }
+    }
+    
+    private function checkAdmin(&$url, $nb) {
+        if($url[0] === "admin" && $nb>1){
+            $this->isAdmin = true;
+            array_splice($url, 0,1);
+            $this->controllerPath .= "admin/";
+        }
+    }
+    
+    private function includeController(){
+        
     }
 
 }

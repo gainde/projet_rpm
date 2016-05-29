@@ -23,6 +23,7 @@ class Projet extends Bean {
     private $date_creation;
     private $date_fin;
     private $url;
+    private $statut;
 
     public function __construct(array $params = array()) {
         if (!empty($params)) {
@@ -65,7 +66,9 @@ class Projet extends Bean {
     public function getUrl() {
         return $this->url;
     }
-
+    public function getStatut() {
+        return $this->statut;
+    }
     function setId($id) {
         $this->id = $id;
     }
@@ -97,7 +100,9 @@ class Projet extends Bean {
     function setUrl($url) {
         $this->url = $url;
     }
-
+    function setStatut($statut) {
+        $this->statut = $statut;
+    }
     
     public function getVars() {
         return $this->getLinks(get_object_vars($this));

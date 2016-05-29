@@ -15,7 +15,7 @@ class Database {
     private $_password = DB_PASSWORD;
     private $_database = DB_DB;
     private $_fetch_mode = array(true => PDO::FETCH_CLASS, false => PDO::FETCH_ASSOC);
-
+    private $lastId;
     /*
       Get an instance of the Database
       @return Instance
@@ -60,8 +60,13 @@ class Database {
     public function getConnection() {
         return $this->_connection;
     }
-
+    public function getLastInsertId(){
+        return $this->lastId;
+    }
     public function select($sql, $params, $class = null) {
+        if ($class != null) {
+            return $this->getObject($sql, $params, $class);
+        }
         return $this->execute($sql, $params, $class);
     }
 
@@ -90,15 +95,23 @@ class Database {
         }
         try {
             $stmt = $this->_connection->prepare($sql);
+           
             if (!empty($params)) {
-                /* var_dump($params);
-                  foreach ($params as $key => $val) {
+                /*var_dump($params);
+                 foreach ($params as $key => $val) {
                   echo $key.' '.$val.'<br>';
                   $stmt->bindParam(':'.$key, $val);
                   } */
-                return $stmt->execute($params);
-            } else
-                return $stmt->execute();
+                $result = $stmt->execute($params);
+                $this->lastId  = $this->_connection->lastInsertId();
+                //return $stmt->execute($params);
+                return $result;
+            } else{
+                $result = $stmt->execute();
+                $this->lastId = $this->_connection->lastInsertId();
+                //return $stmt->execute();
+                return $result;
+            }
             /* if ($class == null) {
               $result = $stmt->fetch();
               } else {
@@ -109,16 +122,17 @@ class Database {
             return false;
         }
     }
-
+    
     private function getObject($sql, $params, $class) {
         try{
         $stmt = $this->_connection->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
         $stmt->execute($params);
+        $this->lastId  = $this->_connection->lastInsertId();
         $result = $stmt->fetch();
         return $result;
         }  catch (PDOException $e) {
-            var_dump($e->getMessage() . ' ' . $e->getTraceAsString() . ' ');
+            //var_dump($e->getMessage() . ' ' . $e->getTraceAsString() . ' ');
             return false;
         }
         
@@ -173,11 +187,17 @@ class Database {
     }
 
     public function load($id, $classname) {
-        $sql = "SELECT * FROM $classname WHERE id = $id";
+        $sql = "SELECT * FROM ".strtolower($classname)." WHERE id =?";
+        $this->getObject($sql, array($id), $classname);
+        /*$classname1 = $classname;
+        $classname = strtolower($classname);
+        $sql = "SELECT * FROM $classname WHERE id = :$param";
+        var_dump($sql);
         $stmt = $this->_connection->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_CLASS, $classname);
-        return $result;
+        var_dump($result);
+        return $result;*/
     }
 
 }

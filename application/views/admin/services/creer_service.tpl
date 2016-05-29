@@ -30,40 +30,44 @@ tinymce.init({
 <form method="post" enctype="multipart/form-data">
     <div class="input-group input-group-lg">
         <label class="bg-label">Nom *:</label>
-	<input class='required form-control' type="text" name="name" placeholder="Nom du projet">
-    </div>
-    <div class="input-group input-group-lg pull-right">
-        <label for="from" class="bg-label">Date *:</label>
-        <input class='required' type="text" id="from" name="from" >
-        <label for="to"> à </label>
-        <input class='required' type="text" id="to" name="to">
-    </div>
-    <div class="input-group input-group-lg">
-        <label class="bg-label">Image :</label>
-        <input name="imgp" type="file" id="upload-file"  placeholder="Image du projet">
-        <label class="bg-label">Nom de l'image:</label>
-	<input type="text" name="nameimg" class="form-control" placeholder="Nom de l'image">
-        <div id="destination" class="size-image"></div>
+	<input class='required form-control' type="text" name="name"  placeholder="Nom du service">
     </div>
      <div class="input-group input-group-lg">
         <label class="bg-label">Description *:</label>
 	<textarea  rows="4" id="mytextareaAccueil1" name="description"></textarea>
      </div>
-     <div class="input-group input-group-lg">
-	<label class="bg-label">Contenu *:</label>
-	<textarea  id="mytextareaAccueil2" name="contenu"></textarea>
-      </div>
-    <div class="input-group input-group-lg">
-        <label class="bg-label"><input type="radio" name="state" value="1" checked>&nbsp;Actif</label>&nbsp;&nbsp;
-	 <label class="bg-label"><input type="radio" name="state" value="0" >&nbsp;Inactif</label>&nbsp;&nbsp;
-          <label class="bg-label"><input type="radio" name="state" value="-1" >&nbsp;Supprimé</label>
-      </div>
-    <br>
-    <a href="{$ROOT}admin/projets" class="btn btn-large btn-info"><i class="glyphicon glyphicon-arrow-left"></i> &nbsp; Retour</a>&nbsp;&nbsp;
+    <div id='domaine'>
+       
+    </div>
+    <br/>
+    <br/>
+        <a class="btn btn-large btn-success" href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Ajouter Domaine</a>
+         <div id="light" class="white_content">
+             <div class="pull-right">
+                 <a id="closeOverlay" href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><span class="glyphicon glyphicon-remove"></span></a>
+            </div>
+              <div class="input-group input-group-lg">
+                <label class="bg-label">Domaine :</label>
+                <input id="nameD" type="text" name="domaineD" class="form-control" placeholder="domaine">
+             </div>
+             <div class="input-group input-group-lg">
+                <label class="bg-label">Description *:</label>
+                <textarea  rows="4" id="domaine1" name="desc"></textarea>
+             </div>
+             <br/>
+                <button  type="button" class="btn btn-large  btn-success" id='add_domaine'>Ajouter Domaine</button>
+             <br/>
+        </div>
+        <div id="fade" class="black_overlay"></div>
+   
+
+    <br/>
+    <br/>
+    <a href="{$ROOT}admin/services" class="btn btn-large btn-info"><i class="glyphicon glyphicon-arrow-left"></i> &nbsp; Retour</a>&nbsp;&nbsp;
     <a href="#" class="btn btn-large btn-info" id="send"><i class="glyphicon glyphicon-floppy-save"></i> &nbsp; Enregistrer</a>
     <button type="submit" class="hidden">Envoyer</button>
 </form>
-</div>
+ </div>   
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 {literal}
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -92,10 +96,13 @@ $('.required').on('keyup',function(e){
             alert(" Veuillez remplir tous les champs obligatoires: *")
            return false; 
         }
-        if(tinymce.get('mytextareaAccueil2').getContent()=='' || tinymce.get('mytextareaAccueil2').getContent()==null){
-            alert(" Veuillez remplir tous les champs obligatoires: *")
-            return false; 
-        }    
+        var body = tinymce.get('mytextareaAccueil1').getBody();
+        text = tinymce.trim(body.innerText || body.textContent);
+
+        if(text.length > 250 ){
+            alert(" Votre description dépasse les 250 caractères!")
+           return false; 
+        }
     $('.required').each(function(e){
         if($(this).val()){
               
@@ -108,46 +115,34 @@ $('.required').on('keyup',function(e){
         $('form').submit();
     });
     
-  //date picker
-    $( "#from" ).datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberOfMonths: 1,
-      onClose: function( selectedDate ) {
-        $( "#to" ).datepicker( "option", "minDate", selectedDate );
-      }
-    });
-    $( "#to" ).datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberOfMonths: 1,
-      onClose: function( selectedDate ) {
-        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-      }
-    });
-   //upload file
-   document.getElementById('upload-file').addEventListener('change', function() {
-	var file;
-	var destination = document.getElementById('destination');
-	destination.innerHTML = '';
-
-	// Looping in case they uploaded multiple files
-	for(var x = 0, xlen = this.files.length; x < xlen; x++) {
-		file = this.files[x];
-		if(file.type.indexOf('image') != -1) { // Very primitive "validation"
-
-			var reader = new FileReader();
-
-			reader.onload = function(e) {
-				var img = new Image();
-				img.src = e.target.result; // File contents here
-
-				destination.appendChild(img);
-			};
-			
-			reader.readAsDataURL(file);
-		}
-	}
+var id = 0;
+function addInput(){
+    id++;
+    var content = tinymce.get('domaine1').getContent();
+    var nameDomaine = $('#nameD').val();
+   if(nameDomaine !='' ){
+    return '<div id="'+id+'" class="input-group input-group-lg ">'+
+            '<label class="bg-label">Nom de domaine : ' +nameDomaine+' </label>'+
+            '<input  type="text" name="domaine[]" class="form-control hidden" placeholder="domaine" value="'+nameDomaine+'"/>&nbsp;'+
+            '<span title="Supprimer le domaine" class="glyphicon glyphicon-remove remove_domaine alert-danger" id="'+id+'" Onclick="removeElement('+this.id+')" style="cursor:pointer"></span>'+
+            '<div class="input-group input-group-lg">'+
+                '<label class="bg-label hidden">Description *:</label>'+
+                '<textarea  rows="4" id="domaine1'+id+'" name="descd[]" class="hidden">'+content+'</textarea>'+
+             '</div>'+
+            '</div>';
+   }
+}
+$('#add_domaine').click(function(e){
+    e.preventDefault();
+    var $INPUT = addInput();
+    $('div#domaine').append($INPUT);
+    tinymce.get('domaine1').setContent('');
+    $('#nameD').val('');
+    $('#closeOverlay').click();
 });
+function removeElement(id){
+    $('#domaine').find('div#'+id).remove();
+}
 </script>
 {/literal}
+ 

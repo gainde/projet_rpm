@@ -457,3 +457,6 @@ blockquote p {
 .margin-0{
     margin: 0px !important;
 }
+.input-group{
+    display: inherit;
+}

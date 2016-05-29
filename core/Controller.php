@@ -1,5 +1,6 @@
 <?php
 require_once (WEBAPPROOT.'models/ServiceDao.php');
+require_once (WEBAPPROOT.'models/DomaineDao.php');
 require_once (WEBAPPROOT.'libs/MenuHelper.php');
 require_once (WEBAPPROOT.'libs/ArrayUtils.php');
 require_once (WEBROOT.'system/Uri.php');
@@ -14,9 +15,12 @@ class Controller {
     protected $header = "header.tpl" ;
     protected $footer="footer.tpl";
     
-    function __construct() {
+    private $admin = "";
+    
+    function __construct($isAdmin = false) {
         $this->menuHelper = MenuHelper::getInstance();
         //$pages = $this->menuHelper->getNavBar();
+        $this->admin = ($isAdmin == true)? "admin/" : "";
     }
     
     function set($tab){
@@ -32,9 +36,13 @@ class Controller {
    
     function redirect($url, $statusCode = 303){
         $url = ROOT.$url;
-        header('Location: ' . $url, true, $statusCode);
-        die();
+       // header('Location: ' . $url, true, $statusCode);
+        echo "<script>
+            window.location = '".$url."';
+            </script>";
+        exit;
     }
+    
     function render($filename){
         $this->page_active = strtolower(get_class($this));
         $this->menuHelper = MenuHelper::getInstance();
@@ -48,13 +56,12 @@ class Controller {
             }
         }
         $uri = Uri::getInstance()->getFragment();
-        if(empty($uri == false)){
+        $home ="";
+        if(isset($uri[0])){
             $home = $uri[0];
             unset($uri[0]);
         }
-        else {
-            $home = 'Accueil';
-        }
+        
         $tpl->assign('addmarging', $addmarging);
         $tpl->assign('home', $home);
         $tpl->assign('uri', $uri);
@@ -69,10 +76,10 @@ class Controller {
         $tpl->assign('liste_js', $this->js);
         $nav_bar_tpl = WEBAPPROOT.'views/nav_bar.tpl';
         $tpl->assign('navbar_tpl', $nav_bar_tpl);
-      
+        $tpl->assign('SITEURL', SITEURL); 
         $tpl->display(WEBAPPROOT."views/".  $this->header);
         //$tpl->display(WEBAPPROOT.'views/nav_bar.tpl');
-        $tpl->display(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.tpl');
+        $tpl->display(WEBAPPROOT.'views/'.  $this->admin . strtolower (get_class($this)).'/'.$filename.'.tpl');
         $modal_tpl = WEBAPPROOT.'views/login-register/modal_login.tpl';
         //var_dump($this->getUser());
         $tpl->assign('modal_tpl', $modal_tpl);
@@ -83,7 +90,7 @@ class Controller {
     }
     
     function includeFile($filename){
-        require(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.php');
+        require(WEBAPPROOT.'views/' .  $this->admin . strtolower (get_class($this)).'/'.$filename.'.php');
     }
     
     function load_css(){
@@ -110,7 +117,10 @@ class Controller {
     
     function getServices() {
         $dao = new ServiceDao(new Service());
-        $services = $dao->getAllData();
+        $list_services = $dao->getAllData();
+        
+        //die(var_dump($list_services));
+        $services = array("services" => $list_services);
         return $services;
     }
     
@@ -197,5 +207,5 @@ class Controller {
          return $pages;
         
     }
-
+    
 }

@@ -17,7 +17,7 @@
                     </ul>
                 </div>
             {else}
-                <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">S'enregistrer</a></span>
+                <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">S'inscrire</a></span>
                 <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">Se connecter</a></span>
             {/if}
 
@@ -34,7 +34,7 @@
                 <span class="text-logo">Réseau des Professionels Mourides du Monde</span>
             </div>
             <div class="col-sm-4">
-                <div class="search pull-right">
+                <div class="search">
                     <form class="navbar-form nopadding" role="search">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search" name="q">

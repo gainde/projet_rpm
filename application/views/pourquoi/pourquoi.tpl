@@ -6,8 +6,10 @@
 
     <div class="col-lg-9 col-sm-9 col-md-9">
         <h1>Pourquoi devenir membre</h1>
-
-        <p>
+        {nocache}
+            <p>{include file='./contenu_pourquoi.tpl'}</p>
+        {/nocache}
+       {* <p>
            Le RPM s’est donné comme crédo de travailler à la réalisation des projets de Khadimou Rassoul. 
            Donc être membre vous donne le privilège de contribuer aux différents projets dans les secteurs tels que la santé, l’éducation, l’assainissement, l’environnement, la construction, l’énergie, les TIC, l’ingénierie etc.  
         </p>
@@ -18,7 +20,7 @@
         <p>
             Il est important de se rappeler que Serigne Touba Que Dieu l’agrée ne s’est pas rabaissé pour obtenir la place qu’il occupe. Nous aussi nous devons tenir notre rang. Comme vous le savez, Serigne Touba disait dans <b>Matlaboul fawsayni</b> 
             «Seigneur des mondes faites que la ville de Touba soit un lieu de dévouement au Créateur, de fidélité au culte musulman, de savoir (…)».Cheikh Ahmadou Bamba nous fait savoir qu’Allah a exaucé tous ses vœux qui y ont été exprimés. 
-            Cela veut dire apporter sa contribution n’est rien d’autre que de participer à des vœux déjà déjà accomplis. 
+            Cela veut dire apporter sa contribution n’est rien d’autre que de participer à des vœux déjà accomplis. 
         <p>
             Le RPM se servira de ce recueil <b>Matlaboul fawzayni</b> comme guide de projets et compte sur l’approbation du khalife général dans ses démarches.
         </p>
@@ -28,7 +30,7 @@
         </p>
         <p>
             <b>Que Serigne Touba, notre vénéré guide accepte notre acte d’allégeance, nous assiste en notre for intérieur dans nos actes de tous les jours et dans ce projet qui a pour but d’œuvrer pour Serigne Touba. 
-            </b></p>
+            </b></p>*}
 
     </div>
 </div>
