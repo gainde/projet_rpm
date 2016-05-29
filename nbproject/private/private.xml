@@ -10,16 +10,21 @@
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Contact.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Pourquoi.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Accueil.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/libs/MenuHelper.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/pourquoi/pourquoi.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/header.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/system/config.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/footer.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Projets.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/afficher_projet.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Authentification.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Admin.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/ressources/css/style.css</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/admin.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/admin/sidebar.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/sidebar.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/header.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/footer.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/statut/projets/projets.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/system/Application.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/PageErreur.php</file>
@@ -37,6 +42,7 @@
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/Actualites.php</file>
             <file>file:/C:/wamp/www/projet_rpm/core/DAO.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/apropos/apropos.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/breadcrumb.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/bean/Projet.php</file>
             <file>file:/C:/wamp/www/projet_rpm/core/Controller.php</file>
         </group>

@@ -16,7 +16,7 @@
                 </a>
                 <ul class="sub">
                     <li><a class="" href="#">Toutes les pages</a></li>  
-                    <li><a class="" href="#">Page Pourquoi</a></li>                          
+                    <li><a class="" href="{$ADMINROOT}pourquoi">Page Pourquoi</a></li>                          
                     <li><a class="" href="#">Page Projets</a></li>
                     <li><a class="" href="#">Page Réalisations</a></li>
                     <li><a class="" href="#">Page Actualités</a></li>

@@ -1,45 +1,40 @@
-<p> Liste des Projets</p>
+<p> Liste des Services</p>
 <div class="container">
-<a href="creer_projet" class="btn btn-large btn-info" title="Creer un projet"><i class="glyphicon glyphicon-plus"></i> &nbsp; Créer projet</a>
-<button id="delete" class="btn btn-large btn-info" title="Supprimer un projet"><i class="glyphicon glyphicon-remove"></i> &nbsp;Supprimer</button>
+<a href="creer_service" class="btn btn-large btn-info" title="Creer un service"><i class="glyphicon glyphicon-plus"></i> &nbsp; Créer </a>
+<button id="delete" class="btn btn-large btn-info" title="Supprimer un service"><i class="glyphicon glyphicon-remove"></i> &nbsp;Supprimer</button>
 </div>
 
 <div class="clearfix"></div><br />
 
 <div class="container">
-<form id="projet-list" action="" method="post" enctype="multipart/form-data">
+<form id="service-list" action="" method="post" enctype="multipart/form-data">
 <table width="100%" data-toggle="table" border="1" class="table table-bordered table-responsive">
  	<thead>
     	<th ><input type="checkbox" id="checkall" alt="Sélectionner Tout"/></th>
         <th >Nom</th>
-        <th >Date de création</th>
-        <th >Date de fin</th>
-        <th >Statut</th>
+        <th >Domaines</th>
         <th colspan="2" align="center">Actions</th>
     </thead>
  
-{foreach from=$projets item=projet}
+{foreach from=$services['services'] item=service}
      <tr>
-	<td><input class="checkall" name="check[]" type="checkbox" id="checkall" value="{$projet->getId()}"/></td>
-	<td>{$projet->getTitre()}</td>
-        <td>{$projet->getDate_creation()|date_format:"%Y-%m-%d"}</td>
-        <td>{$projet->getDate_fin()}</td>
-        <td>{if $projet->getStatut() eq '1'}
-                <span class="label label-success">Actif</span>
-            {elseif $projet->getStatut() eq '0'}
-                <span class="label label-warning">Inactif</span>
-            {elseif $projet->getStatut() eq '-1'}
-            <span class="label label-danger">Supprimé</span>
-            {/if}</td>
-	<td align="center"><a class="edit ml10" href="editer_projet/{$projet->getId()}" title="Éditer">
+	<td><input class="checkall" name="check[]" type="checkbox" id="checkall" value="{$service->getId()}"/></td>
+	<td>{$service->getTitre()}</td>
+        <td><table>{foreach from=$service->getDomaine()  item=domaine}
+                    <tr><td>{$domaine->getTitre()}</td></tr>
+                 
+            {/foreach}
+        </table>
+        </td>
+	<td align="center"><a class="edit ml10" href="editer_service/{$service->getId()}" title="Éditer">
                <i class="glyphicon glyphicon-edit"></i>
             </a>
             &nbsp;
-            <a class="edit ml10" href="afficher_projet/{$projet->getId()}" title="Afficher">
+            <a class="edit ml10" href="afficher_service/{$service->getId()}" title="Afficher">
                <i class="glyphicon glyphicon-eye-open"></i>
             </a>
             &nbsp;
-            <a class="remove ml10" href="supprimer_projet/{$projet->getId()}" title="Suprimer">
+            <a class="remove ml10" href="supprimer_service/{$service->getId()}" title="Suprimer">
                <i class="glyphicon glyphicon-remove"></i>
             </a>
         </td>
@@ -76,7 +71,7 @@
                 }
             });
             if(stop){
-                $('#projet-list').submit();
+                $('#service-list').submit();
             }else{
                 alert("Veuillez selectionner un item.");
             }

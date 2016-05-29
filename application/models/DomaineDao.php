@@ -15,7 +15,7 @@ class DomaineDao extends DAO{
 
     public function __construct(\Domaine $domaine) {
         parent::__construct($domaine->getVars());
-        $this->pk = 'id_service';
+        $this->pk = 'id';
         $this->table = 'domaine';
     }
 
@@ -27,5 +27,8 @@ class DomaineDao extends DAO{
     }
     public function getAllData() {
         return $this->selectAll($this->table);
+    }
+    public function getAllDataActive($where='') {
+        return $this->selectAllActive($this->table,'*',$where);
     }
 }

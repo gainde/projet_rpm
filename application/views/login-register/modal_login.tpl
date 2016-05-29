@@ -3,10 +3,10 @@
         <div class="modal-content">
             <div class="modal-header login_modal_header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h2 class="modal-title" id="myModalLabel">Login to Your Account</h2>
+                <h2 class="modal-title" id="myModalLabel">Se connecter</h2>
             </div>
             <div class="modal-body login-modal">
-                <p>Veuillez vous authentifier ou vous enregistrer. </p>
+                <p>Veuillez vous authentifier ou vous inscrire. </p>
                 <br/>
                 <div id="login_response"><!-- spanner --></div> </center>
                 <div class="clearfix"></div>
@@ -30,14 +30,14 @@
                                 <img align="absmiddle" src="images/spinner.gif">&nbsp;Processing...
                             </div>
 
-                            <a href="#" class="login-link text-center">Lost your password?</a>
+                            <a href="#" class="login-link text-center">Mot de passe perdu?</a>
                         </div>
                     </form>
 
                     <div class='modal-body-right'>
                         <div class="form-group modal-register-btn">
                             <div class="spaceBottom30">Nouveau utilisateur?</div>
-                            <div><a href="{$ROOT}authentification/register/" ><button class="btn btn-default"> Enregistrer-vous</button></a>
+                            <div><a href="{$ROOT}authentification/register/" ><button class="btn btn-default">S'inscrire</button></a>
                             </div>
                         </div>	
                         <div id='center-line'> OR </div>

@@ -1,30 +1,23 @@
 <?php
 
-/*
+/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-/**
- * Description of ServiceDao
- *
- * @author Moussa Thimbo
- */
 require_once WEBROOT.'core/DAO.php';
-require_once (WEBAPPROOT.'bean/Service.php');
-class ServiceDao extends DAO {
+require_once (WEBAPPROOT.'bean/Pourquoi.php');
+class PourquoiDao extends DAO{
 
-    public function __construct(\Service $service = null) {
-        parent::__construct($service?$service->getVars():array());
+    public function __construct(\Pourquoi $pourquoi) {
+        parent::__construct($pourquoi->getVars());
         $this->pk = 'id';
-        $this->table = 'service';
+        $this->table = 'pourquoi';
     }
 
     public function test() {
         var_dump($this->variables);
     }
-
     public function getDataById() {
         return $this->read();
     }

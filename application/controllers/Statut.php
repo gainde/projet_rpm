@@ -1,5 +1,6 @@
 <?php
 require_once WEBAPPROOT.'bean/Projet.php';
+require_once (WEBAPPROOT.'models/ProjetDao.php');
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,9 +21,17 @@ class Statut extends Controller{
         $this->render('projets-realisations');
     }
     function projets() {
-        $this->set($this->getListProjets());
+        $this->set($this->getListProjetsActives());
         $this->setSubMenu("projets");
         $this->render('projets/projets');
+    }
+    function projet($params=null) {
+        $projetDao = new ProjetDao(new Projet());
+        $list = $projetDao->read($params);
+        $this->set(array("projet" => $list));
+             
+        //$this->setSubMenu("projets");
+        $this->render('projet');
     }
     function realisations() {
         echo 'page realisation';
@@ -30,53 +39,14 @@ class Statut extends Controller{
     
     
     function getListProjets(){
-        $list = array(
-            new Projet(array(
-            'id' => "1",
-            'titre' => "Premier Projet Titre",
-            'description' => "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                  Aliquam in felis sit amet augue.</p>",
-            'url' => "",
-            'date_creation' => "12/12/2015",
-            'image' => "//placehold.it/100")),
-            
-            new Projet(array(
-            'id' => "2",
-            'titre' => "Deuxieme Projet Titre",
-            'description' => "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                  Aliquam in felis sit amet augue.</p>",
-            'url' => "",
-            'date_creation' => "12/12/2015",
-            'image' => "//placehold.it/100")),
-            
-            new Projet(array(
-            'id' => "3",
-            'titre' => "Troisième Projet Titre",
-            'description' => "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                  Aliquam in felis sit amet augue.</p>",
-            'url' => "",
-            'date_creation' => "12/12/2015",
-            'image' => "//placehold.it/100")),
-            
-            
-            new Projet(array(
-            'id' => "4",
-            'titre' => "Quatrième Projet Titre",
-            'description' => "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                  Aliquam in felis sit amet augue.</p>",
-            'url' => "",
-            'date_creation' => "12/12/2015",
-            'image' => "//placehold.it/100")),
-        );
-        
+        $projetDao = new ProjetDao(new Projet());
+        $list = $projetDao->getAllData();
+        return array('projets'=>$list);
+    }
+     function getListProjetsActives(){
+        $projetDao = new ProjetDao(new Projet());
+        $where = array("statut"=>'1');
+        $list = $projetDao->getAllDataActive($where);
         return array('projets'=>$list);
     }
 }

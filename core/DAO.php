@@ -118,7 +118,7 @@ class DAO implements CrudInterface {
             $fields = array_keys($bindings);
             $fieldsvals = array(implode(",", $fields), ":" . implode(",:", $fields));
             $sql = "INSERT INTO " . $this->table . " (" . $fieldsvals[0] . ") VALUES (" . $fieldsvals[1] . ")";
-            var_dump($fieldsvals);
+            //var_dump($fieldsvals);
             return $this->db->insert($sql, $bindings);
         }
         return false;
@@ -126,7 +126,9 @@ class DAO implements CrudInterface {
      public function selectAll($table, $rows = '*', $where = null, $order = null) {
           $sql = "SELECT " . $rows . " FROM " . $table ;
         if ($where !== null) {
-            $sql .= " WHERE " . $where;
+            
+            $sql .= " WHERE " . $where ;
+           
         }
         if ($order != null) {
             $sql .= ' ORDER BY ' . $order;
@@ -134,7 +136,28 @@ class DAO implements CrudInterface {
         $result = $this->db->selectAll($sql, null, $table);
         return $result;
     }
-
+    public function selectAllActive($table, $rows = '*', $where = null, $order = null) {
+          $sql = "SELECT " . $rows . " FROM " . $table ;
+        if ($where !== null) {
+            $fieldsvals = '';
+            $i = 0;
+            foreach ($where as $keys => $column) {
+                $i++;
+            if ($column !== $this->pk) {
+                $fieldsvals .= $keys . " = '" . $column."'";
+                if($i < count($where)){
+                   $fieldsvals .=  " , "; 
+                }
+              }
+            }
+            $sql .= " WHERE " . $fieldsvals ;
+        }
+        if ($order != null) {
+            $sql .= ' ORDER BY ' . $order;
+        }
+        $result = $this->db->selectAll($sql, $where, $table);
+        return $result;
+    }
     public function read($id = "") {
         if (empty($id)) {
             $id = $this->variables[$this->pk];
@@ -143,6 +166,7 @@ class DAO implements CrudInterface {
         
         $params = array(":" . $this->pk => $id);
         $result = $this->db->select($sql, $params, $this->table);
+
         return $result;
     }
 
@@ -169,7 +193,7 @@ class DAO implements CrudInterface {
 
         $id = (!empty($id)) ? $id : $this->variables[$this->pk];
         if (!empty($id)) {
-            $params = array(":" . $this->pk, $id);
+            $params = array(":" . $this->pk => $id);
             //$stmt = $this->db->prepare($sql);
             //$stmt->bindparam(":".$this->pk, $id);
             //$stmt->execute();
@@ -179,13 +203,8 @@ class DAO implements CrudInterface {
         return false;
     }
 
-    public function find($id = "") {
-        $this->db->load();
-        $id = (empty($this->variables[$this->pk])) ? $id : $this->variables[$this->pk];
-        if (!empty($id)) {
-            $sql = "SELECT * FROM " . $this->table . " WHERE " . $this->pk . "= :" . $this->pk . " LIMIT 1";
-            $this->variables = $this->db->row($sql, array($this->pk => $id));
-        }
+    public function find($id = "",$class='') {
+        $this->db->load($id,$class);
     }
     
      public function findAll($id = "") {
@@ -257,5 +276,7 @@ class DAO implements CrudInterface {
         return $dao->selectAll($table, $rows, $where, $order);
     }
     
-
+    public function getLastID(){
+        return $this->db->getLastInsertId();
+    }
 }

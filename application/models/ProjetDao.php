@@ -31,5 +31,7 @@ class ProjetDao extends DAO {
     public function getAllData() {
         return $this->selectAll($this->table);
     }
-
+    public function getAllDataActive($where='') {
+        return $this->selectAllActive($this->table,'*',$where);
+    }
 }

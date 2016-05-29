@@ -31,9 +31,14 @@ class Service extends Bean {
         }
         if(isset($this->id)){
             $this->domaine = Dao::loadAll('domaine','*', "id_service = $this->id");
+            $this->linkObject = array('domaine');
         }
     }
-
+    
+    public function getId() {
+        return $this->id;
+    }
+    
     public function getTitre() {
         return $this->titre;
     }
@@ -46,7 +51,9 @@ class Service extends Bean {
         return $this->domaine;
     }
 
-
+    function setId($id) {
+        $this->id = $id;
+    }
     public function setTitre($titre) {
         $this->titre = $titre;
     }
@@ -64,7 +71,7 @@ class Service extends Bean {
     }
 
     public function getVars() {
-        return $this->getLinks(get_object_vars($this));
+        return $this->avoidLinks($this->getLinks(get_object_vars($this)), array("domaine"));
     }
 
     public function __toString() {

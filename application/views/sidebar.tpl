@@ -4,7 +4,8 @@
     <div id='cssmenu'>        
                 <ul>    
                 <!--/liste services-->
-                {foreach from=$services item=service}
+                {nocache}
+                {foreach from=$services['services'] item=service}
                         {if $service->getDomaine() != null}
                             <li class='has-sub'><a href='#'><span>{$service->getTitre()}</span></a>
 			  <ul>
@@ -17,6 +18,7 @@
                         {/if}
 		   </li>
                 {/foreach}
+                {/nocache}
                 </ul>
                 <!--/fin services-->
 	</div>

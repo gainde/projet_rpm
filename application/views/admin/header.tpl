@@ -13,9 +13,6 @@
         {foreach from=$liste_css item=css}
              <link href="{$ROOT}ressources/css/{$css}" rel="stylesheet" />
         {/foreach}
-        {foreach from=$liste_js item=js}
-    <script type="text/javascript" src="{$ROOT}ressources/js/{$js}"></script>
-{/foreach}
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
         <!--[if lt IE 9]>
           <script src="js/html5shiv.js"></script>

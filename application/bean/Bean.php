@@ -24,4 +24,11 @@ abstract class Bean {
         unset($data['linkObject']);
         return $data;
     }
+    
+    protected function avoidLinks($data, $array){
+        foreach ((array) $array as $value){
+            unset($data[$value]);
+        }
+        return $data;
+    }
 }

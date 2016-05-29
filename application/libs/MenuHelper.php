@@ -85,7 +85,6 @@ class MenuHelper {
             
             $js[] = "admin/jquery.knob.js";
             $js[] = "admin/owl.carousel.js";
-            $js[] = "admin/jquery-1.12.0.min.js";
             $js[] = "admin/dataTables.bootstrap.min.js";
             $js[] = "admin/jquery.dataTables.min.js";
         }
