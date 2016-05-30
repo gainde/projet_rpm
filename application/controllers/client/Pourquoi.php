@@ -11,9 +11,9 @@
  *
  * @author Moussa
  */
-class Pourquoi extends Controller{
+class Pourquoi extends Client_Controller{
     function __construct() {
-        
+        parent::__construct();
     }
     
     function index() {

@@ -6,9 +6,10 @@ require_once (WEBAPPROOT.'models/ServiceDao.php');
  * @Auteur : Moussa Thimbo
  */
 
-class Accueil extends Controller{
+class Accueil extends Client_Controller{
     
     function __construct() {
+        parent::__construct();
         $data = array();
     }
     

@@ -11,10 +11,10 @@
  *
  * @author Moussa Thimbo
  */
-class Authentification extends Controller {
+class Authentification extends Client_Controller {
 
     function __construct() {
-        
+        parent::__construct();
     }
 
     function login() {

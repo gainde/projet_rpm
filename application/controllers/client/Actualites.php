@@ -11,9 +11,9 @@
  *
  * @author Moussa
  */
-class Actualites extends Controller{
+class Actualites extends Client_Controller{
     function __construct() {
-        
+        parent::__construct();
     }
     
     function index() {

@@ -11,9 +11,9 @@
  *
  * @author Moussa
  */
-class Apropos extends Controller{
+class Apropos extends Client_Controller{
     function __construct() {
-        
+        parent::__construct();
     }
     
     function index() {

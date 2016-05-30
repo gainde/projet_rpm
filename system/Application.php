@@ -7,6 +7,7 @@ class Application {
     private $params = array();
     private $isAdmin = false;
     private $controllerPath;
+    private $section = "client";
 
     /**
      * analyser et récupérer format (controlleur/methode/[params/]
@@ -14,12 +15,12 @@ class Application {
      */
     public function __construct() {
         $this->controllerPath = WEBAPPROOT . 'controllers/';
-        $this->splitUrl();
         
+        $this->splitUrl();
         if (file_exists($this->controllerPath . $this->controller . '.php')) {
             require $this->controllerPath . $this->controller . '.php';
             
-            $this->controller = new $this->controller($this->isAdmin);
+            $this->controller = new $this->controller();
             // verifier si méthode existe
             if (method_exists($this->controller, $this->action)) {
                 if (!empty($this->params)) {
@@ -58,21 +59,37 @@ class Application {
             // Récupérer les parametres
             $this->params = array_values($url);
         }else{
+            $this->includesClient();
             $this->controller = "Accueil";
             $this->action = "index";
+            $this->controllerPath .=$this->section  . '/';        
         }
     }
     
     private function checkAdmin(&$url, $nb) {
-        if($url[0] === "admin" && $nb>1){
-            $this->isAdmin = true;
-            array_splice($url, 0,1);
-            $this->controllerPath .= "admin/";
+         
+        if($url[0] === "admin" /*&& $nb>1*/){
+            $this->section = $url[0];
+            
+            $this->includesAdmin();
+            if($nb>1){
+                array_splice($url, 0,1);
+            }
+        }else{
+            $this->includesClient();
         }
+        $this->controllerPath .=$this->section  . '/';
+        //die(var_dump($url));
     }
     
-    private function includeController(){
-        
+    
+    
+    private function includesClient(){
+        require ('core/Client_Controller.php'); 
+    }
+    
+    private function includesAdmin(){
+        require ('core/Admin_Controller.php'); 
     }
 
 }

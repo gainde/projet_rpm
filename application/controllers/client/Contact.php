@@ -11,9 +11,9 @@
  *
  * @author Moussa
  */
-class Contact extends Controller{
+class Contact extends Client_Controller{
     function __construct() {
-        
+        parent::__construct();
     }
     
     function index() {

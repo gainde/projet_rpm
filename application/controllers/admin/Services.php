@@ -12,14 +12,14 @@ require_once (WEBAPPROOT.'models/DomaineDao.php');
  *
  * @author oussou
  */
-class Services extends Controller{
+class Services extends Admin_Controller{
     
     function __construct($isAdmin = false) {
-          parent::__construct($isAdmin);
-          $this->load_css();
+          parent::__construct();
+          /*$this->load_css();
           $this->load_js();
           $this->header = "admin/header.tpl";
-          $this->footer ="admin/footer.tpl";
+          $this->footer ="admin/footer.tpl";*/
     }
     function index() {
         if(isset($_POST['check'])){
@@ -171,13 +171,6 @@ class Services extends Controller{
                                         'titre' => "$name",
                                         'description' => "$description"
                                         );
-    }
-    function load_css(){  
-        $this->css = $this->menuHelper->getCss('admin');
-    }
-    
-    function load_js(){ 
-        $this->js = $this->menuHelper->getJs('admin');
     }
     function resizeString($chaine,$size){
         if(count_chars($chaine) > $size){

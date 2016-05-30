@@ -12,7 +12,7 @@ require_once (WEBAPPROOT.'models/ProjetDao.php');
  *
  * @author Moussa
  */
-class Statut extends Controller{
+class Statut extends Client_Controller{
     function __construct() {
         parent::__construct();
     }

@@ -4,9 +4,10 @@
  * @Auteur : Moussa Thimbo
  */
 
-class Erreur extends Controller{
+class Erreur extends Client_Controller{
     
     function __construct() {
+        parent::__construct();
         $data = array();
     }
     
