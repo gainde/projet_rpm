@@ -5,6 +5,7 @@ require_once (WEBAPPROOT.'libs/MenuHelper.php');
 require_once (WEBAPPROOT.'libs/ArrayUtils.php');
 require_once (WEBROOT.'system/Uri.php');
 
+
 class Controller {
     protected $vars = array();
     protected $js = array();
@@ -16,11 +17,14 @@ class Controller {
     protected $footer="footer.tpl";
     
     private $admin = "";
-    
-    function __construct($isAdmin = false) {
+    protected $section;
+    protected $tpl;
+            
+    function __construct($section) {
+        $this->section = $section ;
         $this->menuHelper = MenuHelper::getInstance();
-        //$pages = $this->menuHelper->getNavBar();
-        $this->admin = ($isAdmin == true)? "admin/" : "";
+        require_once(WEBROOT.'tpl/SmartyBC.class.php');
+        $this->tpl = new SmartyBC();
     }
     
     function set($tab){
@@ -47,12 +51,12 @@ class Controller {
         $this->page_active = strtolower(get_class($this));
         $this->menuHelper = MenuHelper::getInstance();
         $pages = $this->menuHelper->getNavBar($this->page_active, $this->sub_menu_active);
-        require_once(WEBROOT.'tpl/SmartyBC.class.php');
+        
         $addmarging = (strcmp(get_class($this),"Accueil")=== 0)? "margin-0" : "margin_bottom40";
-        $tpl = new SmartyBC();
+        
         if(!empty($this->vars)){
             foreach ($this->vars as $key => $value) {
-                $tpl->assign($key, $value);
+                $this->tpl->assign($key, $value);
             }
         }
         $uri = Uri::getInstance()->getFragment();
@@ -62,45 +66,53 @@ class Controller {
             unset($uri[0]);
         }
         
-        $tpl->assign('addmarging', $addmarging);
-        $tpl->assign('home', $home);
-        $tpl->assign('uri', $uri);
-        $tpl->assign('WEBROOT', WEBROOT);
-        $tpl->assign('APPROOT', APPROOT);
-        $tpl->assign('ROOT', ROOT); 
-        $tpl->assign('ADMINROOT', ADMINROOT); 
-        $tpl->assign('User', $this->getUser());
-        $tpl->assign('services', $this->getServices());
-        $tpl->assign('pages', $pages);
-        $tpl->assign('liste_css', $this->css);
-        $tpl->assign('liste_js', $this->js);
-        $nav_bar_tpl = WEBAPPROOT.'views/nav_bar.tpl';
-        $tpl->assign('navbar_tpl', $nav_bar_tpl);
-        $tpl->assign('SITEURL', SITEURL); 
-        $tpl->display(WEBAPPROOT."views/".  $this->header);
+        $this->tpl->assign('addmarging', $addmarging);
+        $this->tpl->assign('home', $home);
+        $this->tpl->assign('uri', $uri);
+        $this->tpl->assign('WEBROOT', WEBROOT);
+        $this->tpl->assign('APPROOT', APPROOT);
+        $this->tpl->assign('ROOT', ROOT); 
+        $this->tpl->assign('ADMINROOT', ADMINROOT); 
+        $this->tpl->assign('User', $this->getUser());
+        $this->tpl->assign('services', $this->getServices());
+        $this->tpl->assign('pages', $pages);
+        $this->tpl->assign('liste_css', $this->css);
+        $this->tpl->assign('liste_js', $this->js);
+        $nav_bar_tpl = WEBAPPROOT.'views/'.  $this->section .'/nav_bar.tpl';
+        $this->tpl->assign('navbar_tpl', $nav_bar_tpl);
+        $this->tpl->assign('SITEURL', SITEURL); 
+        $this->tpl->display(WEBAPPROOT."views/".  $this->section . '/'. $this->header);
         //$tpl->display(WEBAPPROOT.'views/nav_bar.tpl');
-        $tpl->display(WEBAPPROOT.'views/'.  $this->admin . strtolower (get_class($this)).'/'.$filename.'.tpl');
-        $modal_tpl = WEBAPPROOT.'views/login-register/modal_login.tpl';
+        $this->displayTpl($filename);
+        $modal_tpl = WEBAPPROOT.'views/'.  $this->section .'/login-register/modal_login.tpl';
         //var_dump($this->getUser());
-        $tpl->assign('modal_tpl', $modal_tpl);
-        $tpl->display(WEBAPPROOT."views/".$this->footer);
+        $this->tpl->assign('modal_tpl', $modal_tpl);
+        $this->tpl->display(WEBAPPROOT."views/".  $this->section . '/'. $this->footer);
 
 
         //require(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.html');
     }
     
+    function displayTpl($filename){
+        $class = strtolower (get_class($this));
+        if($this->section == 'admin' && $class == 'admin'){
+            $class = "";
+        }
+                $this->tpl->display(WEBAPPROOT.'views/'.  $this->section .'/'. $class.'/'.$filename.'.tpl');
+    }
+    
     function includeFile($filename){
-        require(WEBAPPROOT.'views/' .  $this->admin . strtolower (get_class($this)).'/'.$filename.'.php');
+        require(WEBAPPROOT.'views/' .  $this->section . strtolower (get_class($this)).'/'.$filename.'.php');
     }
     
     function load_css(){
         $this->css[] = 'http://fonts.googleapis.com/css?family=Bree+Serif';
         $this->css[] = 'http://fonts.googleapis.com/css?family=Philosopher';
         $this->css[] = 'http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300';
-        $this->css[] = $WEBROOT."ressources/css/bootstrap.min.css";
-        $this->css[] = $WEBROOT."ressources/css/font-awesome.min.css";
-        $this->css[] = $WEBROOT."ressources/css/style.css";
-        $this->css[] = $WEBROOT."ressources/css/lightbox.css";
+        $this->css[] = "ressources/css/bootstrap.min.css";
+        $this->css[] = "ressources/css/font-awesome.min.css";
+        $this->css[] = "ressources/css/style.css";
+        $this->css[] = "ressources/css/lightbox.css";
         
     }
     

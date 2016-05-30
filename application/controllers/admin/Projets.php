@@ -6,14 +6,14 @@ require_once (WEBAPPROOT.'models/ProjetDao.php');
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class Projets extends Controller{
+class Projets extends Admin_Controller{
     
     function __construct($isAdmin = false) {
-          parent::__construct($isAdmin);
-          $this->load_css();
+          parent::__construct();
+          /*$this->load_css();
           $this->load_js();
           $this->header = "admin/header.tpl";
-          $this->footer ="admin/footer.tpl";
+          $this->footer ="admin/footer.tpl";*/
     }
     
     /*function index() {
@@ -103,13 +103,6 @@ class Projets extends Controller{
              $this->render('afficher_projet');
     }
     
-    function load_css(){  
-        $this->css = $this->menuHelper->getCss('admin');
-    }
-    
-    function load_js(){ 
-        $this->js = $this->menuHelper->getJs('admin');
-    }
     function getListProjets(){
        $projetDao = new ProjetDao(new Projet());
        $list = $projetDao->getAllData();

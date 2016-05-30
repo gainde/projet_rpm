@@ -7,14 +7,11 @@ require_once (WEBAPPROOT.'models/PourquoiDao.php');
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-class Admin extends Controller{
+class Admin extends Admin_Controller{
     
     function __construct() {
           parent::__construct();
-          $this->load_css();
-          $this->load_js();
-          $this->header = "admin/header.tpl";
-          $this->footer ="admin/footer.tpl";
+          //$this->section = "";
     }
     
     function index() {
@@ -150,13 +147,6 @@ class Admin extends Controller{
             $this->set(array("pourquoi" => $list));
             $this->render('pourquoi/pourquoi');
         }
-    }
-    function load_css(){  
-        $this->css = $this->menuHelper->getCss('admin');
-    }
-    
-    function load_js(){ 
-        $this->js = $this->menuHelper->getJs('admin');
     }
     function getListProjets(){
        $projetDao = new ProjetDao(new Projet());

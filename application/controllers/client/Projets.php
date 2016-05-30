@@ -11,9 +11,9 @@
  *
  * @author Moussa Thimbo
  */
-class Projets extends Controller{
+class Projets extends Client_Controller{
     function __construct() {
-        
+        parent::__construct();
     }
     
     function index() {
