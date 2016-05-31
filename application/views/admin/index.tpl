@@ -2,7 +2,7 @@
 
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                <a href="{$ADMINROOT}membres">
+                <a href="{$ADMINROOT}membre">
                 <div class="info-box blue-bg">
                     <i class="fa fa-users"></i>
                     <div class="title">Gestion Membre</div>					
