@@ -32,8 +32,8 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="{$ADMINROOT}membres">Liste des membres</a></li>
-                    <li><a class="" href="{$ADMINROOT}membres/add_membre">Ajout</a></li>
+                    <li><a class="" href="{$ADMINROOT}membre">Liste des membres</a></li>
+                    <li><a class="" href="{$ADMINROOT}membre/add_membre">Ajout</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
