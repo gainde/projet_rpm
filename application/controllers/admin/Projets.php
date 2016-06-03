@@ -10,10 +10,6 @@ class Projets extends Admin_Controller{
     
     function __construct($isAdmin = false) {
           parent::__construct();
-          /*$this->load_css();
-          $this->load_js();
-          $this->header = "admin/header.tpl";
-          $this->footer ="admin/footer.tpl";*/
     }
     
     /*function index() {
