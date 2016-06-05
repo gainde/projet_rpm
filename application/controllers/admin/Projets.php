@@ -1,5 +1,6 @@
 <?php
 require_once (WEBAPPROOT.'models/ProjetDao.php');
+require_once (WEBROOT.'core/Validateur.php');
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -57,6 +58,7 @@ class Projets extends Admin_Controller{
             $erreur = false;
             //POST
             if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                /*
                 $array_projet  = $this->postProject($erreur_array,$erreur);
               
                 if(!$erreur ){
@@ -66,7 +68,11 @@ class Projets extends Admin_Controller{
                 }else{
                     $this->set(array('erreur_array'=>$erreur_array,'erreur'=>$erreur));
                     $this->render('editer_projet');
-                }
+                }*/
+                $regle = ReglesValidation::getRegle('projet');
+                $validateur = new Validateur($_POST, $regle);
+                $validateur->valider();
+                //die(var_dump($regle));
             }else{
                  $projetDao = new ProjetDao(new Projet());
                  $list = $projetDao->read($params);
