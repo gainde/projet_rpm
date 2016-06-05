@@ -176,7 +176,7 @@
                                                     <option value="ouganda">Ouganda</option>
                                                     <option value="rwanda">Rwanda</option>
                                                     <option value="saoTomeEtPrincipe">Sao Tomé-et-Principe</option>
-                                                    <option value="senegal">Séngal</option>
+                                                    <option value="senegal">Sénégal</option>
                                                     <option value="seychelles">Seychelles</option>
                                                     <option value="sierra">Sierra</option>
                                                     <option value="somalie">Somalie</option>
