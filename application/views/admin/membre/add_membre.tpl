@@ -21,11 +21,11 @@
                         <i class="fa fa-coffee"></i>
                         ICi  <strong>.alert Important</strong> à afficher (erreur, succes...)
                     </div>
-                    <h3>Personal info</h3>
+                    <h3>Informations Personnelles</h3>
 
                     <form class="form-horizontal" role="form">
                         <section class="panel">
-                            <header class="panel-heading"> Personal info </header>
+                            <header class="panel-heading"> Informations Personnelles </header>
                             <div class="panel-body">
                                 <fieldset>
 
@@ -42,7 +42,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-3 control-label">Company:</label>
+                                        <label class="col-lg-3 control-label">Compagnie:</label>
                                         <div class="col-lg-8">
                                             <input class="form-control" value="" type="text">
                                         </div>
@@ -55,74 +55,55 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Username:</label>
+                                        <label class="col-md-3 control-label">Identifant:</label>
                                         <div class="col-md-8">
                                             <input class="form-control"  type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Password:</label>
+                                        <label class="col-md-3 control-label">Mot de passe:</label>
                                         <div class="col-md-8">
                                             <input class="form-control"  type="password">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Confirm password:</label>
+                                        <label class="col-md-3 control-label">Confirmation mot de passe:</label>
                                         <div class="col-md-8">
                                             <input class="form-control"  type="password">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label"></label>
-                                        <div class="col-md-8">
-                                            <input class="btn btn-primary" value="Enregistrer" type="button">
-                                            <span></span>
-                                            <input class="btn btn-default" value="Annuler" type="reset">
-                                        </div>
-                                    </div>
+                                   
                                 </fieldset>
                             </div>
                         </section>
 
                         <div class="clearfix"></div>
                         <section class="panel">
-                            <header class="panel-heading"> Address </header>
+                            <header class="panel-heading"> Adresse </header>
                             <div class="panel-body">
                                 <fieldset>
                                     <!-- Address form -->
-
-                                    <h2>Address</h2>
-
-                                    <!-- full-name input-->
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Full Name</label>
-                                        <div class="col-md-8">
-                                            <input id="full-name"  name="full-name" type="text" placeholder="full name"
-                                                   class="form-control">
-                                            <p class="help-block"></p>
-                                        </div>
-                                    </div>
                                     <!-- address-line1 input-->
                                     <div class="control-group">
-                                        <label class="col-md-3 control-label">Address Line 1</label>
+                                        <label class="col-md-3 control-label">Address </label>
                                         <div class="col-md-8">
                                             <input id="address-line1" name="address-line1" type="text" placeholder="address line 1"
                                                    class="form-control">
-                                            <p class="help-block">Street address, P.O. box, company name, c/o</p>
+                                            <p class="help-block">Rue, nom de compagnie</p>
                                         </div>
                                     </div>
                                     <!-- address-line2 input-->
                                     <div class="control-group">
-                                        <label class="col-md-3 control-label">Address Line 2</label>
+                                        <label class="col-md-3 control-label">Adresse Suite</label>
                                         <div class="col-md-8">
                                             <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
                                                    class="form-control">
-                                            <p class="help-block">Apartment, suite , unit, building, floor, etc.</p>
+                                            <p class="help-block">Appartement, suite , unité, etc.</p>
                                         </div>
                                     </div>
                                     <!-- city input-->
                                     <div class="control-group">
-                                        <label class="col-md-3 control-label">City / Town</label>
+                                        <label class="col-md-3 control-label">Ville</label>
                                         <div class="col-md-8">
                                             <input id="city" name="city" type="text" placeholder="city" class="form-control">
                                             <p class="help-block"></p>
@@ -130,9 +111,9 @@
                                     </div>
                                     <!-- region input-->
                                     <div class="control-group">
-                                        <label class="col-md-3 control-label">State / Province / Region</label>
+                                        <label class="col-md-3 control-label">Province/Region</label>
                                         <div class="col-md-8">
-                                            <input id="region" name="region" type="text" placeholder="state / province / region"
+                                            <input id="region" name="region" type="text" placeholder="province / region"
                                                    class="form-control">
                                             <p class="help-block"></p>
                                         </div>
@@ -148,10 +129,10 @@
                                     </div>
                                     <!-- country select -->
                                     <div class="control-group">
-                                        <label class="col-md-3 control-label">Country</label>
+                                        <label class="col-md-3 control-label">Pays</label>
                                         <div class="col-md-8">
                                             <select id="country" name="country" class="form-control">
-                                                <option value="" selected="selected">(please select a country)</option>
+                                                <option value="" selected="selected">(Sélectionner un pays)</option>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AL">Albania</option>
                                                 <option value="DZ">Algeria</option>
@@ -397,6 +378,18 @@
                                 </fieldset>
                             </div>
                         </section>
+                        
+                        <div class="clearfix"></div>
+                        <div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"></label>
+                                <div class="col-md-8">
+                                    <input class="btn btn-primary" value="Enregistrer" type="button">
+                                    <span></span>
+                                    <input class="btn btn-default" value="Annuler" type="reset">
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
