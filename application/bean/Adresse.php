@@ -19,6 +19,7 @@ class Adresse extends Bean{
     private $code_postal;
     private $province;
     private $pays;
+    private $id_user;
     
     public function __construct(array $params = array()) {
         if(!empty($params)){
@@ -61,7 +62,9 @@ class Adresse extends Bean{
     public function getPays() {
         return $this->pays;
     }
-
+    public function getIdUser() {
+        return $this->id_user;
+    }
     public function setId($id) {
         $this->id = $id;
     }
@@ -88,6 +91,9 @@ class Adresse extends Bean{
 
     public function setPays($pays) {
         $this->pays = $pays;
+    }
+    public function setIdUser($id_user) {
+        $this->id_user = $id_user;
     }
 
 

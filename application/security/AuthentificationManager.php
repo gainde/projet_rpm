@@ -29,8 +29,11 @@ class AuthentificationManager {
         //pour éviter sql injection
         //$userdao = new UserDao(new User());
         //$userdao->test();
-        $dao = new DAO(array('username' =>$username, 'password' =>$password), $this->table );
-        $user = $dao->select();
+       // $dao = new DAO(array('username' =>$username, 'password' =>$password), $this->table );
+        //$user = $dao->select();
+        $userDao = new UserDao(new User());
+        //$where = array('email'=>"$email");
+        $user = $userDao->getRow(array('username' =>$username, 'password' =>$password));
         if (isset($user)) {
             require_once WEBAPPROOT.'security/UserSession.php';
             $session = new UserSession();

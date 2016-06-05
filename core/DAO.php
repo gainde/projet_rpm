@@ -146,7 +146,7 @@ class DAO implements CrudInterface {
             if ($column !== $this->pk) {
                 $fieldsvals .= $keys . " = '" . $column."'";
                 if($i < count($where)){
-                   $fieldsvals .=  " , "; 
+                   $fieldsvals .=  " and "; 
                 }
               }
             }
@@ -169,7 +169,28 @@ class DAO implements CrudInterface {
 
         return $result;
     }
+    public function getRow($where = "") {
+         $sql = "SELECT * FROM " . $this->table;
+        if ($where !== null) {
+            $fieldsvals = '';
+            $i = 0;
+            foreach ($where as $keys => $column) {
+                $i++;
+            if ($column !== $this->pk) {
+                $fieldsvals .= $keys . " = '" . $column."'";
+                if($i < count($where)){
+                   $fieldsvals .=  " and "; 
+                }
+              }
+            }
+            $sql .= " WHERE " . $fieldsvals." LIMIT 1";
+        }
+        
+        $params = $where;
+        $result = $this->db->select($sql, $params, $this->table);
 
+        return $result;
+    }
     public function update($id = '') {
         $this->variables[$this->pk] = (empty($this->variables[$this->pk])) ? $id : $this->variables[$this->pk];
         $fieldsvals = '';

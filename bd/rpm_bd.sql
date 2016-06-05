@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2016 at 08:07 PM
+-- Generation Time: Jun 05, 2016 at 08:54 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -34,15 +34,19 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `province` varchar(30) NOT NULL,
   `pays` varchar(30) NOT NULL,
   `numero` varchar(30) NOT NULL,
+  `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `adresse`
 --
 
-INSERT INTO `adresse` (`id`, `rue`, `code_postal`, `ville`, `province`, `pays`, `numero`) VALUES
-(8, 'saint real', 'h3m2y8', 'Montreal', 'quebec', 'canada', '11786');
+INSERT INTO `adresse` (`id`, `rue`, `code_postal`, `ville`, `province`, `pays`, `numero`, `id_user`) VALUES
+(8, 'saint real', 'h3m2y8', 'Montreal', 'quebec', 'canada', '11786', 0),
+(9, '8190 rue Arthur Peloquin', 'H1R2S8', 'Saint Leonard', 'Quebec', 'Canada', '1', 2),
+(10, '8190 rue Arthur Peloquin', 'H1R2S8', 'Saint Leonard', 'Quebec', 'Canada', '1', 3),
+(11, '8190 rue Arthur Peloquin', 'H1R2S8', 'Saint Leonard', 'Quebec', 'Canada', '1', 4);
 
 -- --------------------------------------------------------
 
@@ -208,19 +212,22 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(50) NOT NULL,
   `is_admin` tinyint(1) NOT NULL,
   `is_active` tinyint(1) NOT NULL,
-  `is_verified` tinyint(1) NOT NULL,
+  `is_verified` text NOT NULL,
   `date_creation` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`,`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nom`, `prenom`, `username`, `password`, `telephone`, `adresse`, `date_naissance`, `profession`, `email`, `is_admin`, `is_active`, `is_verified`, `date_creation`, `last_update`) VALUES
-(1, 'thimbo', 'moussa', 'test', 'test123', '5142099999', 8, NULL, 'programmeur', 'moussa@adress.ca', 0, 0, 0, '2015-11-11 23:16:37', '2015-11-11 23:16:37');
+(1, 'thimbo', 'moussa', 'test', 'test123', '5142099999', 8, NULL, 'programmeur', 'moussa@adress.ca', 0, 0, '0', '2015-11-11 23:16:37', '2015-11-11 23:16:37'),
+(2, 'Dieng', 'Ousmane', 'moussa@adressw.ca', 'as', '5147084568', NULL, '0000-00-00', '1', 'moussa@adressw.ca', 0, 0, '57527740d6560', '2016-06-04 06:37:52', '2016-06-04 06:37:52'),
+(3, 'Dieng', 'Ousmane', 'moussa@adressw1.ca', 'as', '5147084568', NULL, '0000-00-00', '1', 'moussa@adressw1.ca', 0, 0, '575277936aba4', '2016-06-04 06:39:15', '2016-06-04 06:39:15'),
+(4, 'Dieng', 'Ousmane', 'oussou.dieng@gmail.com', 'test123', '5147084568', NULL, '0000-00-00', '000', 'oussou.dieng@gmail.com', 0, 0, '57527c8b5b28c', '2016-06-04 07:00:27', '2016-06-04 07:00:27');
 
 --
 -- Constraints for dumped tables

@@ -81,6 +81,7 @@ class Controller {
         $nav_bar_tpl = WEBAPPROOT.'views/'.  $this->section .'/nav_bar.tpl';
         $this->tpl->assign('navbar_tpl', $nav_bar_tpl);
         $this->tpl->assign('SITEURL', SITEURL); 
+        
         $this->tpl->display(WEBAPPROOT."views/".  $this->section . '/'. $this->header);
         //$tpl->display(WEBAPPROOT.'views/nav_bar.tpl');
         $this->displayTpl($filename);
@@ -92,7 +93,26 @@ class Controller {
 
         //require(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.html');
     }
-    
+    function partialView($filename){
+        $this->page_active = strtolower(get_class($this));
+        $this->menuHelper = MenuHelper::getInstance();
+        $pages = $this->menuHelper->getNavBar($this->page_active, $this->sub_menu_active);
+        
+        $addmarging = (strcmp(get_class($this),"Accueil")=== 0)? "margin-0" : "margin_bottom40";
+        
+        if(!empty($this->vars)){
+            foreach ($this->vars as $key => $value) {
+                $this->tpl->assign($key, $value);
+            }
+        }
+        $uri = Uri::getInstance()->getFragment();
+        $home ="";
+        if(isset($uri[0])){
+            $home = $uri[0];
+            unset($uri[0]);
+        }
+         $this->displayTpl($filename);
+    }
     function displayTpl($filename){
         $class = strtolower (get_class($this));
         if($this->section == 'admin' && $class == 'admin'){

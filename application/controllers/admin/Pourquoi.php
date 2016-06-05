@@ -28,7 +28,7 @@ class Pourquoi extends Admin_Controller{
                                     'contenu' =>"$contenu");
                 $pourquoiDao = new PourquoiDao(new Pourquoi($array_projet));
                 $pourquoiDao->create();
-                $file = WEBROOT.'application/views/pourquoi/contenu_pourquoi.tpl';
+                $file = WEBROOT.'application/views/client/pourquoi/contenu_pourquoi.tpl';
                 // Open the file to get existing content
                 //$current = file_get_contents($file);
                 // Append a new person to the file

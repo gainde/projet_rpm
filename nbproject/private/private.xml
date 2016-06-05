@@ -3,47 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Statut.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/index.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/accueil/index.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/.htaccess</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Contact.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Pourquoi.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Accueil.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/libs/MenuHelper.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/pourquoi/pourquoi.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/header.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/system/config.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/footer.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Projets.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/afficher_projet.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Authentification.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Admin.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/bean/Adresse.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/models/Mail.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/client/Statut.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/admin/Services.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/ajax/subdomaine.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/login-register/modal_login.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/client/Authentification.php</file>
             <file>file:/C:/wamp/www/projet_rpm/ressources/css/style.css</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/admin.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/sidebar.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/sidebar.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/header.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/footer.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/statut/projets/projets.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/system/Application.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/PageErreur.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/contact/processcontact.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/creer_projet.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/membres/liste_membres.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/projets.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/ressources/css/admin/style.css</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/contact/contact.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/nav_bar.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/editer_projet.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Apropos.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/nav_bar.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/core/CrudInterface.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/Actualites.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/sidebar.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/security/AuthentificationManager.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/client/Ajax.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/authentification/activer.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/accueil/index.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/bean/User.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/authentification/connecter.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/footer.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/header.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/admin/Projets.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/authentification/inscription.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/services/creer_service.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/core/DAO.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/apropos/apropos.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/breadcrumb.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/bean/Projet.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/authentification/initialiser.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/nav_bar.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/core/Client_Controller.php</file>
             <file>file:/C:/wamp/www/projet_rpm/core/Controller.php</file>
         </group>
     </open-files>

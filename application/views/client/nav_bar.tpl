@@ -3,24 +3,24 @@
 <nav class="nav navbar-default navbar-fixed-top bar-top">
     <div class="container ">
         <div class="pull-right">
-
-            {if $User != null  && $User instanceof User}
+            {nocache}
+            {if $User != null}
 
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Bonjour&nbsp;{$User->getUsername()}
+                        Bonjour&nbsp;{$User->getPrenom()}
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownLoginMenu">
                         <li><a href="#">Profil</a></li>
-                        <li class="dropdown-header"><span><a href="{$ROOT}authentification/logout/">Se deconnecter</a></li>
+                        <li class="dropdown-header"><span><a href="{$ROOT}authentification/logout/">Se déconnecter</a></li>
                     </ul>
                 </div>
             {else}
-                <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">S'inscrire</a></span>
-                <span><a id='modal-launcher' class="sign" data-toggle="modal" data-target="#login-modal">Se connecter</a></span>
+                <span><a class="sign" href="{$ROOT}authentification/inscription/">S'inscrire</a></span>
+                <span><a id='' href="{$ROOT}authentification/connecter/" class="sign" data-toggle="" data-target="">Se connecter</a></span>
             {/if}
-
+{/nocache}
         </div>
     </div>
 </nav>

@@ -30,14 +30,14 @@
                                 <img align="absmiddle" src="images/spinner.gif">&nbsp;Processing...
                             </div>
 
-                            <a href="#" class="login-link text-center">Mot de passe perdu?</a>
+                            <a href="{$ROOT}authentification/initialiser/" class="login-link text-center">Mot de passe perdu?</a>
                         </div>
                     </form>
 
                     <div class='modal-body-right'>
                         <div class="form-group modal-register-btn">
                             <div class="spaceBottom30">Nouveau utilisateur?</div>
-                            <div><a href="{$ROOT}authentification/register/" ><button class="btn btn-default">S'inscrire</button></a>
+                            <div><a href="{$ROOT}authentification/inscription/" ><button class="btn btn-default">S'inscrire</button></a>
                             </div>
                         </div>	
                         <div id='center-line'> OR </div>
