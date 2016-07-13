@@ -2,45 +2,30 @@
 require_once (WEBROOT.'core/ReglesValidation.php');
 
 class Validateur{
-    //array(name, string, 1, 30, false),...
-    //string => array(array(name, string, 2, 30, false),...)
-    var $list_champs;
-    //var $data;
-    var $erreur_array = array();
-    
-    var $key_courant = null;
     
     function __construct($data, $list_champs) {
-        //die(var_dump($data));
-        $this->list_champs = $list_champs;
-        //$this->data = $data;
-        var_dump($list_champs);
-        $this->prepare($data);
+        parent::__construct($data, $list_champs);
     }
     
     function prepare($data) {
-        foreach ($data as $key => $value) {
-            $this->list_champs[$key][1] = $value;
-        }
+        parent::prepare($data);
+        $this->list_champs['compareDate'][1] = $this->list_champs['from'][1];
+        $this->list_champs['compareDate'][2] = $this->list_champs['to'][1];
+        var_dump($this->list_champs);
     }
     
     function valider(){
         $valide =true;
         foreach ($this->list_champs as $key => $value) {
-            $this->key_courant = $key;
-            $valide &= call_user_func_array(array($this, array_shift($value)), $value); 
+            $valide &= $erreur_array[$key]= call_user_func_array(array($this, array_shift($value)), $value); 
         }
         var_dump($valide);
-        //var_dump($erreur_array);
+        var_dump($erreur_array);
         die(var_dump($this->list_champs));
-        return $this->erreur_array;
     }
     
     function string($string, $lg_min, $lg_max, $nullable = true ){
         if(is_null($string) || empty($string)){
-            if(!$nullable){
-                $this->erreur_array[$this->key_courant] = 'Le champ ne peut pas être null';
-            }
             return $nullable;
         }
         
@@ -49,25 +34,18 @@ class Validateur{
     
     function email($email)
     {
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $this->erreur_array[$this->key_courant] = "L'email n'est pas valide";
-        }
-        return true;
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
     
     function numerique($valeur, $lg_min, $lg_max, $nullable = true )
     {
         if(!isset($valeur) || $valeur === null ){
-            if(!$nullable){
-                $this->erreur_array[$this->key_courant] = "Le champ ne peut pas être null";
-            }
             return $nullable;
         }
         if(is_numeric($valeur)){
             return $this->estDansBorne($valeur, $lg_min, $lg_max);
         }
         else {
-            $this->erreur_array[$this->key_courant] = "Le champ doit être numerique";
             return false;
         }
         
@@ -101,7 +79,7 @@ class Validateur{
         }
     }
             
-    function motDePasse($motDePasse){
+    function validationMotDePasse($motDePasse){
         return true;
     }
     
@@ -111,7 +89,6 @@ class Validateur{
             return true;
         }
         else {
-            $this->erreur_array[$this->key_courant] = "La taille n'est pas respecté : doit être entre ".$lg_min . " et ".$lg_max;
             return false;
         }
     }
@@ -129,7 +106,6 @@ class Validateur{
                 /*$d = DateTime::createFromFormat($format, $date);
                 return $d && $d->format($format) == $date;*/
             } else {
-                $this->erreur_array[$this->key_courant] = "La date n'est pas valide";
                 return false;
             }
         } else {
@@ -148,11 +124,7 @@ class Validateur{
     }
     
     function url($url){
-        if(!filter_var($url, FILTER_VALIDATE_URL)){
-            $this->erreur_array[$this->key_courant] = "L'url n'est pas valide";
-            return false;
-        }
-        return true;
+        return filter_var($url, FILTER_VALIDATE_URL);
     }
     
     
