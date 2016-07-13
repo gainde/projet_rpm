@@ -23,6 +23,7 @@ class User extends Bean {
     private $email;
     private $date_naissance;
     private $profession;
+    private $secteur;
     private $is_active;
     private $is_verified;
     private $is_admin;
@@ -71,6 +72,9 @@ class User extends Bean {
 
     public function getProfession() {
         return $this->profession;
+    }
+    public function getDomaine() {
+        return $this->secteur;
     }
 
     public function getIs_active() {
@@ -125,6 +129,10 @@ class User extends Bean {
         $this->profession = $profession;
     }
 
+    public function setDomaine($secteur) {
+        $this->secteur = $secteur;
+    }
+    
     public function setIs_active($is_active) {
         $this->is_active = $is_active;
     }

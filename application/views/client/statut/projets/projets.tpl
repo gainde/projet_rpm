@@ -5,6 +5,7 @@
     </div>
 
     <div class="col-lg-9 col-sm-9 col-md-9">
+        {include file="../../breadcrumb.tpl"}
         <div class="panel">
             <div class="panel-body">
 

@@ -12,7 +12,7 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownLoginMenu">
-                        <li><a href="#">Profil</a></li>
+                        <li><a href="{$ROOT}authentification/profil/{$User->getId()}">Profil</a></li>
                         <li class="dropdown-header"><span><a href="{$ROOT}authentification/logout/">Se déconnecter</a></li>
                     </ul>
                 </div>
@@ -25,22 +25,22 @@
     </div>
 </nav>
 <div class="header_top"><!--header_top-->
-    <div class="">
+    <div class="banner">
 
         <div class="row top">
-            <div class="col-sm-8">
-                <img src="{$ROOT}ressources/images/logo.png" class="logo" />
+            <div class="col-sm-8" style="margin:0 0 0 10px">
+                <a  href='{$ROOT}accueil' title="Réseau des Professionels Mourides"><img src="{$ROOT}ressources/images/logo.png" class="logo" /></a>
                 <br/>
                 <span class="text-logo">Réseau des Professionels Mourides du Monde</span>
             </div>
-            <div class="col-sm-4">
-                <div class="search">
+            <div class="col-sm-3">
+                <div class="search" >
                     <form class="navbar-form nopadding" role="search">
-                        <div class="input-group">
+                        <div class="input-group pull-right" >
                             <input type="text" class="form-control" placeholder="Search" name="q">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                            </div>
+                            
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            
                         </div>
                     </form>
                 </div>
@@ -55,13 +55,14 @@
 
 <!-- NAVBAR
 ================================================== -->
-<div class=" navbar-wrapper">
+<div class="navbar-wrapper">
     <div class="">
 
         <div class="navbar navbar navbar-static-top" role="navigation">
             <div class="">
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                <span class="glyphicon glyphicon-th-list show-menu"> MENU </span>
+               <center> <div class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav nav1">
                         {nocache}
                       {foreach from=$pages key=page item=info_page}
                          
@@ -79,13 +80,31 @@
                          </li>
                     {/foreach}
                     {/nocache}
-            </ul>
-                </div>
+                        </ul>
+                </div></center>
             </div>
         </div>
 
     </div>
 </div>
             {nocache}
-<div class="{$addmarging}"></div>
+                <div class="{$addmarging}"></div>
 {/nocache}
+<script>
+    $('.show-menu').click(function(){
+        $('.nav1>li').toggle();
+        $('.collapse').show();
+    });
+   $(window).resize(function() {
+    if(screen.width == window.innerWidth){
+       $('.nav1>li').show();
+       $('.collapse').show();
+    } else if(screen.width > window.innerWidth){
+     $('.nav1>li').show();
+       // $('.collapse').hide();
+    } else {
+        $('.nav1>li').show();
+        $('.collapse').show();
+    }
+});
+</script>

@@ -15,14 +15,10 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="#">Toutes les pages</a></li>  
-                    <li><a class="" href="{$ADMINROOT}pourquoi">Page Pourquoi</a></li>                          
-                    <li><a class="" href="#">Page Projets</a></li>
-                    <li><a class="" href="#">Page Réalisations</a></li>
-                    <li><a class="" href="#">Page Actualités</a></li>
-                    <li><a class="" href="#">Page A propos</a></li>
-                    <li><a class="" href="#">Page Forum</a></li>
-                    <li><a class="" href="#">Page Contact</a></li>
+                    <li><a class="" href="{$ADMINROOT}pages/">Toutes les pages</a></li>  
+                    <li><a class="" href="{$ADMINROOT}pages/pourquoi">Page Pourquoi</a></li>                          
+                    <li><a class="" href="{$ADMINROOT}pages/actualite">Page Actualités</a></li>
+                    <li><a class="" href="{$ADMINROOT}pages/apropos">Page A propos</a></li>
                 </ul>
             </li>       
             <li class="sub-menu">
@@ -36,6 +32,12 @@
                     <li><a class="" href="{$ADMINROOT}membre/add_membre">Ajout</a></li>
                 </ul>
             </li>
+            <li>
+                <a class="" href="{$ADMINROOT}admin/administrateur">
+                    <i class="fa fa-users"></i>
+                    <span>Administrateur</span>
+                </a>
+            </li>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="fa fa-tasks"></i>
@@ -45,6 +47,17 @@
                 <ul class="sub">
                     <li><a class="" href="{$ADMINROOT}projets" title="Liste des projets">Liste des projets</a></li>
                     <li><a class="" href="{$ADMINROOT}projets/creer_projet">Ajout</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                    <i class="fa fa-tasks"></i>
+                    <span>Service</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+                    <li><a class="" href="{$ADMINROOT}services" title="Liste des projets">Liste des services</a></li>
+                    <li><a class="" href="{$ADMINROOT}services/creer_service">Ajout</a></li>
                 </ul>
             </li>
             <li>

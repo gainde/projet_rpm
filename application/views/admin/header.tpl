@@ -23,10 +23,11 @@
 
     <body>
         <!-- container section start -->
-        <section id="container" class="">
+       <section id="container" class="">
             {include file="./nav_bar.tpl"}
             <!--sidebar start-->
             {include file="./sidebar.tpl"}
+            
             
             
 <!--main content start-->
@@ -34,3 +35,4 @@
     <section class="wrapper">            
         <!--overview start-->
         {include file="./breadcrumb.tpl"}
+ 

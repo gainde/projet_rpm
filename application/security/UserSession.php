@@ -20,6 +20,5 @@ class UserSession extends Session{
     public function getUser() {
         return $this->get();
     }
-    
-    
+
 }

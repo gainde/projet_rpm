@@ -3,23 +3,50 @@
             {include file='../sidebar.tpl'}
     </div>
     <div class="col-lg-9 col-sm-9 col-md-9">
+        {include file="../breadcrumb.tpl"}
         <h1 class="page-heading nospace">Réinitialiser votre mot de passe</h1>
         <br>
-        {if $init neq '0'}
+        
         <div class="panel panel-default">
 				  <div class="panel-heading">
 					<h3 class="panel-title">Information</h3>
 				  </div>
                                     <div class="panel-body" >
-                                        {/if}
+                                       
         {if $init eq '1'}
             <p>Votre mot de passe a été réinitialisé avec succés. Veuillez vous reconnecter!</p>
+            <center> <table width="50%"><tr><td align="center">
+            <form id="login" action="{$ROOT}authentification/connecter/" method="post">
+                        
+                            <input type="hidden" name="action" value="user_login">
+                            <input type="hidden" name="module" value="login">
+                            <div class="form-group">
+                                <input type="text" name="username" id="username" placeholder="Entrez votre nom d'utilisateur" value="" class="form-control login-field">
+                                <i class="fa fa-user login-field-icon"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" name="password" id="login-pass" placeholder="Password" value="" class="form-control login-field">
+                                <i class="fa fa-lock login-field-icon"></i>
+                            </div>
+
+                            <input href="#" class="btn btn-success modal-login-btn" id="submit" type="submit" value="Connecter">
+                            
+                            <a href="{$ROOT}authentification/initialiser/" class="login-link text-center">Mot de passe perdu</a>
+                       
+                    </form>
+                        </td></tr></table></center>
             {elseif $init eq '-1'}
                  <p>Votre mot de passe n'a pas été réinitialisé. Un problème est survenu ! Veuillez reprendre la procédure d'activation de compte.</p>
+             
+            
             {else}
-                {if $init neq '0'}
-            </div>
-            </div>{/if}
+                
+            {* <div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Information</h3>
+				  </div>
+                                    <div class="panel-body" >*}
                 <form method="post" enctype="multipart/form-data">
             <table class="table-register" cellspacing="10" cellcollapse="none">
                 <thead><tr><th width="30%"></th><th width="80%"></th></tr></thead>
@@ -56,9 +83,10 @@
                 </tr>
             </table>
         </form>
+                                  
             {/if}
-    </div>
-</div>
+                                    </div></div></div></div>
+            
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 {literal}
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>

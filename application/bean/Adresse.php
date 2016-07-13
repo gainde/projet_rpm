@@ -52,7 +52,7 @@ class Adresse extends Bean{
     }
 
     public function getCode_postale() {
-        return $this->code_postale;
+        return $this->code_postal;
     }
 
     public function getProvince() {
@@ -82,7 +82,7 @@ class Adresse extends Bean{
     }
 
     public function setCode_postale($code_postale) {
-        $this->code_postale = $code_postale;
+        $this->code_postal = $code_postale;
     }
 
     public function setProvince($province) {

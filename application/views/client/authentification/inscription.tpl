@@ -16,8 +16,23 @@
       $('#subdomaine').show();
     }
   });
+     }else{
+         return false;
      }
  }
+
+function validate(evt) {
+  var theEvent = evt || window.event;
+  if(key !== 8){
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]/;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+  }
+}
 </script>
 {/literal}
 <div class="">
@@ -25,6 +40,7 @@
             {include file='../sidebar.tpl'}
     </div>
     <div class="col-lg-9 col-sm-9 col-md-9">
+        {include file="../breadcrumb.tpl"}
         <h1 class="page-heading nospace">Inscription</h1>
         <br>
        {if $success eq '1'}
@@ -49,9 +65,14 @@
                                     </div>
              </div>
         {else}
+            <div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Information</h3>
+				  </div>
+                                    <div class="panel-body" >
         <form method="post" enctype="multipart/form-data">
-            <table class="table-register" cellspacing="10" cellcollapse="none">
-                <thead><tr><th width="30%"></th><th width="80%"></th></tr></thead>
+            <table class="table-register" cellspacing="10" cellcollapse="none" width='100%'>
+                <thead><tr><th width="40%"></th><th width="60%"></th></tr></thead>
                 <tr>
                     <td>
                         <label class="bg-label">Prénom *:</label>
@@ -95,11 +116,11 @@
               </tr>
               <tr>
                  <td>
-                      <label class="bg-label">Domaine de compétence:</label>
+                      <label class="bg-label">Secteur *:</label>
                 </td>
                 <td>
-                    <select name="skills" id="services" onchange="getSubdomaine(this.value)" onclick="getSubdomaine(this.value)">
-                        <option value="000">Sélectionner votre domaine de competence</option>
+                    <select class='form-control' name="skills" id="services" onchange="getSubdomaine(this.value)" onclick="getSubdomaine(this.value)">
+                        <option value="000">Sélectionner votre secteur</option>
                         {nocache}
                         {foreach from=$services['services'] item=service}
                          <option value="{$service->getId()}">{$service->getTitre()}</option>
@@ -116,7 +137,7 @@
                 <label class="bg-label">Téléphone:</label>
                 </td>
                 <td>
-                    <input class='form-control' type="text" name="tel" placeholder="Téléphone">
+                    <input class='form-control' type="text" name="tel" placeholder="Téléphone" onkeypress="validate(event)">
                 </td>
                 </tr>
                <tr>
@@ -125,7 +146,7 @@
                     
                   </td>
                 <td>
-                    <input class='form-control' type="text" name="numberr" placeholder="Numéro rue">
+                    <input class='form-control' type="text" name="numberr" placeholder="Numéro rue" onkeypress="validate(event)">
                 </td>
                 </tr>
                <tr>
@@ -176,6 +197,8 @@
                 </tr>
             </table>
         </form>
+                                    </div>
+            </div>
        {/if}
       </div>
 </div>

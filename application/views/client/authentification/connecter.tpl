@@ -3,6 +3,7 @@
             {include file='../sidebar.tpl'}
     </div>
     <div class="col-lg-9 col-sm-9 col-md-9">
+        {include file="../breadcrumb.tpl"}
         <h1 class="page-heading nospace">Connection</h1>
         <br>
   
@@ -14,6 +15,8 @@
                                     <div class="panel-body" >
                 
                                         <table class='table-register'><thead><tr><th width='60%'></th><th width='10%'></th><th></th></tr></thead>
+                                            <tr><td colspan="2" align='center'>{if $success eq '0'}<label class="alert alert-danger">Erreur de connection!</label></td></tr>
+                                                                                              {/if}
                                             <tr><td align='center'>
                     <form id="login" action="" method="post">
                         

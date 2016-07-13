@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-  <div class="panel-heading">Services</div>
+<div class="panel-heading"><h3 class="panel-title">Services</h3></div>
   <div class="panel-body nopadding">
     <div id='cssmenu'>        
                 <ul>    

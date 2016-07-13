@@ -185,7 +185,6 @@ class DAO implements CrudInterface {
             }
             $sql .= " WHERE " . $fieldsvals." LIMIT 1";
         }
-        
         $params = $where;
         $result = $this->db->select($sql, $params, $this->table);
 

@@ -3,31 +3,40 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/projet_rpm/application/bean/Adresse.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/models/Mail.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/ressources/js/slide.show.js</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/index.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/supprimer_admin.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/models/ProjetDao.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/header.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/client/Statut.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/admin/Services.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/client/ajax/subdomaine.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/client/login-register/modal_login.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/footer.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/admin/Membre.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/client/Authentification.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/system/Session.php</file>
             <file>file:/C:/wamp/www/projet_rpm/ressources/css/style.css</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/client/sidebar.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/security/UserSession.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/security/AuthentificationManager.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/controllers/client/Ajax.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/models/UserDao.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/sidebar.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/admin/Pages.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/client/authentification/activer.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/client/accueil/index.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/bean/User.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/client/authentification/connecter.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/client/slide.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/creer_projet.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/client/footer.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/administrateur.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/connecter.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/client/header.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/membre/liste_membres.tpl</file>
             <file>file:/C:/wamp/www/projet_rpm/application/controllers/admin/Projets.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/client/authentification/inscription.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/services/creer_service.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/core/DAO.php</file>
-            <file>file:/C:/wamp/www/projet_rpm/application/views/client/authentification/initialiser.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/projets/supprimer_projet.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/views/admin/nav_bar.tpl</file>
+            <file>file:/C:/wamp/www/projet_rpm/core/Admin_Controller.php</file>
             <file>file:/C:/wamp/www/projet_rpm/application/views/client/nav_bar.tpl</file>
-            <file>file:/C:/wamp/www/projet_rpm/core/Client_Controller.php</file>
             <file>file:/C:/wamp/www/projet_rpm/core/Controller.php</file>
+            <file>file:/C:/wamp/www/projet_rpm/application/controllers/admin/Admin.php</file>
         </group>
     </open-files>
 </project-private>

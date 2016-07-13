@@ -1,6 +1,5 @@
 <?php
-require_once (WEBAPPROOT.'models/ServiceDao.php');
-require_once (WEBAPPROOT.'models/DomaineDao.php');
+require_once (WEBAPPROOT.'models/UserDao.php');
 require_once (WEBAPPROOT.'libs/MenuHelper.php');
 require_once (WEBAPPROOT.'libs/ArrayUtils.php');
 require_once (WEBROOT.'system/Uri.php');
@@ -15,6 +14,14 @@ class Admin_Controller extends Controller{
         $this->load_js();
         //$this->header = "admin/header.tpl";
         //$this->footer ="admin/footer.tpl";
+       
+        if($this->getUser() == null){
+            if(strcmp(get_class($this),'Admin')!==0){
+                echo $this->notGrant();
+            }else{
+                
+            }
+        }
     }
     
     function load_css(){  
@@ -24,5 +31,5 @@ class Admin_Controller extends Controller{
     function load_js(){ 
         $this->js = $this->menuHelper->getJs('admin');
     }
-    
+   
 }

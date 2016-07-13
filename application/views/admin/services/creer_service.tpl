@@ -27,6 +27,11 @@ tinymce.init({
 });
 </script>
 <div class="container">
+     <div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Créer un service</h3>
+				  </div>
+                                    <div class="panel-body" > 
 <form method="post" enctype="multipart/form-data">
     <div class="input-group input-group-lg">
         <label class="bg-label">Nom *:</label>
@@ -67,6 +72,8 @@ tinymce.init({
     <a href="#" class="btn btn-large btn-info" id="send"><i class="glyphicon glyphicon-floppy-save"></i> &nbsp; Enregistrer</a>
     <button type="submit" class="hidden">Envoyer</button>
 </form>
+                                    </div>
+     </div>
  </div>   
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 {literal}

@@ -23,15 +23,15 @@
         <link rel="stylesheet" href="{$ROOT}ressources/css/lightbox.css"/>
         <link rel="stylesheet" href="{$ROOT}ressources/css/style.css" />
         
-         <script src="{$ROOT}ressources/js/lightbox.js"></script>
+         {*<script src="{$ROOT}ressources/js/lightbox.js"></script>*}
         <script src="{$ROOT}ressources/js/modernizr-2.6.2.min.js"></script>
         <script src="{$ROOT}ressources/js/jquery-1.10.2.min.js"></script>
-        <script src="{$ROOT}ressources/js/bjqs-1.3.min.js"></script>
+        <script src="{$ROOT}ressources/js/bjqs-1.3.js"></script>
         <script src="{$ROOT}ressources/js/menu_jquery.js"></script>
         <script language="JavaScript" type="text/javascript">
             function getLoginUrl() {
                 var ROOT = {$ROOT};
-                return ROOT + "authentification/login/";
+               // return ROOT + "authentification/login/";
             }
 
         </script>
@@ -40,3 +40,4 @@
     <body>
         <div class="container main nopadding">
             {include file="$navbar_tpl"}
+            

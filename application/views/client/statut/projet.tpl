@@ -4,6 +4,7 @@
 </div>
 
 <div class="col-lg-9 col-sm-9 col-md-9">
+    {*include file="../breadcrumb.tpl"*}
 <br>
 <div class="col-md-2 col-sm-3 text-center">
     <a class="story-img" href="#"><img src="{$ROOT}ressources/images/projets/{$projet->getUrl()}" style="width:100px;height:100px" class="img-circle"></a>

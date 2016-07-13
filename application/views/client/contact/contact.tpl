@@ -7,31 +7,71 @@
           <h1 class="page-heading nospace">Contact</h1>
 		  <br>
                   <div class="col-lg-9 col-lg-push-1">
-		  <form name="contact" action="{$ROOT}contact/processcontact/" method="post">
-			<div class="input-group input-group-lg">
-				<span class="input-group-addon glyphicon glyphicon-user"></span>
-					<input type="text" name="name" class="form-control" placeholder="Nom" required>
-			</div>
-			<br>
-			<div class="input-group input-group-lg">
-				<span class="input-group-addon glyphicon glyphicon-earphone"></span>
-					<input type="text" name="number" class="form-control" placeholder="Telephone">
-			</div>
-			<br>
-			<div class="input-group input-group-lg">
-				<span class="input-group-addon">@</span>
-					<input type="email" name="email" class="form-control" placeholder="Email" required>
-			</div>
-			<br>
-			<div class="input-group input-group-lg">
-				<span class="input-group-addon glyphicon glyphicon-question-sign"></span>
-					<textarea class="form-control" name="query" style="height: 150px;" placeHolder="Message" required></textarea>
-			</div>
-			<br>
-			<a href="#" class="btn btn-primary pull-right  btnNext" id="send" style="margin: 10px 0;"><i class="glyphicon glyphicon-send"></i> &nbsp; Envoyer</a>
-                        <button type="submit" class="hidden">Envoyer</button>	
-				
+                       <div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Information</h3>
+				  </div>
+                                    <div class="panel-body" >
+                                        {if $success eq '1'}
+                                            <p> Votre message a été envoyé avec succés à l'équipe de RPM. 
+                                                Nous vous répondons bientôt !</p>
+                                            {elseif $success eq '-1'}
+                                              <p> Une erreur est survenue lors de l'envoie du message. Veuillez réessayer svp !</p>
+                                                {/if}
+		  <form name="contact"  method="post">
+                      <center> <table width="90%">
+                       
+                    <tr>
+                    <td>
+                        <label class="bg-label">Nom *:</label>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <input class='required form-control' type="text" name="name" placeholder="Prénom et nom">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="bg-label">Email *:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class='required form-control' type="text" name="email" placeholder="Email" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="bg-label">Telephone *:</label>
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class='required form-control' type="email" name="number" placeholder="Telephone" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="bg-label">Message *:</label>
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                       <textarea class="form-control" name="query" style="height: 150px;" placeHolder="Message" required></textarea>
+                    </td>
+                </tr>
+                 <tr>
+                <td>
+                    <a href="#" class="btn btn-primary pull-right  btnNext" id="send" style="margin: 10px 0;"><i class="glyphicon glyphicon-send"></i> &nbsp; Envoyer</a>
+                        <button type="submit" class="hidden">Envoyer</button>
+                </td>
+                 </tr>
+                          </table></center>
+                 
 		  </form>
+                                    </div>
+                       </div>
                   </div>
         </div>
 </div>

@@ -20,6 +20,7 @@ class Services extends Admin_Controller{
           $this->load_js();
           $this->header = "admin/header.tpl";
           $this->footer ="admin/footer.tpl";*/
+            
     }
     function index() {
         if(isset($_POST['check'])){
@@ -48,6 +49,7 @@ class Services extends Admin_Controller{
                     if(isset($_POST['domaine'])){
                         $array_id_domaine = $_POST['domaine'];
                         foreach($array_id_domaine as $keys => $id_domaine){
+                            if($id_domaine != ''){
                             $descD = $_POST['descd'][$keys];
                             $array_domaine = array('id_service'=>"$idservice",
                                                     'titre' => "$id_domaine",
@@ -56,6 +58,7 @@ class Services extends Admin_Controller{
                                                   
                             $domaineDao = new DomaineDao(new Domaine($array_domaine));
                             $domaineDao->create();
+                            }
                         }
                     }
                     $this->redirect('admin/services');
@@ -84,6 +87,7 @@ class Services extends Admin_Controller{
                     $array_id_domaine = $_POST['domaine'];
                     $this->deleteDomaine($params);
                     foreach($array_id_domaine as $keys => $id_domaine){
+                         if($id_domaine != ''){
                         $descD = $_POST['descd'][$keys];
                         $array_domaine = array('id_service'=>"$params",
                                                 'titre' => "$id_domaine",
@@ -92,6 +96,7 @@ class Services extends Admin_Controller{
 
                         $domaineDao = new DomaineDao(new Domaine($array_domaine));
                         $domaineDao->create();
+                         }
                     }
                     $this->redirect('admin/services');
                 }else{

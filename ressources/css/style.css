@@ -4,9 +4,10 @@ body{
     font-size: 16px;
     min-height: 1000px;
     text-justify: auto;
+    background-color: #CDD0CE;
 }
 .container{
-	width:1245px;
+	width:80%;
 }
 .main{
     background-color: white;
@@ -120,7 +121,7 @@ sidebar-globe{
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 0;
     overflow-y: auto;
     height: 100%;
     background: #072007;
@@ -452,7 +453,7 @@ blockquote p {
     background-color: white;
 }
 .size-img{
-    width: auto;
+    width: 900px;
 }
 .margin-0{
     margin: 0px !important;
@@ -465,6 +466,159 @@ table.table-register{
     border-spacing: 10px 10px !important;
 }
 .border-left-login{
-    margin-left: 10px;
+   
     border-left: 4px solid #999;
+}
+.color-white{
+    color: white;
+    font-size: 12px;
+}
+.color-white:hover{
+    color: black;
+    font-size: 12px;
+}
+.padding-20{
+    padding: 20px;
+}
+.height-slide{
+    height: 330px;
+}
+.nav1{
+    padding-left:50px;
+}
+.nav1 > li> a{
+    font-weight: bold;
+}
+.show-menu{
+    display: none;
+}
+.banner{
+    background-image: url(../images/banner.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+/*responsive*/
+@media only screen and (max-width: 1480px){
+    .size-img{
+    width: 700px;
+    }
+}
+@media only screen and (max-width: 1280px){
+    body{
+        font-size: 12px;
+    }
+    .height-slide{
+        height: 250px;
+    }
+    .input-group .form-control{
+        width: 60%;
+        margin-left: 20px;
+    }
+    .nav1{
+        padding-left:0px;
+    }
+    .nav1>li>a{
+        font-size: 12px;
+    }
+    
+    size-pane-accueil{
+        height: 159px;
+    }
+    .size-img{
+    width: 500px;
+    }
+}
+@media only screen and (max-width: 1024px){
+    body{
+        font-size: 12px;
+    }
+    .height-slide{
+         height: 210px;
+    }
+    .input-group .form-control{
+        width: 60%;
+        margin-left: 20px;
+    }
+    .nav1{
+        padding-left:0px;
+    }
+    .nav1>li>a{
+        font-size: 10px;
+    }
+    
+    size-pane-accueil{
+        height: 159px;
+    }
+    .size-img{
+        width:500px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    /* For mobile phones: */
+    body{
+        font-size: 10px;
+    }
+    .height-slide{
+        height: 130px;
+    }
+    .input-group .form-control{
+        width: 60%;
+        margin-left: 20px;
+    }
+    .nav1{
+        padding-left:0px;
+    }
+    .nav1>li>a,.nav1>li>ul>li>a{
+        font-size: 8px;
+    }
+    size-pane-accueil{
+        height: 159px;
+    }
+   .size-img{
+        width: 400px;
+    } 
+}
+@media only screen and (max-width: 700px) {
+    body{
+        font-size: 10px;
+    }
+    .height-slide{
+        height: 130px;
+    }
+    .input-group .form-control{
+       width: 60%;
+        margin-left: 20px;
+    }
+    .nav1{
+        padding-left:0px;
+    }
+    .nav1>li>a,.nav1>li>ul>li>a{
+        font-size: 8px;
+        text-align: left;
+        margin:0 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    li.active>a{
+        background-color: #5ea24a;
+         margin:0;
+    }
+    li.active{
+         margin:0 20px;
+    }
+    .show-menu{
+        display: inline;
+        width: 50px;
+        height: 50px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    .collapse{
+        display: inline;
+    }
+    .collapse:not(:hover){
+        display: none;
+    }
+    .size-img{
+        width: 400px;
+    }
 }

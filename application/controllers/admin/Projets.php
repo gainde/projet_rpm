@@ -1,6 +1,7 @@
 <?php
 require_once (WEBAPPROOT.'models/ProjetDao.php');
-
+require_once (WEBAPPROOT.'models/LinkDao.php');
+require_once (WEBAPPROOT.'models/ServiceDao.php');
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -98,7 +99,40 @@ class Projets extends Admin_Controller{
              $this->set(array("projet" => $list));
              $this->render('afficher_projet');
     }
-    
+    function lier_projet_service($params){
+         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                $service = $_POST['skills'];
+                $domaines = $_POST['domaines'];
+                $id_projet = $_POST['projet'];
+                foreach($domaines as $value){
+                    $linkdao = new LinkDao(new Link());
+                    $list = $linkdao->getAllDataActive(array('id_project'=>"$id_projet",'id_service'=>"$service",'id_domaine'=>"$value"));
+                    if($list){
+                    
+                    }else{
+                        if($value!=''){
+                            $linkdao = new LinkDao(new Link(array('id_project'=>"$id_projet",'id_service'=>"$service",'id_domaine'=>"$value",'general'=>'0')));
+                            $linkdao->create();
+                        }
+                }
+                if(!isset($_POST['domaines'])){
+                   $linkdao = new LinkDao(new Link(array('id_project'=>"$id_projet",'id_service'=>"$service",'general'=>'1')));
+                   $linkdao->create(); 
+                }
+            }
+            }
+        $projetDao = new ProjetDao(new Projet());
+        $projet = $projetDao->read($params);
+           
+        $linkdao = new LinkDao(new Link());
+        $list = $linkdao->getAllDataActive(array('id_project'=>"$params"));
+        
+        $servicedao = new ServiceDao(new Service());
+        $service = $servicedao->getAllData();
+        
+        $this->set(array('link'=>$list,'services'=>$service,'projet'=>$projet));
+        $this->render('lier_projet_service');
+    }
     function getListProjets(){
        $projetDao = new ProjetDao(new Projet());
        $list = $projetDao->getAllData();

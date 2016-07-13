@@ -1,9 +1,9 @@
 {if $field eq '0'}
 <td>
-    <label class="bg-label">Domaine de compétence:</label>
+    <label class="bg-label">Domaine de compétences:</label>
 </td>
 <td>
-   <select name="domaine" id="domaines">                    
+   <select class='form-control' name="domaine" id="domaines">                    
 {foreach from=$domaines item=domaine}  
     <option value="{$domaine->getId()}">{$domaine->getTitre()}</option>   
  {/foreach}
@@ -11,9 +11,9 @@
  </td>
  {else if $domaines->getTitre() eq 'Divers'}
      <td>
-        <label class="bg-label">Entrer un domaine:</label>
+        <label class="bg-label">Domaine de compétences:</label>
     </td>
     <td>
-        <input type="text" name="divers" placeholder='Entrer un domaine'/>
+        <input id="domaines" class='form-control' type="text" name="divers" placeholder='Entrer un domaine'/>
     </td>
  {/if}

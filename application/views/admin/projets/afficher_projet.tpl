@@ -1,4 +1,9 @@
-<div class="container">    
+<div class="container">   
+     <div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Information du projet</h3>
+				  </div>
+                                    <div class="panel-body" >
     <br>
     <div class="col-md-2 col-sm-3 text-center">
         <a class="story-img" href="#"><img src="{$projet->getUrl()}" style="width:100px;height:100px" class="img-circle"></a>
@@ -16,4 +21,6 @@
         <br><br>
          <a href="{$ROOT}admin/projets" class="btn btn-large btn-info"><i class="glyphicon glyphicon-arrow-left"></i> &nbsp; Retour</a>&nbsp;&nbsp;
     </div>
+                                    </div>
+     </div>
 </div>

@@ -1,6 +1,7 @@
 <?php
-$mail="moussa.thimbo@gmail.com";	
-$subject="Contact";
+require_once (WEBAPPROOT.'models/Mail.php');
+$mail="contact@rp2m.com";	
+
 
 
 $name=filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -17,7 +18,8 @@ Question : {$query}
 S il vous plait repondez aussitot possible.
 
 ";
-mail($mail, $subject, $msg);
+$send_mail = new Mail();
+$send_mail->sendMailContact($email, $mail, $name, $number, $query);
 ?>
 <script>
 alert("Envoyer avec success.");

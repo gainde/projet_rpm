@@ -104,11 +104,6 @@ class MenuHelper {
                 'param' => $dropdown[false],
                 'sub_menu' => array()
             ),
-            ROOT."authentification/register/"  => array(
-                'class' => $link[$page_active === 'register'],
-                'name' => 'Devenir membre',
-                'param' => $dropdown[false],
-                'sub_menu' => array()),
             ROOT."pourquoi/"  => array(
                 'class' => $link[$page_active === 'pourquoi'],
                 'name' => 'Pourquoi devenir membre',

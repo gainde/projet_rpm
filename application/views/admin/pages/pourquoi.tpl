@@ -28,21 +28,24 @@ tinymce.init({
             }
 });
 </script>
-{assign var='content' value=""}
-{foreach from=$pourquoi item=pour}
-    {assign var='content' value=$pour->getContenu()}
-{/foreach}
 <div class="container">
+    <div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Contenu de la page {if $page != null}{$page->getTitre()}{/if}</h3>
+				  </div>
+                                    <div class="panel-body" >
 <form method="post" enctype="multipart/form-data">
 <div class="input-group input-group-lg">
 	<label class="bg-label">Contenu *:</label>
-	<textarea  id="mytextareaPourquoi" name="contenu">{$content}</textarea>
+	<textarea  id="mytextareaPourquoi" name="contenu">{if $page != null}{$page->getContenu()}{/if}</textarea>
       </div>
     <br>
-    <a href="{$ROOT}admin/projets" class="btn btn-large btn-info"><i class="glyphicon glyphicon-arrow-left"></i> &nbsp; Retour</a>&nbsp;&nbsp;
+    <a href="{$ROOT}admin/pages" class="btn btn-large btn-info"><i class="glyphicon glyphicon-arrow-left"></i> &nbsp; Retour</a>&nbsp;&nbsp;
     <a href="#" class="btn btn-large btn-info" id="send"><i class="glyphicon glyphicon-floppy-save"></i> &nbsp; Enregistrer</a>
     <button type="submit" class="hidden">Envoyer</button>
 </form>
+                                    </div>
+    </div>
 </div>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 {literal}

@@ -57,7 +57,8 @@ $(document).ready(function(){
 				else // ERROR?
 				{  
 					var login_response = result;
-					$('#login_response').html(login_response);
+					//$('#login_response').html(login_response);
+                                        $('#login_response').html('');
                                         alert('echec');
 				}  
 		   

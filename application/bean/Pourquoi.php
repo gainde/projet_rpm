@@ -12,6 +12,7 @@ class Pourquoi extends Bean {
     private $titre;
     private $description;
     private $contenu;
+    private $id_page;
     
     public function __construct(array $params = array()) {
         if (!empty($params)) {
@@ -23,7 +24,9 @@ class Pourquoi extends Bean {
             }
         }
     }
-
+    public function getId() {
+        return $this->id;
+    }
     public function getTitre() {
         return $this->titre;
     }
@@ -35,6 +38,9 @@ class Pourquoi extends Bean {
     public function getContenu() {
         return $this->contenu;
     }
+    public function getId_page() {
+        return $this->id_page;
+    }
     public function setTitre($titre) {
         $this->titre = $titre;
     }
@@ -44,9 +50,11 @@ class Pourquoi extends Bean {
     }
     
     public function setContenu($contenu) {
-        return $this->contenu = $contenu;
+        $this->contenu = $contenu;
     }
-    
+    public function setId_page($id_page) {
+       $this->id_page = $id_page;
+    }
     public function getVars() {
         return $this->getLinks(get_object_vars($this));
     }
@@ -56,6 +64,7 @@ class Pourquoi extends Bean {
         $chaine .= 'titre : ' . $this->titre . '<br>';
         $chaine .= 'description : ' . $this->description . '<br>';
         $chaine .= 'description : ' . $this->contenu . '<br>';
+        $chaine .= 'id_page : ' . $this->id_page . '<br>';
         return $chaine;
     }
 }

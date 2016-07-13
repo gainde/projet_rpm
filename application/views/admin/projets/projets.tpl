@@ -1,3 +1,4 @@
+ 
 <p> Liste des Projets</p>
 <div class="container">
 <a href="creer_projet" class="btn btn-large btn-info" title="Creer un projet"><i class="glyphicon glyphicon-plus"></i> &nbsp; Créer projet</a>
@@ -7,8 +8,13 @@
 <div class="clearfix"></div><br />
 
 <div class="container">
+    <div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Liste des projets</h3>
+				  </div>
+                                    <div class="panel-body" >
 <form id="projet-list" action="" method="post" enctype="multipart/form-data">
-<table width="100%" data-toggle="table" border="1" class="table table-bordered table-responsive">
+    <table id="myTable" width="100%" data-toggle="table" border="1" class="table table-bordered table-responsive">
  	<thead>
     	<th ><input type="checkbox" id="checkall" alt="Sélectionner Tout"/></th>
         <th >Nom</th>
@@ -42,11 +48,17 @@
             <a class="remove ml10" href="supprimer_projet/{$projet->getId()}" title="Suprimer">
                <i class="glyphicon glyphicon-remove"></i>
             </a>
+               &nbsp;
+            <a class="remove ml10" href="lier_projet_service/{$projet->getId()}" title="Lier le projet avec un service">
+               <i class="glyphicon glyphicon-paperclip"></i>
+            </a>
         </td>
     </tr>
  {/foreach}
 </table>
 </form>
+ </div>
+ </div>
 </div>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 {literal}
@@ -82,5 +94,8 @@
             }
             
         });
+        $(document).ready(function(){
+    $('#myTable').DataTable();
+});
         </script>
     {/literal}

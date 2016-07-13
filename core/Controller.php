@@ -86,10 +86,11 @@ class Controller {
         //$tpl->display(WEBAPPROOT.'views/nav_bar.tpl');
         $this->displayTpl($filename);
         $modal_tpl = WEBAPPROOT.'views/'.  $this->section .'/login-register/modal_login.tpl';
+       
         //var_dump($this->getUser());
         $this->tpl->assign('modal_tpl', $modal_tpl);
         $this->tpl->display(WEBAPPROOT."views/".  $this->section . '/'. $this->footer);
-
+         
 
         //require(WEBAPPROOT.'views/'.strtolower (get_class($this)).'/'.$filename.'.html');
     }
@@ -111,7 +112,15 @@ class Controller {
             $home = $uri[0];
             unset($uri[0]);
         }
-         $this->displayTpl($filename);
+        $this->tpl->assign('WEBROOT', WEBROOT);
+        $this->tpl->assign('APPROOT', APPROOT);
+        $this->tpl->assign('ROOT', ROOT); 
+        $this->tpl->assign('ADMINROOT', ADMINROOT); 
+        $this->tpl->assign('User', $this->getUser());
+        $this->tpl->assign('pages', $pages);
+        $this->tpl->assign('liste_css', $this->css);
+        $this->tpl->assign('liste_js', $this->js);
+        $this->displayTpl($filename);
     }
     function displayTpl($filename){
         $class = strtolower (get_class($this));
@@ -124,7 +133,11 @@ class Controller {
     function includeFile($filename){
         require(WEBAPPROOT.'views/' .  $this->section . strtolower (get_class($this)).'/'.$filename.'.php');
     }
-    
+    function notGrant(){
+        return "<script>
+            window.location ='".ROOT."admin';
+            </script>";
+    }
     function load_css(){
         $this->css[] = 'http://fonts.googleapis.com/css?family=Bree+Serif';
         $this->css[] = 'http://fonts.googleapis.com/css?family=Philosopher';
@@ -159,7 +172,7 @@ class Controller {
     function getPageActive(){
     }
 
-    function getNavBar(){
+   /* function getNavBar(){
         //print_r($this->page_active);
         
         $link = array(true => 'active', false => '');
@@ -173,11 +186,7 @@ class Controller {
                 'param' => $dropdown[false],
                 'sub_menu' => array()
             ),
-            ROOT."authentification/register/"  => array(
-                'class' => $link[$this->page_active === 'register'],
-                'name' => 'Devenir membre',
-                'param' => $dropdown[false],
-                'sub_menu' => array()),
+            
             ROOT."pourquoi/"  => array(
                 'class' => $link[$this->page_active === 'pourquoi'],
                 'name' => 'Pourquoi devenir membre',
@@ -236,8 +245,8 @@ class Controller {
         }
         $nav_bar_menu .= '</ul>';*/
        // print_r($nav_bar_menu);
-         return $pages;
+        /* return $pages;
         
     }
-    
+    */
 }

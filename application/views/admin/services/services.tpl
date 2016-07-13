@@ -7,6 +7,11 @@
 <div class="clearfix"></div><br />
 
 <div class="container">
+    <div class="panel panel-default">
+				  <div class="panel-heading">
+					<h3 class="panel-title">Liste des services</h3>
+				  </div>
+                                    <div class="panel-body" > 
 <form id="service-list" action="" method="post" enctype="multipart/form-data">
 <table width="100%" data-toggle="table" border="1" class="table table-bordered table-responsive">
  	<thead>
@@ -42,6 +47,8 @@
  {/foreach}
 </table>
 </form>
+ </div>
+ </div>
 </div>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 {literal}
