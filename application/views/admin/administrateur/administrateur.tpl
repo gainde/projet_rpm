@@ -34,7 +34,7 @@
         <td>{$membre->getEmail()}</td>
         <td>{$membre->getTelephone()}</td>
         <td align="center">
-            <a class="edit ml10" href="{$ROOT}admin/admin/supprimer_admin/{$membre->getId()}" title="Suprimer">
+            <a class="edit ml10" href="{$ROOT}admin/administrateur/supprimer_admin/{$membre->getId()}" title="Suprimer">
                <i class="glyphicon glyphicon-remove"></i>
             </a>
         </td>

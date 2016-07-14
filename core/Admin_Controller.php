@@ -14,14 +14,12 @@ class Admin_Controller extends Controller{
         $this->load_js();
         //$this->header = "admin/header.tpl";
         //$this->footer ="admin/footer.tpl";
-       
-        if($this->getUser() == null){
-            if(strcmp(get_class($this),'Admin')!==0){
-                echo $this->notGrant();
-            }else{
-                
+       if(strcmp(get_class($this),'Home')!== 0){
+            if($this->getUser() == null || $this->getUser()->getIs_admin() !== '1'){
+              echo $this->notGrant();
             }
         }
+     
     }
     
     function load_css(){  

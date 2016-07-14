@@ -75,7 +75,12 @@ class AuthentificationManager {
     }
     public function clearCurrent(){        
     }
-    public function isAdmin(){       
+    public function isAdmin(){ 
+        if($session->getUser()->getIs_admin() == 1){
+               return true;
+        }else{
+            return false;
+        }
     } 
     public function redirect(){       
     }  

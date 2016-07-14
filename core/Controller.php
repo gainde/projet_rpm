@@ -135,7 +135,7 @@ class Controller {
     }
     function notGrant(){
         return "<script>
-            window.location ='".ROOT."admin';
+            window.location ='".ROOT."admin/home';
             </script>";
     }
     function load_css(){

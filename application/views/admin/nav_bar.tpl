@@ -42,7 +42,7 @@
                                 </li>
                                
                                 <li>
-                                    <a href="{$ROOT}admin/admin/logout"><i class="icon_key_alt"></i> Se déconnecter</a>
+                                    <a href="{$ROOT}admin/administrateur/logout"><i class="icon_key_alt"></i> Se déconnecter</a>
                                 </li>
                                 
                             </ul>

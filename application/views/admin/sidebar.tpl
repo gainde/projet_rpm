@@ -33,7 +33,7 @@
                 </ul>
             </li>
             <li>
-                <a class="" href="{$ADMINROOT}admin/administrateur">
+                <a class="" href="{$ADMINROOT}administrateur">
                     <i class="fa fa-users"></i>
                     <span>Administrateur</span>
                 </a>
@@ -63,7 +63,7 @@
             <li>
                 <a class="" href="#">
                     <i class="icon_piechart"></i>
-                    <span>Statistiquess</span>
+                    <span>Statistiques</span>
                 </a>
             </li>
             

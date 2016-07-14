@@ -5,9 +5,9 @@
 				  </div>
                                     <div class="panel-body" >
 <h3> Voulez vous vraiment supprimer cet administrateur!</h3>
-<form method="post">
+<form method="post" action='{$ROOT}admin/administrateur/supprimer_admin/{$user->getId()}'>
     <input class="hidden" name="check" type="text" id="checkall" value="{$user->getId()}">
-    <a href="{$ROOT}admin/admin/administrateur" class="btn btn-large btn-info"><i class="glyphicon glyphicon-arrow-left"></i> &nbsp; Retour</a>&nbsp;&nbsp;
+    <a href="{$ROOT}admin/administrateur" class="btn btn-large btn-info"><i class="glyphicon glyphicon-arrow-left"></i> &nbsp; Retour</a>&nbsp;&nbsp;
     <a href="#" class="btn btn-large btn-info" id="send"><i class="glyphicon glyphicon-remove"></i> &nbsp; Confirmer</a>
     <button type="submit" class="hidden">Envoyer</button>
 </form>
